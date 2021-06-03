@@ -1,19 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Nav></Nav>
+    <full-page ref="fullpage" :options="options" id="fullpage">
+      <div class="section"></div>
+      <div class="section"></div>
+      <div class="section"></div>
+      <div class="section"></div>
+    </full-page>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Nav from "./components/Nav";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Nav,
+  },
+  data() {
+    return {
+      options: {
+        licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
+        menu: "#menu",
+        anchors: ["page1", "page2", "page3"],
+        sectionsColor: ["#FEFCF5", "#000000", "#FEFCF5", "#AA4F37"],
+        paddingTop: "0px",
+        paddingBottom: "0px",
+      },
+    };
+  },
+};
 </script>
 
 <style>
@@ -23,6 +39,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
