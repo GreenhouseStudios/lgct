@@ -2,10 +2,10 @@
   <div>
     <nav class="db dt-l w-50 border-box pa3 mt3 right-0 absolute">
       <a
+        @click="fp.moveTo(index + 1)"
         class="f4 fw6 black link dim ma3"
-        v-for="item in navItems"
+        v-for="(item,index) in navItems"
         :key="item"
-        href="/"
         >{{ item }}</a
       >
     </nav>
@@ -25,6 +25,14 @@ export default {
         "Resources",
       ],
     };
+  },
+  mounted () { 
+    // console.log(this.$refs);
+  },
+  computed: {
+    fp() {
+      return window.fullpage_api;
+    }
   },
 };
 </script>

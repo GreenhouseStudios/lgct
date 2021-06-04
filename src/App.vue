@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <to-top-button v-show="!homeActive"></to-top-button>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
         <Nav></Nav>
@@ -66,7 +67,7 @@
 
       <div class="section">
         <div class="pa7">
-          <p class="f1  athelas lh-title">
+          <p class="f1 athelas lh-title">
             A very well written explanation on what the timeline details and
             what it aims to accomplish using this series of events, and how it
             ties into today.
@@ -82,7 +83,10 @@
           <div class="flex items-center justify-center">
             <div v-for="i in 3" :key="i" class="w-33 h7 ph3">
               <h2>Land Grab U</h2>
-              <div class="w5 h5 br-100 mv4 dib" style="background-color: #c5aa57">
+              <div
+                class="w5 h5 br-100 mv4 dib"
+                style="background-color: #c5aa57"
+              >
                 <div
                   class="w5 h5 br-100"
                   style="
@@ -91,7 +95,7 @@
                   "
                 ></div>
               </div>
-              <p class="">{{ipsum.generateParagraphs(1)}}</p>
+              <p class="">{{ ipsum.generateParagraphs(1) }}</p>
             </div>
             <!-- <img :src="require('/src/assets/initiatives.png')" alt="" /> -->
           </div>
@@ -102,15 +106,19 @@
 </template>
 
 <script>
-import Nav from "./components/Nav";
 import { LoremIpsum } from "lorem-ipsum";
+import Nav from "./components/Nav";
+import ToTopButton from "./components/ToTopButton.vue";
+
 export default {
   name: "App",
   components: {
     Nav,
+    ToTopButton,
   },
   data() {
     return {
+      homeActive: true,
       ipsum: new LoremIpsum({
         sentencesPerParagraph: {
           max: 4,
@@ -144,8 +152,17 @@ export default {
         ],
         paddingTop: "0px",
         paddingBottom: "0px",
+        onLeave: this.showOrHideToTopButton,
       },
     };
+  },
+  methods: {
+    showOrHideToTopButton(origin,destination,direction) {
+      console.log(origin);
+      console.log(destination);
+      console.log(direction);
+       this.homeActive = destination.isFirst;
+    }
   },
 };
 </script>
