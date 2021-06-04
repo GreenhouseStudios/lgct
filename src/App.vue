@@ -15,8 +15,8 @@
           <img class="fl" :src="require('/src/assets/map.png')" alt="" />
         </div>
       </div>
-      <div class="section">
-        <p class="f1 pa6 mt6">
+      <div class="section pa7">
+        <p class="f1 pa6 ma5 lh-title i">
           Land Grab Connecticut is an initiative created by Greenhouse Studios
           at the University of Connecticut to recognize the weight and impact of
           Land Grant Universities, institutionalized by the Morrill Act of 1862,
@@ -66,7 +66,7 @@
 
       <div class="section">
         <div class="pa7">
-          <p class="f1">
+          <p class="f1  athelas lh-title">
             A very well written explanation on what the timeline details and
             what it aims to accomplish using this series of events, and how it
             ties into today.
@@ -76,36 +76,22 @@
 
       <div class="section">
         <div class="">
-          <h1 class="f2 absolute tl ma5">Other Inititatives</h1>
+          <h1 class="f2 absolute tl ma5">Other Initiatives</h1>
         </div>
         <div class="pv7">
           <div class="flex items-center justify-center">
-            <div class="w5 h5 br-100 ma5" style="background-color: #c5aa57">
-              <div
-                class="w5 h5 br-100"
-                style="
-                  background-color: #232621;
-                  transform: translate(5px, -5px);
-                "
-              ></div>
-            </div>
-            <div class="w5 h5 br-100 ma5" style="background-color: #c5aa57">
-              <div
-                class="w5 h5 br-100"
-                style="
-                  background-color: #232621;
-                  transform: translate(5px, -5px);
-                "
-              ></div>
-            </div>
-            <div class="w5 h5 br-100 ma5" style="background-color: #c5aa57">
-              <div
-                class="w5 h5 br-100"
-                style="
-                  background-color: #232621;
-                  transform: translate(5px, -5px);
-                "
-              ></div>
+            <div v-for="i in 3" :key="i" class="w-33 h7 ph3">
+              <h2>Land Grab U</h2>
+              <div class="w5 h5 br-100 mv4 dib" style="background-color: #c5aa57">
+                <div
+                  class="w5 h5 br-100"
+                  style="
+                    background-color: #232621;
+                    transform: translate(5px, -5px);
+                  "
+                ></div>
+              </div>
+              <p class="">{{ipsum.generateParagraphs(1)}}</p>
             </div>
             <!-- <img :src="require('/src/assets/initiatives.png')" alt="" /> -->
           </div>
@@ -117,6 +103,7 @@
 
 <script>
 import Nav from "./components/Nav";
+import { LoremIpsum } from "lorem-ipsum";
 export default {
   name: "App",
   components: {
@@ -124,6 +111,16 @@ export default {
   },
   data() {
     return {
+      ipsum: new LoremIpsum({
+        sentencesPerParagraph: {
+          max: 4,
+          min: 2,
+        },
+        wordsPerSentence: {
+          max: 16,
+          min: 4,
+        },
+      }),
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         menu: "#menu",
