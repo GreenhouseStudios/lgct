@@ -1,9 +1,15 @@
 <template>
   <div>
     <full-page ref="fullpage" :options="options" id="fullpage">
-      
+      <nav class="db dt-l w-10 border-box pa3 mt3 right-0 absolute">
+      <a
+        @click="$router.push('./')"
+        class="f4 fw6 black link dim ma3"
+        >Home</a
+      >
+    </nav>
       <div class="section pa7">
-        <h1 class="f-headline">Land Grab Timeline</h1>
+        <h1 class="f-headline-l f1">Land Grab Timeline</h1>
         <div class="w2 h3 bl bw2 black line"></div>
       </div>
       <div class="section pv6" v-for="card in cards" :key="card.heading">
@@ -19,6 +25,7 @@
 <script>
 import ipsum from "../ipsum.js";
 import TimelineCard from "./TimelineCard.vue";
+
 import _ from "lodash";
 export default {
   components: {
@@ -54,6 +61,7 @@ export default {
   left: 0;
 }
 .line{
-    transform: scale(1,1000) translate(30vw);
+    transform: translateX(30vw) translateY(15vh);
+    height: 100000vh;
 }
 </style>

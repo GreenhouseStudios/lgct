@@ -1,5 +1,5 @@
 <template>
-  <div @click="isExpanded = !isExpanded" :class="{expanded: isExpanded}" class="bg-moon-gray serif pl5 w-40 pt3 pb6 ma4 grow">
+  <div @click="isExpanded = !isExpanded" :class="{expanded: isExpanded}" class="bg-light-gray serif pl5 w-40 pt3 pb6 ma4 grow">
     <span class="tl">
       <h2>{{ date }}</h2>
       <h1>{{ heading }}</h1>

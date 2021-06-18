@@ -16,8 +16,8 @@
           <img class="fl" :src="require('/src/assets/map.png')" alt="" />
         </div>
       </div>
-      <div class="section pa7">
-        <p class="f1 pa6 ma5 lh-title i">
+      <div class="section ph7 pv5">
+        <p class="f1 ph6 mh5 lh-title i">
           Land Grab Connecticut is an initiative created by Greenhouse Studios
           at the University of Connecticut to recognize the weight and impact of
           Land Grant Universities, institutionalized by the Morrill Act of 1862,
