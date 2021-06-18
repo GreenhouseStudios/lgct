@@ -33,7 +33,7 @@ export default {
         sectionsColor: _.flatten(
           Array(100).fill([
             "#FEFCF5",
-            "#000000",
+            "#222",
             "#FEFCF5",
             "#AA4F37",
             "#82b8b3",
