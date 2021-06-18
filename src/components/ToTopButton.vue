@@ -9,11 +9,12 @@
 
 <script>
 export default {
-    methods: {
-        toTop() {
-            this.fp.moveTo(1)
-        }
+  name: "ToTopButton",
+  methods: {
+    toTop() {
+      this.fp.moveTo(1);
     },
+  },
   computed: {
     fp() {
       return window.fullpage_api;
