@@ -52,7 +52,7 @@ export default {
     this.cards = [];
     axios
       .get(
-        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%7Btitle%2Cbody%7D"
+        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%20%7C%20order(_createdAt)%7B%0A%20%20title%2Cbody%0A%7D"
       )
       .then(function (response) {
         const result = response.data.result;
