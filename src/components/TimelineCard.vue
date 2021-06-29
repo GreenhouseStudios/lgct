@@ -7,7 +7,7 @@
     <span v-show="isExpanded" class="flex flex-row flex-wrap">
     <p class="w-50 mh4">{{ body }}</p>
     <img class="w-30 mh4" :src="url" alt="placeholder image">
-    <button @click="$emit('open-modal')" class="sans-serif blue f5 bn grow hover-bg-light-blue pa2 no-underline underline-hover">Read More</button>
+    <button @click.stop="$emit('open-modal')" class="sans-serif blue f5 bn grow hover-bg-light-blue pa2 no-underline underline-hover">Read More</button>
     </span>
     
   </div>
