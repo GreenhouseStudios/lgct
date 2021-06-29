@@ -8,33 +8,37 @@
       </nav>
       <div class="section pa7">
         <h1 class="f-headline-l f1">Land Grab Timeline</h1>
-        <div class="w2 h3 bl bw2 black line absolute"></div>
+        <div class="w2 h3 bl bw1 black line absolute"></div>
       </div>
       <div v-if="cards !== null">
         <div class="section pv6" v-for="card in cards" :key="card.heading">
           <div class="flex flex-column items-center">
-            <timeline-card :heading="card.heading" :body="card.body">
+            <timeline-card :heading="card.heading" :body="card.body" :date="card.date" :img="card.img" v-on:open-modal="openModal()">
             </timeline-card>
           </div>
         </div>
       </div>
     <!-- </full-page> -->
+    <detail-modal :showModal="showModal" v-on:close-modal="closeModal()"></detail-modal>
   </div>
 </template>
 
 <script>
 import ipsum from "../ipsum.js";
 import TimelineCard from "./TimelineCard.vue";
+import DetailModal from "./DetailModal.vue"
 // import groq from 'groq'
 import axios from "axios";
 import _ from "lodash";
 export default {
   components: {
     TimelineCard,
+    DetailModal,
   },
   name: "Timeline",
   data() {
     return {
+      showModal: false,
       ipsum: ipsum,
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
@@ -47,12 +51,20 @@ export default {
       cards: [],
     };
   },
+  methods: {
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    }
+  },
   mounted() {
     const $vm = this;
     this.cards = [];
     axios
       .get(
-        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%20%7C%20order(_createdAt)%7B%0A%20%20title%2Cbody%0A%7D"
+        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2Cdate%2CmainImage%0A%7D"
       )
       .then(function (response) {
         const result = response.data.result;
@@ -61,6 +73,8 @@ export default {
           $vm.cards.push( {
             heading: result[i].title,
             body: $vm.ipsum.generateParagraphs(1),
+            date: result[i].date ? result[i].date.substring(0,4) : "1492",
+            img: result[i].mainImage
           });
         }
         // $vm.fp.destroy()
