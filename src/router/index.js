@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Timeline from '@/components/Timeline'
-import Landing from '@/components/Landing'
+import Main from '@/components/Main'
 import VueRouter from 'vue-router'
 Vue.use(
     VueRouter
   )
 const routes = [
-  { path: '/timeline', component: Timeline },
-  { path: '/', component: Landing },
+  { path: '/timeline/:title', component: Timeline },
+  { path: '/', component: Main },
 ]
 
 const router = new VueRouter({

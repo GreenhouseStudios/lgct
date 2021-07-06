@@ -2,12 +2,12 @@
   <div>
     <!-- <full-page ref="fullpage" :options="options" id="fullpage"> -->
       <nav class="db dt-l w-10 border-box pa3 mt3 right-0 absolute">
-        <a @click="$router.push('./')" class="f4 fw6 black link dim ma3"
+        <a @click="$router.push('/')" class="f4 fw6 black link dim ma3"
           >Home</a
         >
       </nav>
       <div class="section pa7">
-        <h1 class="f-headline-l f1">Land Grab Timeline</h1>
+        <h1 class="f-headline-l f1">{{this.$route.params.title}}</h1>
         <div class="w2 h3 bl bw1 black line absolute"></div>
       </div>
       <div v-if="cards !== null">
@@ -27,13 +27,18 @@
 import ipsum from "../ipsum.js";
 import TimelineCard from "./TimelineCard.vue";
 import DetailModal from "./DetailModal.vue"
-// import groq from 'groq'
 import axios from "axios";
 import _ from "lodash";
 export default {
   components: {
     TimelineCard,
     DetailModal,
+  },
+  props: {
+    timelineTitle: {
+      type: String,
+      default: "National Timeline"
+    },
   },
   name: "Timeline",
   data() {
@@ -64,7 +69,7 @@ export default {
     this.cards = [];
     axios
       .get(
-        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2Cdate%2CmainImage%0A%7D"
+        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2Cdate%2CmainImage%2C%20categories%0A%7D&%24keyword=%22" + this.$route.params.title + "%22"
       )
       .then(function (response) {
         const result = response.data.result;
