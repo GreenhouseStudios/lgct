@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="db-ns dn dt-l w-50 border-box pa3 mt3 right-0 absolute">
+    <nav class="db-ns dn dt-l w-60 border-box pa3 mt3 right-0 absolute">
       <a
         @click="fp.moveTo(index + 1)"
         class="f4 fw6 black link dim ma3"
@@ -35,11 +35,14 @@ export default {
       name: "Nav",
       navItems: [
         "Home",
-        "Maps",
+        "Morrill Act",
+        "Map the Impact",
+        "Mission",
         "Timelines",
-        "Indigenous Peoples",
-        "About",
+        "Assumption vs Truth",
+        "Cultural Involvement",
         "Resources",
+        "About",
       ],
       btnColors: ['bg-hot-pink z-5','bg-blue z-4', 'bg-pink z-3', 'bg-green z-2', 'bg-yellow z-1', 'bg-silver z-0'],
       navShow: false,
