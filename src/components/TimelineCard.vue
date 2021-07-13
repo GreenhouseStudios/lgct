@@ -2,7 +2,7 @@
   <div
     @click.prevent="isExpanded = !isExpanded"
     :class="{ expanded: isExpanded }"
-    class="bg-light-gray serif pl5-ns ph4 w-40-ns w-100 pt3 pb6-ns pb4 ma4-ns grow"
+    class="bg-light-gray serif pl5-ns ph4 w-40-ns w-100 pt3 pb4 ma4-ns grow"
   >
     <span class="tl">
       <h2>{{ date }}</h2>
@@ -11,7 +11,7 @@
     <div v-show="isExpanded">
       <div class="flex flex-row-ns flex-column items-start">
         <div class="w-50-ns order-2 order-0-ns">
-          <p v-for="(child, index) in blockChildren" :key="index">
+          <p v-for="(child, index) in blockChildren" :key="index" class="mt0">
             {{ child[0].text }}
           </p>
            <button
