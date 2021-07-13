@@ -32,7 +32,7 @@
           Read More
         </button>
         </div>
-        <img class="mw5 mh4-ns order-1" :src="url" alt="placeholder image" />
+        <img class="mw5 mh4-ns mb3 order-1" :src="url" alt="placeholder image" />
       </div>
       <div>
        
