@@ -1,21 +1,21 @@
 <template>
   <div
-    @click="isExpanded = !isExpanded"
+    @click.prevent="isExpanded = !isExpanded"
     :class="{ expanded: isExpanded }"
-    class="bg-light-gray serif pl5 w-40 pt3 pb6 ma4 grow"
+    class="bg-light-gray serif pl5-ns ph4 w-40-ns w-100 pt3 pb6-ns pb4 ma4-ns grow"
   >
     <span class="tl">
       <h2>{{ date }}</h2>
       <h1>{{ heading }}</h1>
     </span>
     <div v-show="isExpanded">
-      <div class="flex flex-row">
-        <div class="w-50">
+      <div class="flex flex-row-ns flex-column items-start">
+        <div class="w-50-ns order-2 order-0-ns">
           <p v-for="(child, index) in blockChildren" :key="index">
             {{ child[0].text }}
           </p>
            <button
-          @click.self="$emit('open-modal')"
+          @click.stop="$emit('open-modal')"
           class="
             sans-serif
             blue
@@ -32,7 +32,7 @@
           Read More
         </button>
         </div>
-        <img class="w-30 mh4" :src="url" alt="placeholder image" />
+        <img class="mw5 mh4-ns order-1" :src="url" alt="placeholder image" />
       </div>
       <div>
        
@@ -91,8 +91,6 @@ export default {
 
 <style lang="scss" scoped>
 .expanded {
-  max-height: 80vh;
-  width: 60vw;
   overflow-y: hidden;
 }
 </style>

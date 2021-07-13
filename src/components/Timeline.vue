@@ -1,17 +1,17 @@
 <template>
   <div>
     <!-- <full-page ref="fullpage" :options="options" id="fullpage"> -->
-      <nav class="db dt-l w-10 border-box pa3 mt3 right-0 absolute">
+      <nav class="db-ns dn dt-l w-10 border-box pa3 mt3 right-0 absolute">
         <a @click="$router.push('/')" class="f4 fw6 black link dim ma3"
           >Home</a
         >
       </nav>
-      <div class="section pa7">
+      <div class="section pa7-ns">
         <h1 class="f-headline-l f1">{{this.$route.params.title}}</h1>
         <div class="w2 h3 bl bw1 black line absolute"></div>
       </div>
-      <div v-if="cards !== null">
-        <div class="section pv6" v-for="card in cards" :key="card.heading">
+      <div v-if="cards !== null" class="w-100">
+        <div class="section pv6-ns pv3" v-for="card in cards" :key="card.heading">
           <div class="flex flex-column items-center">
             <timeline-card :heading="card.heading" :body="card.body" :date="card.date" :img="card.img" v-on:open-modal="openModal()">
             </timeline-card>
@@ -59,9 +59,11 @@ export default {
   methods: {
     openModal() {
       this.showModal = true;
+      console.log("show modal")
     },
     closeModal() {
       this.showModal = false;
+      console.log("close modal")
     }
   },
   mounted() {
