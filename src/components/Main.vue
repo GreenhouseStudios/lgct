@@ -104,15 +104,15 @@ export default {
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         menu: "#menu",
-        anchors: [
-          "Home",
-          "Maps",
-          "Mission",
-          "Timelines",
-          "Nations",
-          "Objectives",
-          "Initiatives",
-        ],
+        // anchors: [
+        //   "Home",
+        //   "Maps",
+        //   "Mission",
+        //   "Timelines",
+        //   "Nations",
+        //   "Objectives",
+        //   "Initiatives",
+        // ],
         sectionsColor: [
           "#FEFCF5",
           "#000000",
