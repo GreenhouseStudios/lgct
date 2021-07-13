@@ -69,7 +69,7 @@ export default {
     this.cards = [];
     axios
       .get(
-        "https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2Cdate%2CmainImage%2C%20categories%0A%7D&%24keyword=%22" + this.$route.params.title + "%22"
+        `https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2Cdate%2CmainImage%2C%20categories%0A%7D&%24keyword=%22${this.$route.params.title}%22`
       )
       .then(function (response) {
         const result = response.data.result;
@@ -77,7 +77,7 @@ export default {
         for (let i = 0; i < result.length; i++) {
           $vm.cards.push( {
             heading: result[i].title,
-            body: $vm.ipsum.generateParagraphs(1),
+            body: result[i].body,
             date: result[i].date ? result[i].date.substring(0,4) : "1492",
             img: result[i].mainImage
           });
