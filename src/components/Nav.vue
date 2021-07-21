@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="db-ns dn dt-l w-60 border-box pa3 mt3 right-0 absolute">
+    <nav class="db-ns dn dt-l border-box pa3 mt3 right-0 absolute">
       <a
         @click="fp.moveTo(index + 1)"
         class="f4 fw6 black link dim ma3"

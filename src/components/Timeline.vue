@@ -111,5 +111,6 @@ export default {
 .line {
   transform: translateX(30vw) translateY(15vh);
   height: 1000vh;
+  z-index: -10;
 }
 </style>
