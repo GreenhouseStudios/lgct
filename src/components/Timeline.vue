@@ -9,13 +9,19 @@
       <div class="w2 h3 bl bw1 black line absolute"></div>
     </div>
     <div v-if="cards !== null" class="w-100">
-      <div class="section pv6-ns pv3" v-for="card in cards" :key="card.heading">
+      <div
+        class="section pv6-ns pv3"
+        v-for="(card, index) in cards"
+        :key="card.heading"
+      >
         <div class="flex flex-column items-center">
+          <div class="cardTrigger"></div>
           <timeline-card
             :heading="card.heading"
             :body="card.body"
             :date="card.date"
             :img="card.img"
+            :index="index"
             v-on:open-modal="openModal()"
           >
           </timeline-card>
@@ -103,12 +109,27 @@ export default {
       duration: 5,
       ease: "power2.out",
     });
-    gsap.from("h1",
-    {
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out"
-    })
+  },
+  updated() {
+    gsap.registerPlugin(ScrollTrigger);
+    for (let i = 0; i < this.cards.length; i++) {
+      gsap.fromTo(
+        "#card"+i,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#card" + i,
+            markers: true,
+            start: "top center",
+          },
+        }
+      );
+    }
   },
   //   updated () {
   //       this.fp.reBuild();

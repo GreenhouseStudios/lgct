@@ -68,7 +68,8 @@
 import ipsum from "../ipsum.js";
 import client from "../sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "TimelineCard",
   components: {},
@@ -92,6 +93,9 @@ export default {
     img: {
       type: Object,
     },
+    index: {
+      type: Number
+    }
   },
   data() {
     return {
@@ -125,23 +129,8 @@ export default {
     },
   },
   mounted() {
-    this.id = "card" + this._uid;
-    gsap.fromTo(
-      "#"+this.id,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#"+this.id,
-          markers: true,
-          start: "top 20%",
-        },
-      }
-    );
+    this.id = "card" + this.index
+    
   },
 };
 </script>
