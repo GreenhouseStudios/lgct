@@ -3,6 +3,7 @@ import Timeline from '@/components/Timeline'
 import Main from '@/components/Main'
 import Glossary from '@/components/Glossary'
 import Error from '@/components/Error'
+import Assumption from '@/components/AssumptionTruth'
 import VueRouter from 'vue-router'
 Vue.use(
     VueRouter
@@ -11,7 +12,7 @@ const routes = [
   { path: '/timeline/:title', component: Timeline },
   { path: '/glossary/:word', component: Glossary},
   { path: '/glossary/', component: Glossary},
-  { path: '/glossary/', component: Glossary},
+  {path: "/assumption/", component: Assumption},
   { path: '/', component: Main },
   { path: '*', component: Error },
 ]

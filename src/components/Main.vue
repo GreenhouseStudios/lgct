@@ -1,13 +1,13 @@
 <template>
   <div>
-    <full-page ref="fullpage" :options="options" id="fullpage" >
+    <full-page ref="fullpage" :options="options" id="fullpage">
       <Home></Home>
       <MorrillAct></MorrillAct>
 
-      <div class="section">
-        <div>
-          <h1 class="f1 white pa5">Mapping the Impact</h1>
-          <img class="fl" :src="require('/src/assets/map.png')" />
+      <div class="section overflow-hidden">
+        <div class="flex flex-column justify-center align-center">
+          <h1 class="f1 white">Mapping the Impact</h1>
+          <img class="mw-30" :src="require('/src/assets/map.png')" />
         </div>
       </div>
       <div class="section ph7-ns pv5-ns">
@@ -22,7 +22,7 @@
       <div class="section">
         <div class="flex flex-row-l flex-column w-100 justify-center">
           <div class="w-40-ns vh-100-ns vh-50 pa5-ns pa3 bg-light-gray">
-            <router-link to="/timeline/National Timeline">
+            <router-link to="/timeline/National Timeline" style="text-decoration: none; color: inherit;">
               <div class="flex flex-column justify-center grow">
                 <h1 class="f1-ns f4">National Timeline</h1>
               </div>
@@ -39,7 +39,7 @@
           </div>
 
           <div class="w-40-ns vh-100-ns vh-50 pa5-ns pa3 bg-lightest-blue">
-            <router-link to="/timeline/Connecticut Timeline">
+            <router-link to="/timeline/Connecticut Timeline" style="text-decoration: none; color: inherit;">
               <div class="flex flex-column justify-center grow">
                 <h1 class="f1-ns f4">Connecticut Timeline</h1>
               </div>
@@ -62,9 +62,17 @@
       <div class="section">
         <div class="pa6-ns pa3">
           <span class="ma5-ns ma2 b--white flex flex-column white">
-            <h1 class="w-40-ns w-25 f-headline-ns f1 tl v-mid">
-              Assumptions vs Truth
-            </h1>
+            <router-link to="/Assumption" style="text-decoration: none; color: inherit;">
+              <h1 class="w-40-ns w-25 f-headline-ns f1 tl v-mid grow">
+                Assumptions vs Truth
+                <img
+                  src="../assets/Arrow-White.svg"
+                  alt="arrow icon"
+                  class="mw3"
+                  style="fill: white"
+                />
+              </h1>
+            </router-link>
             <h2>
               Learn the truth about the University's role in dispossesing
               generations of people from opportunity and prosperity.
@@ -144,13 +152,13 @@
 import ipsum from "../ipsum.js";
 import Home from "./Home";
 import Footer from "./Footer";
-import MorrillAct from "./MorrillAct.vue"
+import MorrillAct from "./MorrillAct.vue";
 export default {
   name: "Landing",
   components: {
     Home,
     Footer,
-    MorrillAct
+    MorrillAct,
   },
   data() {
     return {
@@ -179,7 +187,5 @@ export default {
 </script>
 
 <style scoped>
-.section{
-  height: 100vh;
-}
+
 </style>

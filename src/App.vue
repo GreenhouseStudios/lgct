@@ -30,4 +30,7 @@ export default {
 #ind {
   background-image: url(../src/assets/indigenous-peoples.png);
 }
+router-link{
+    text-decoration: none;
+}
 </style>
