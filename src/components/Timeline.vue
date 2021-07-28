@@ -124,7 +124,6 @@ export default {
           ease: "power2.out",
           scrollTrigger: {
             trigger: "#card" + i,
-            markers: true,
             start: "top center",
           },
         }
