@@ -35,7 +35,6 @@ export default {
       ease: "power2.out",
       scrollTrigger: {
         trigger: "#morrill-trigger",
-        markers: true,
         start: "top center",
       },
     });
