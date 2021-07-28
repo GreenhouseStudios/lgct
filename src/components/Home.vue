@@ -17,7 +17,7 @@ export default {
     Nav,
   },
   mounted() {
-    gsap.from(".section", { opacity: 0, duration: 3, ease: "power2.out" });
+    gsap.from("#hero", { opacity: 0, duration: 3, ease: "power2.out" });
     gsap.from("nav", { x: 500, duration: 1, ease: "power2.out" });
   },
 };

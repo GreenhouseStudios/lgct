@@ -2,13 +2,25 @@
   <div
     @click="expandCard"
     :class="{ expanded: isExpanded }"
-    class="bg-light-gray serif pl5-ns ph4 w-70-ns w-100 pt3 pb4 ma4-ns relative "
+    class="
+      card
+      bg-light-gray
+      serif
+      pl5-ns
+      ph4
+      w-70-ns w-100
+      pt3
+      pb4
+      ma4-ns
+      relative
+    "
+    :id="id"
   >
-    <span class="tl">
+    <span class="tl test">
       <h2>{{ date }}</h2>
       <h1>{{ heading }}</h1>
     </span>
-    <div v-show="isExpanded" >
+    <div v-show="isExpanded">
       <span
         class="absolute top-0 right-0 hover-bg-light-blue bg-moon-gray w3 h3"
         v-on:click.stop="collapseCard"
@@ -56,7 +68,7 @@
 import ipsum from "../ipsum.js";
 import client from "../sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
-
+import { gsap } from "gsap";
 export default {
   name: "TimelineCard",
   components: {},
@@ -83,6 +95,7 @@ export default {
   },
   data() {
     return {
+      id: "",
       ipsum: ipsum,
       isExpanded: false,
       builder: imageUrlBuilder(client),
@@ -102,14 +115,33 @@ export default {
   methods: {
     expandCard() {
       event.cancelBubble = true;
-if(event.stopPropagation) event.stopPropagation();
+      if (event.stopPropagation) event.stopPropagation();
       this.isExpanded = true;
     },
     collapseCard() {
       event.cancelBubble = true;
-if(event.stopPropagation) event.stopPropagation();
+      if (event.stopPropagation) event.stopPropagation();
       this.isExpanded = false;
     },
+  },
+  mounted() {
+    this.id = "card" + this._uid;
+    gsap.fromTo(
+      "#"+this.id,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#"+this.id,
+          markers: true,
+          start: "top 20%",
+        },
+      }
+    );
   },
 };
 </script>

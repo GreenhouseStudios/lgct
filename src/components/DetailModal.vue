@@ -11,7 +11,10 @@
       </div>
       <div class="pa4 flex flex-column items-center">
         <h1 class="f-headline-ns">Detail Modal</h1>
-        <p v-for="n in 10" :key="n" class="ma3 pv3 w-30-ns">
+        <!-- <p v-for="n in 10" :key="n" class="ma3 pv3 w-30-ns">
+          {{ ipsum.generateParagraphs(1) }}
+        </p> -->
+         <p class="ma3 pv3 w-30-ns">
           {{ ipsum.generateParagraphs(1) }}
         </p>
       </div>

@@ -1,27 +1,8 @@
 <template>
   <div>
-    <full-page ref="fullpage" :options="options" id="fullpage">
+    <full-page ref="fullpage" :options="options" id="fullpage" >
       <Home></Home>
-
-      <div class="section ph7-ns pv5-ns pa2">
-        <h1 class="f-headline-ns f1">What is the Morrill Act?</h1>
-        <p class="f3-ns f5 ph6-ns pa4 mh5-ns lh-title-ns i">
-          In 1862, the United States government passed “an Act donating public
-          lands to the several states and territories which may provide Colleges
-          for the benefit of Agriculture and the Mechanic Arts,” known as the
-          Morrill Act. These public lands were established by the systematic and
-          violent dispossession of Indigenous people by the United States
-          government. The land tied to UConn’s Land Grant status spans 12 states
-          originally stewarded by Indigenous tribes. The colleges established
-          benefitted white citizens then and continue to disproportionately
-          benefit white citizens today. The University of Connecticut became
-          Connecticut’s Land Grant college in 1893. Upon receiving land grant
-          status by the state, the University of Connecticut directly benefited
-          from the 178190.04 acres of land and the $135,000.84 ($3,598,150.99
-          today) raised from it through annual payments to the university. The
-          state of Connecticut paid $12,763.01.
-        </p>
-      </div>
+      <MorrillAct></MorrillAct>
 
       <div class="section">
         <div>
@@ -46,7 +27,7 @@
                 <h1 class="f1-ns f4">National Timeline</h1>
               </div>
             </router-link>
-            <p class="f2-ns ">
+            <p class="f2-ns">
               Land acts like the Morrill Act were made possible by the
               systematic dispossession of Indigenous peoples by the United
               States government and the establishment of land as ownable and
@@ -63,7 +44,7 @@
                 <h1 class="f1-ns f4">Connecticut Timeline</h1>
               </div>
             </router-link>
-            <p class="f2-ns ">
+            <p class="f2-ns">
               The University of Connecticut is built on land originally
               stewarded by Indigenous peoples and was taken by brutal force. The
               University of Connecticut also continues to benefit from the
@@ -103,7 +84,9 @@
 
       <div class="section">
         <div class="pv2 ph3">
-          <h1 class="f-headline-ns f3 absolute-ns tl-ns ma5-ns">Activism and Resources</h1>
+          <h1 class="f-headline-ns f3 absolute-ns tl-ns ma5-ns">
+            Activism and Resources
+          </h1>
         </div>
         <div class="pv7-ns">
           <div class="flex flex-row-ns flex-column items-center justify-center">
@@ -133,23 +116,23 @@
           Learn more about the process and team members
         </p>
         <div class="flex flex-row-ns flex-column items-center justify-center">
-            <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2">
-              <h2 class="f2-ns f4">Team Member</h2>
+          <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2">
+            <h2 class="f2-ns f4">Team Member</h2>
+            <div
+              class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
+              style="background-color: #c5aa57"
+            >
               <div
-                class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
-                style="background-color: #c5aa57"
-              >
-                <div
-                  class="w5-ns h5-ns h3 w3 br-100"
-                  style="
-                    background-color: #232621;
-                    transform: translate(5px, -5px);
-                  "
-                ></div>
-              </div>
-              <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
+                class="w5-ns h5-ns h3 w3 br-100"
+                style="
+                  background-color: #232621;
+                  transform: translate(5px, -5px);
+                "
+              ></div>
             </div>
+            <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
           </div>
+        </div>
       </div>
 
       <Footer></Footer>
@@ -161,11 +144,13 @@
 import ipsum from "../ipsum.js";
 import Home from "./Home";
 import Footer from "./Footer";
+import MorrillAct from "./MorrillAct.vue"
 export default {
   name: "Landing",
   components: {
     Home,
     Footer,
+    MorrillAct
   },
   data() {
     return {
@@ -173,16 +158,8 @@ export default {
       ipsum: ipsum,
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
+        scrollBar: true,
         menu: "#menu",
-        // anchors: [
-        //   "Home",
-        //   "Maps",
-        //   "Mission",
-        //   "Timelines",
-        //   "Nations",
-        //   "Objectives",
-        //   "Initiatives",
-        // ],
         sectionsColor: [
           "#FEFCF5",
           "#FEFCF5",
@@ -200,3 +177,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.section{
+  height: 100vh;
+}
+</style>
