@@ -33,4 +33,22 @@ export default {
 router-link{
     text-decoration: none;
 }
+.lgct-white{
+  color: #FEFCF5,
+}
+.lgct-red{
+  color: #AA4F37,
+}
+.lgct-blue{
+  color: #82b8b3,
+}
+.lgct-teal{
+  color: #70B9B2,
+}
+.lgct-gold{
+  color: #EFC55B,
+}
+.lgct-grey{
+
+}
 </style>

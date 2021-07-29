@@ -21,10 +21,15 @@
       </div>
       <div class="section">
         <div class="flex flex-row-l flex-column w-100 justify-center">
-          <div class="w-40-ns vh-100-ns vh-50 pa5-ns pa3 bg-light-gray">
+          <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white">
             <router-link to="/timeline/National Timeline" style="text-decoration: none; color: inherit;">
               <div class="flex flex-column justify-center grow">
-                <h1 class="f1-ns f4">National Timeline</h1>
+                <h1 class="f1-ns f4">National Timeline <img
+                  src="../assets/Arrow-White.svg"
+                  alt="arrow icon"
+                  class="mw2"
+                  style="fill: white"
+                /></h1>
               </div>
             </router-link>
             <p class="f2-ns">
@@ -38,10 +43,15 @@
             </p>
           </div>
 
-          <div class="w-40-ns vh-100-ns vh-50 pa5-ns pa3 bg-lightest-blue">
+          <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white bg-gray">
             <router-link to="/timeline/Connecticut Timeline" style="text-decoration: none; color: inherit;">
               <div class="flex flex-column justify-center grow">
-                <h1 class="f1-ns f4">Connecticut Timeline</h1>
+                <h1 class="f1-ns f4">Connecticut Timeline <img
+                  src="../assets/Arrow-White.svg"
+                  alt="arrow icon"
+                  class="mw2"
+                  style="fill: white"
+                /></h1>
               </div>
             </router-link>
             <p class="f2-ns">
