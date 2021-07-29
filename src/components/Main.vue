@@ -83,7 +83,12 @@
 
       <div class="section">
         <div class="pa7-ns ph3 pv5 white">
-          <h1 class="f-headline-ns">Cultural Involvement</h1>
+          <router-link to="/involvement" style="text-decoration: none; color: inherit;"><h1 class="f-headline-ns grow">Cultural Involvement  <img
+                  src="../assets/Arrow-White.svg"
+                  alt="arrow icon"
+                  class="mw3"
+                  style="fill: white"
+                /></h1></router-link>
           <p class="f1-ns f3 lh-title">
             Learn more about contemporary indigenous cultures
           </p>
@@ -179,6 +184,7 @@ export default {
           "#FEFCF5",
           "#AA4F37",
         ],
+        
         onLeave: this.showOrHideToTopButton,
       },
     };
