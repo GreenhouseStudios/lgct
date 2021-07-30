@@ -1,10 +1,10 @@
 <template>
-  <div class="section ph7-ns pv5-ns pa2" id="morrill">
-    <h1 id="morrill-child" class="f-headline-ns f1">
+  <div class="section ph5-l pv5-l pa0 overflow-hidden" id="morrill">
+    <h1 id="morrill-child" class="f-subheadline-l f1-m">
       What is the Morrill Act?
     </h1>
     <div id="morrill-trigger"></div>
-    <p class="f3-ns f5 ph6-ns pa4 mh5-ns lh-title-ns i">
+    <p class="f3-ns f5 ph6-ns pa0 ma0 mh5-ns lh-title-ns i overflow-hidden">
       In 1862, the United States government passed “an Act donating public lands
       to the several states and territories which may provide Colleges for the
       benefit of Agriculture and the Mechanic Arts,” known as the Morrill Act.

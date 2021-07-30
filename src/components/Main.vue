@@ -10,8 +10,8 @@
           <img class="mw-30" :src="require('/src/assets/map.png')" />
         </div>
       </div>
-      <div class="section ph7-ns pv5-ns">
-        <p class="f1-ns f3 ph6-ns pa4 mh5-ns lh-title-ns i">
+      <div class="section ph5-l pv5-l overflow-hidden">
+        <p class="f1-l f2 ph6-l pa4 mh5-l lh-title-ns i">
           Land Grab Connecticut is an initiative created by Greenhouse Studios
           at the University of Connecticut to recognize the weight and impact of
           Land Grant Universities, institutionalized by the Morrill Act of 1862,
@@ -20,11 +20,11 @@
         </p>
       </div>
       <div class="section">
-        <div class="flex flex-row-l flex-column w-100 justify-center">
+        <div class="flex flex-row-l flex-column w-100 justify-center overflow-hidden">
           <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white">
             <router-link to="/timeline/National Timeline" style="text-decoration: none; color: inherit;">
               <div class="flex flex-column justify-center grow">
-                <h1 class="f1-ns f4">National Timeline <img
+                <h1 class="f1-l f4">National Timeline <img
                   src="../assets/Arrow-White.svg"
                   alt="arrow icon"
                   class="mw2"
@@ -32,7 +32,7 @@
                 /></h1>
               </div>
             </router-link>
-            <p class="f2-ns">
+            <p class="f3-ns ph3">
               Land acts like the Morrill Act were made possible by the
               systematic dispossession of Indigenous peoples by the United
               States government and the establishment of land as ownable and
@@ -43,7 +43,7 @@
             </p>
           </div>
 
-          <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white bg-gray">
+          <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white bg-gray pa3">
             <router-link to="/timeline/Connecticut Timeline" style="text-decoration: none; color: inherit;">
               <div class="flex flex-column justify-center grow">
                 <h1 class="f1-ns f4">Connecticut Timeline <img
@@ -54,7 +54,7 @@
                 /></h1>
               </div>
             </router-link>
-            <p class="f2-ns">
+            <p class="f3-ns ph3">
               The University of Connecticut is built on land originally
               stewarded by Indigenous peoples and was taken by brutal force. The
               University of Connecticut also continues to benefit from the
