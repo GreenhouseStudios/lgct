@@ -113,7 +113,7 @@
         </div>
         <div class="pv7-ns">
           <div class="flex flex-row-ns flex-column items-center justify-center">
-            <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2">
+            <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
               <a href="https://www.landgrabu.org" style="text-decoration: none; color: inherit;">
 
               <h2 class="f2-ns f4">Land Grab U</h2>
