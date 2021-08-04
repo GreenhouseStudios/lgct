@@ -11,12 +11,13 @@
       </div>
       <div class="pa4 flex flex-column items-center">
         <h1 class="f-headline-ns">Detail Modal</h1>
-        <!-- <p v-for="n in 10" :key="n" class="ma3 pv3 w-30-ns">
-          {{ ipsum.generateParagraphs(1) }}
-        </p> -->
-         <p class="ma3 pv3 w-30-ns">
+        <p v-if="card.fullBody" class="ma3 pv3 w-30-ns" v-html="blocksToHTML({ blocks: card.fullBody })"></p>
+         <p v-else class="ma3 pv3 w-30-ns">
           {{ ipsum.generateParagraphs(1) }}
         </p>
+
+        <h3>Citations</h3>
+        <p v-if="card.fullBody" class="ma3 pv3 w-30-ns" v-html="blocksToHTML({ blocks: card.citations })"></p>
       </div>
     </div>
   </transition>
@@ -30,11 +31,21 @@ export default {
       type: Boolean,
       default: false,
     },
+    card: {
+      type: Object,
+      default: () => {},
+    }
   },
   data() {
     return {
       ipsum: ipsum,
+      blocksToHTML: require("@sanity/block-content-to-html"),
     };
+  },
+  computed: {
+    blockChildren() {
+      return this.body.map((x) => x.children).filter((x) => x.text !== "\n");
+    },
   },
 };
 </script>

@@ -22,7 +22,7 @@
             :date="card.date"
             :img="card.img"
             :index="index"
-            v-on:open-modal="openModal()"
+            v-on:open-modal="openModal(index)"
           >
           </timeline-card>
         </div>
@@ -31,6 +31,7 @@
     <!-- </full-page> -->
     <detail-modal
       :showModal="showModal"
+      :card="activeCard"
       v-on:close-modal="closeModal()"
     ></detail-modal>
   </div>
@@ -60,6 +61,7 @@ export default {
     return {
       showModal: false,
       ipsum: ipsum,
+      activeCard: {fullBody: ""},
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         menu: "#menu",
@@ -72,7 +74,8 @@ export default {
     };
   },
   methods: {
-    openModal() {
+    openModal(index) {
+      this.activeCard = this.cards[index]
       this.showModal = true;
       console.log("show modal");
     },
@@ -86,7 +89,7 @@ export default {
     this.cards = [];
     axios
       .get(
-        `https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2Cdate%2CmainImage%2C%20categories%0A%7D&%24keyword=%22${this.$route.params.title}%22`
+        `https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2CfullBody%2Ccitations%2Cdate%2CmainImage%2C%20categories%0A%7D&%24keyword=%22${this.$route.params.title}%22`
       )
       .then(function (response) {
         const result = response.data.result;
@@ -95,8 +98,10 @@ export default {
           $vm.cards.push({
             heading: result[i].title,
             body: result[i].body,
+            fullBody : result[i].fullBody,
             date: result[i].date ? result[i].date.substring(0, 4) : "1492",
             img: result[i].mainImage,
+            citations: result[i].citations,
           });
         }
         // $vm.fp.destroy()
