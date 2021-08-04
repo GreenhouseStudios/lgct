@@ -107,13 +107,15 @@
 
       <div class="section">
         <div class="pv2 ph3">
-          <h1 class="f-headline-ns f3 absolute-ns tl-ns ma5-ns">
+          <h1 class="f1-l f3-m absolute-ns tl-ns ma5-ns">
             Activism and Resources
           </h1>
         </div>
         <div class="pv7-ns">
           <div class="flex flex-row-ns flex-column items-center justify-center">
-            <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2">
+            <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
+              <a href="https://www.landgrabu.org" style="text-decoration: none; color: inherit;">
+
               <h2 class="f2-ns f4">Land Grab U</h2>
               <div
                 class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
@@ -128,6 +130,7 @@
                 ></div>
               </div>
               <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
+              </a>
             </div>
           </div>
         </div>
