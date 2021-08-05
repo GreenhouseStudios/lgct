@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section lgct-white relative">
+    <div class="section bg-lgct-white relative">
       <router-link to="/">
         <img
           src="../assets/lgct-logo-long.png"
@@ -26,7 +26,7 @@
         </p>
       </header>
       <div
-        class="lgct-teal absolute bottom-0 right-0 w-100"
+        class="bg-lgct-teal absolute bottom-0 right-0 w-100"
         style="height: 10vh"
       >
         <div
@@ -36,7 +36,7 @@
         ></div>
       </div>
     </div>
-    <div class="section lgct-teal white flex flex-row">
+    <div class="section bg-lgct-teal white flex flex-row">
       <section class="w-50 pa4 lh-copy">
         <h3 class="w-50 center f2">{{ ipsum.generateParagraphs(1) }}</h3>
       </section>
@@ -58,7 +58,7 @@
       </section>
     </div>
 
-    <div class="section lgct-red white serif fw3 pa5">
+    <div class="section bg-lgct-red white serif fw3 pa5">
       <section class="tl mh5">
         <h1 class="f1">The Future of Land Grab</h1>
         <div class="sans-serif">
@@ -68,7 +68,7 @@
       </section>
     </div>
 
-    <div class="section lgct-white serif fw3 pa5">
+    <div class="section bg-lgct-white serif fw3 pa5">
       <section class="tl mh5">
         <h1 class="f1">The Future of Land Grab</h1>
         <div class="sans-serif">
@@ -79,7 +79,7 @@
     </div>
 
     
-    <div class="section lgct-gold fw3">
+    <div class="section bg-lgct-gold fw3">
       <section class="tl mh5">
         <h1 class="f1 serif pa4">The Team</h1>
         <div class="flex flex-wrap w-100 justify-between">
@@ -98,7 +98,7 @@
       </section>
     </div>
 
-     <div class="section lgct-teal fw3">
+     <div class="section bg-lgct-teal fw3">
       <section class="tl mh5 white">
         <h1 class="f1 serif ma0">Special Thanks To</h1>
         <div class="flex flex-wrap w-100 justify-between">

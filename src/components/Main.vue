@@ -135,9 +135,16 @@
 
       <div class="section">
         <div class="pv2 ph3">
-          <h1 class="f1-l f3-m absolute-ns tl-ns ma5-ns">
-            Activism and Resources
+          <router-link to="/resources"  style="text-decoration: none; color: inherit">
+          <h1 class="f1-l f3-m absolute-ns tl-ns ma5-ns grow">
+            Activism and Resources      <img
+                src="../assets/Arrow.svg"
+                alt="arrow icon"
+                class="mw3"
+                style="fill: white"
+              />
           </h1>
+          </router-link>
         </div>
         <div class="pv7-ns">
           <div class="flex flex-row-ns flex-column items-center justify-center">

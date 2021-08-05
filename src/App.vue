@@ -36,25 +36,39 @@ router-link{
 $lgct-white: #FEFCF5;
 $lgct-red: #AA4F37;
 $lgct-teal: #70B9B2;
-.lgct-white{
+.bg-lgct-white{
   background-color: #FEFCF5,
 }
-.lgct-red{
+.bg-lgct-red{
   background-color: #AA4F37,
+}
+.bg-lgct-blue{
+  color: #82b8b3,
+}
+.bg-lgct-teal{
+  background-color: #54BAB1,
+}
+.bg-lgct-gold{
+  background-color: #EDC35B,
+}
+.lgct-white{
+  color: #FEFCF5,
+}
+.lgct-red{
+  color: #AA4F37,
 }
 .lgct-blue{
   color: #82b8b3,
 }
 .lgct-teal{
-  background-color: #54BAB1,
+  color: #54BAB1,
 }
 .lgct-gold{
-  background-color: #EFC55B,
+  color: #EDC35B,
 }
-.lgct-grey{
-
+:root{
+  --box-shadow-color: #54BAB1;
 }
-
 #curved-corner-bottomleft,
 #curved-corner-bottomright,
 #curved-corner-topleft,
@@ -83,7 +97,7 @@ $lgct-teal: #70B9B2;
 #curved-corner-bottomright:before {
   bottom: 0;
   right: 0;
-  box-shadow: 100px 100px 0 0 #54BAB1;
+  box-shadow: 100px 100px 0 0;
 }
 #curved-corner-topleft:before {
   top: 0;
