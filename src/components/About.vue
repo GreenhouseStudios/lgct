@@ -1,0 +1,141 @@
+<template>
+  <div>
+    <div class="section lgct-white relative">
+      <router-link to="/">
+        <img
+          src="../assets/lgct-logo-long.png"
+          alt="land grab connecticut logo long version"
+          class="mw6 absolute top-2 left-2"
+        />
+      </router-link>
+      <header
+        class="
+          mw-25 mw-25-ns
+          pa3
+          pa5-ns
+          flex flex-column
+          h-100
+          justify-center
+          tl
+        "
+      >
+        <h1 class="serif f-subheadline ph7">About Land Grab CT</h1>
+        <p class="f3 ph7">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </header>
+      <div
+        class="lgct-teal absolute bottom-0 right-0 w-100"
+        style="height: 10vh"
+      >
+        <div
+          id="curved-corner-bottomright"
+          class="fr relative"
+          style="top: -100px"
+        ></div>
+      </div>
+    </div>
+    <div class="section lgct-teal white flex flex-row">
+      <section class="w-50 pa4 lh-copy">
+        <h3 class="w-50 center f2">{{ ipsum.generateParagraphs(1) }}</h3>
+      </section>
+      <section class="w-50 pa2">
+        <ul class="list h-100 flex flex-column">
+          <li class="w-75 h-25 pa3 ma2">
+            <h1>Goal 1</h1>
+            <p class="i f3">{{ ipsum.generateParagraphs(1) }}</p>
+          </li>
+          <li class="w-75 h-25 pa3 ma2">
+            <h1>Goal 2</h1>
+            <p class="i f3">{{ ipsum.generateParagraphs(1) }}</p>
+          </li>
+          <li class="w-75 h-25 pa3 ma2">
+            <h1>Goal 3</h1>
+            <p class="i f3">{{ ipsum.generateParagraphs(1) }}</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="section lgct-red white serif fw3 pa5">
+      <section class="tl mh5">
+        <h1 class="f1">The Future of Land Grab</h1>
+        <div class="sans-serif">
+          <p class="f1">{{ ipsum.generateParagraphs(1) }}</p>
+          <p class="f1">{{ ipsum.generateParagraphs(1) }}</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="section lgct-white serif fw3 pa5">
+      <section class="tl mh5">
+        <h1 class="f1">The Future of Land Grab</h1>
+        <div class="sans-serif">
+          <p class="f1">{{ ipsum.generateParagraphs(1) }}</p>
+          <p class="f1">{{ ipsum.generateParagraphs(1) }}</p>
+        </div>
+      </section>
+    </div>
+
+    
+    <div class="section lgct-gold fw3">
+      <section class="tl mh5">
+        <h1 class="f1 serif pa4">The Team</h1>
+        <div class="flex flex-wrap w-100 justify-between">
+        <div v-for="i in 8" :key="i" class="ma5">
+          <div class="ba br-100 overflow-hidden hide-child" style="background-image: url(../assets/Arrow.svg); height:400px; width: 400px">
+          <div class="child">
+             <img src="../assets/Arrow-White.svg" alt="">
+          </div>
+          </div>
+          <div class="tc">
+          <p class="f3 fw6 mb0">First and Last Name</p>
+          <p class="i mt0">Titles and roles in Project</p>
+          </div>
+        </div>
+        </div>
+      </section>
+    </div>
+
+     <div class="section lgct-teal fw3">
+      <section class="tl mh5 white">
+        <h1 class="f1 serif ma0">Special Thanks To</h1>
+        <div class="flex flex-wrap w-100 justify-between">
+        <div v-for="i in 8" :key="i" class="ma5">
+          <div class="ba br-100 overflow-hidden hide-child" style="background-image: url(../assets/Arrow.svg); height:400px; width: 400px">
+          <div class="child">
+             <img src="../assets/Arrow-White.svg" alt="">
+          </div>
+          </div>
+          <div class="tc">
+          <p class="f3 fw6 mb0">First and Last Name</p>
+          <p class="i mt0">Titles and roles in Project</p>
+          </div>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
+
+<script>
+import ipsum from "../ipsum.js";
+export default {
+  name: "About",
+  data() {
+    return {
+      ipsum: ipsum,
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.section {
+  height: 100vh;
+}
+li {
+  background-color: #459d96;
+}
+</style>

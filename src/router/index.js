@@ -5,6 +5,7 @@ import Glossary from '@/components/Glossary'
 import Error from '@/components/Error'
 import Assumption from '@/components/AssumptionTruth'
 import Involvement from '@/components/Involvement'
+import About from '@/components/About'
 import VueRouter from 'vue-router'
 Vue.use(
     VueRouter
@@ -15,6 +16,7 @@ const routes = [
     { path: '/glossary/', component: Glossary },
     { path: "/assumption/", component: Assumption },
     { path: "/involvement/", component: Involvement },
+    { path: "/about/", component: About },
     { path: '/', component: Main },
     { path: '*', component: Error },
 ]

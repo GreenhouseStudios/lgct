@@ -20,16 +20,29 @@
         </p>
       </div>
       <div class="section">
-        <div class="flex flex-row-l flex-column w-100 justify-center overflow-hidden">
+        <div
+          class="
+            flex flex-row-l flex-column
+            w-100
+            justify-center
+            overflow-hidden
+          "
+        >
           <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white">
-            <router-link to="/timeline/National Timeline" style="text-decoration: none; color: inherit;">
+            <router-link
+              to="/timeline/National Timeline"
+              style="text-decoration: none; color: inherit"
+            >
               <div class="flex flex-column justify-center grow">
-                <h1 class="f1-l f4">National Timeline <img
-                  src="../assets/Arrow-White.svg"
-                  alt="arrow icon"
-                  class="mw2"
-                  style="fill: white"
-                /></h1>
+                <h1 class="f1-l f4">
+                  National Timeline
+                  <img
+                    src="../assets/Arrow-White.svg"
+                    alt="arrow icon"
+                    class="mw2"
+                    style="fill: white"
+                  />
+                </h1>
               </div>
             </router-link>
             <p class="f3-ns ph3">
@@ -44,14 +57,20 @@
           </div>
 
           <div class="w-50-ns vh-100-ns vh-50 pa5-ns pa3 white bg-gray pa3">
-            <router-link to="/timeline/Connecticut Timeline" style="text-decoration: none; color: inherit;">
+            <router-link
+              to="/timeline/Connecticut Timeline"
+              style="text-decoration: none; color: inherit"
+            >
               <div class="flex flex-column justify-center grow">
-                <h1 class="f1-ns f4">Connecticut Timeline <img
-                  src="../assets/Arrow-White.svg"
-                  alt="arrow icon"
-                  class="mw2"
-                  style="fill: white"
-                /></h1>
+                <h1 class="f1-ns f4">
+                  Connecticut Timeline
+                  <img
+                    src="../assets/Arrow-White.svg"
+                    alt="arrow icon"
+                    class="mw2"
+                    style="fill: white"
+                  />
+                </h1>
               </div>
             </router-link>
             <p class="f3-ns ph3">
@@ -72,7 +91,10 @@
       <div class="section">
         <div class="pa6-ns pa3">
           <span class="ma5-ns ma2 b--white flex flex-column white">
-            <router-link to="/Assumption" style="text-decoration: none; color: inherit;">
+            <router-link
+              to="/Assumption"
+              style="text-decoration: none; color: inherit"
+            >
               <h1 class="w-40-ns w-25 f-headline-ns f1 tl v-mid grow">
                 Assumptions vs Truth
                 <img
@@ -93,12 +115,18 @@
 
       <div class="section">
         <div class="pa7-ns ph3 pv5 white">
-          <router-link to="/involvement" style="text-decoration: none; color: inherit;"><h1 class="f-headline-ns grow">Cultural Involvement  <img
-                  src="../assets/Arrow-White.svg"
-                  alt="arrow icon"
-                  class="mw3"
-                  style="fill: white"
-                /></h1></router-link>
+          <router-link
+            to="/involvement"
+            style="text-decoration: none; color: inherit"
+            ><h1 class="f-headline-ns grow">
+              Cultural Involvement
+              <img
+                src="../assets/Arrow-White.svg"
+                alt="arrow icon"
+                class="mw3"
+                style="fill: white"
+              /></h1
+          ></router-link>
           <p class="f1-ns f3 lh-title">
             Learn more about contemporary indigenous cultures
           </p>
@@ -114,22 +142,24 @@
         <div class="pv7-ns">
           <div class="flex flex-row-ns flex-column items-center justify-center">
             <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
-              <a href="https://www.landgrabu.org" style="text-decoration: none; color: inherit;">
-
-              <h2 class="f2-ns f4">Land Grab U</h2>
-              <div
-                class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
-                style="background-color: #c5aa57"
+              <a
+                href="https://www.landgrabu.org"
+                style="text-decoration: none; color: inherit"
               >
+                <h2 class="f2-ns f4">Land Grab U</h2>
                 <div
-                  class="w5-ns h5-ns h3 w3 br-100"
-                  style="
-                    background-color: #232621;
-                    transform: translate(5px, -5px);
-                  "
-                ></div>
-              </div>
-              <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
+                  class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
+                  style="background-color: #c5aa57"
+                >
+                  <div
+                    class="w5-ns h5-ns h3 w3 br-100"
+                    style="
+                      background-color: #232621;
+                      transform: translate(5px, -5px);
+                    "
+                  ></div>
+                </div>
+                <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
               </a>
             </div>
           </div>
@@ -137,7 +167,20 @@
       </div>
 
       <div class="section white">
-        <h1 class="f-subheadline-ns f1 pv5">About the Project</h1>
+        <router-link
+          to="/about"
+          style="text-decoration: none; color: inherit"
+        >
+          <h1 class="f-subheadline-ns f1 pv5 grow">
+            About the Project
+            <img
+              src="../assets/Arrow-White.svg"
+              alt="arrow icon"
+              class="mw3"
+              style="fill: white"
+            />
+          </h1>
+        </router-link>
         <p class="f1-ns f5 ph6-ns pa4 mh5-ns lh-title-ns i">
           Learn more about the process and team members
         </p>
@@ -197,7 +240,7 @@ export default {
           "#FEFCF5",
           "#AA4F37",
         ],
-        
+
         onLeave: this.showOrHideToTopButton,
       },
     };
@@ -206,5 +249,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
