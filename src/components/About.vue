@@ -78,41 +78,59 @@
       </section>
     </div>
 
-    
     <div class="section lgct-gold fw3">
       <section class="tl mh5">
         <h1 class="f1 serif ma0 pv4">The Team</h1>
         <div class="flex flex-wrap w-100 justify-between">
-        <div v-for="i in 8" :key="i" class="ph4">
-          <div class="ba br-100 overflow-hidden hide-child" style="background-image: url(../assets/Arrow.svg); height:300px; width: 300px">
-          <div class="child">
-             <img src="../assets/Arrow-White.svg" alt="">
+          <div v-for="i in 8" :key="i" class="ph4">
+            <div
+              class="ba br-100 overflow-hidden hide-child"
+              style="
+                background-image: url(../assets/Arrow.svg);
+                height: 300px;
+                width: 300px;
+              "
+            >
+              <div class="child">
+                <div class="w-100 bg-white pl4 pr3 pt5" style="height: 600px">
+                  <p class="black">{{ ipsum.generateParagraphs(1) }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="tc">
+              <p class="f3 fw6 mb0">First and Last Name</p>
+              <p class="i mt0">Titles and roles in Project</p>
+            </div>
           </div>
-          </div>
-          <div class="tc">
-          <p class="f3 fw6 mb0">First and Last Name</p>
-          <p class="i mt0">Titles and roles in Project</p>
-          </div>
-        </div>
         </div>
       </section>
     </div>
 
-     <div class="section lgct-teal fw3">
+    <div class="section lgct-teal fw3">
       <section class="tl mh5 white">
         <h1 class="f1 serif ma0 pv4">Special Thanks To</h1>
         <div class="flex flex-wrap w-100 justify-between">
-        <div v-for="i in 8" :key="i" class="ph4">
-          <div class="ba br-100 overflow-hidden hide-child" style="background-image: url(../assets/Arrow.svg); height:300px; width: 300px">
-          <div class="child">
-             <img src="../assets/Arrow-White.svg" alt="">
+          <div v-for="i in 8" :key="i" class="ph4">
+            <div
+              class="ba br-100 overflow-hidden hide-child"
+              style="
+                background-image: url(../assets/Arrow.svg);
+                height: 300px;
+                width: 300px;
+              "
+            >
+              <div class="child">
+                <!-- <img src="../assets/Arrow-White.svg" alt=""> -->
+                <div class="w-100 bg-white pl4 pr3 pt5" style="height: 600px">
+                  <p class="black">{{ ipsum.generateParagraphs(1) }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="tc">
+              <p class="f3 fw6 mb0">First and Last Name</p>
+              <p class="i mt0">Titles and roles in Project</p>
+            </div>
           </div>
-          </div>
-          <div class="tc">
-          <p class="f3 fw6 mb0">First and Last Name</p>
-          <p class="i mt0">Titles and roles in Project</p>
-          </div>
-        </div>
         </div>
       </section>
     </div>
