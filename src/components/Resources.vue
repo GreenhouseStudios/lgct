@@ -5,12 +5,13 @@
         <img
           src="../assets/lgct-logo-long.png"
           alt="land grab connecticut logo long version"
-          class="mw6 absolute top-2 left-2"
+          class="mw6-ns w4 absolute top-2 left-2"
         />
       </router-link>
       <header
         class="
-          mw-25 mw-25-ns
+          w-100
+          mw-25-ns
           pa3
           pa5-ns
           flex flex-column
@@ -19,8 +20,10 @@
           tl
         "
       >
-        <h1 class="serif f-subheadline ph7">Activism and Resources</h1>
-        <p class="f3 ph7">
+        <h1 class="serif f-subheadline-ns f2 ph7-ns ph2 mb0">
+          Activism and Resources
+        </h1>
+        <p class="f3 ph7-ns ph2 mt0">
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
           nisi ut aliquip ex ea commodo consequat.
         </p>
@@ -37,14 +40,18 @@
       </div>
     </div>
 
-    <div class="section bg-lgct-red pa5 flex justify-end">
-      <div class="br4 bg-lgct-white w-75 pv4 ph5 shadow-4">
+    <div class="section bg-lgct-red pa5-ns pa4 flex justify-end-ns justify-center">
+      <div
+        class="br4 bg-lgct-white w-75 pv4 ph5 shadow-4 dn db-l"
+        id="main-card"
+      >
         <div
           class="bg-dark-gray white w-50 pa2 br4 fl ph5 shadow-4"
+          id="title-card"
           style="position: relative; right: 10%"
         >
-          <h1 class="serif f-subheadline mb0 mr0">Creating Change</h1>
-          <p class="f3">{{ ipsum.generateSentences(1) }}</p>
+          <h1 class="serif f-subheadline-sn f2 mb0 mr0">Creating Change</h1>
+          <p class="f3-ns f6">{{ ipsum.generateSentences(1) }}</p>
         </div>
         <div class="mb5 tl pa2">
           <h2>Heading Sample</h2>
@@ -63,24 +70,35 @@
           <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
         </div>
       </div>
+
+      <div class="flex flex-column">
+        <h1 class="serif white mb0">Creating Change</h1>
+        <p class="black f6 fw7">{{ipsum.generateSentences(1)}}</p>
+        <div class="br4 bg-lgct-white w-100 pv4 ph5-ns ph2 shadow-4">
+          <div v-for="i in 4" :key="i" class="tl">
+            <h1 class="f4 fw7">Heading 1</h1>
+            <p class="f5 fw7 i">{{ipsum.generateSentences(2)}}</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section bg-lgct-gold fw3 pa5">
       <section>
         <div>
-          <h1 class="f-subheadline serif mb0">Resources</h1>
+          <h1 class="f-subheadline-ns f1 serif mb0">Resources</h1>
           <div
             id="title-underline"
-            class="center ma0 bg-white br-pill w-25 h1"
+            class="center ma0 bg-white br-pill w-25-ns w5 h1"
           ></div>
         </div>
-        <ul class="flex ma2 overflow-x-visible" id="resource-cards-container">
+        <ul class="flex ma2 " id="resource-cards-container">
           <a href="https://landgrabu.org">
             <div
               v-for="i in 4"
               :key="i"
               id="card"
-              class="ma3 w-25 br4 bg-white overflow-hidden shadow-4"
+              class="ma3-ns ma1 w-25-ns w5 br4 bg-white overflow-hidden shadow-4"
               style="height: 450px"
             >
               <img
@@ -92,10 +110,6 @@
                 style="height: 85%"
               />
               <h2>{{ ipsum.generateWords(3) }}</h2>
-              <!-- <picture class="relative">
-              <source src="../assets/indigenous-peoples.png">
-              <img src="../assets/indigenous-peoples.png" alt="">
-            </picture> -->
             </div>
           </a>
         </ul>
@@ -204,7 +218,7 @@ export default {
 
 <style lang="scss" scoped>
 .section {
-  height: 100vh;
+  min-height: 100vh;
 }
 li {
   background-color: #459d96;
