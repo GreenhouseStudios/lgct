@@ -71,7 +71,7 @@
         </div>
       </div>
 
-      <div class="flex flex-column">
+      <div class="flex flex-column dn-ns">
         <h1 class="serif white mb0">Creating Change</h1>
         <p class="black f6 fw7">{{ipsum.generateSentences(1)}}</p>
         <div class="br4 bg-lgct-white w-100 pv4 ph5-ns ph2 shadow-4">
