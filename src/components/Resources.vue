@@ -43,7 +43,7 @@
           class="bg-dark-gray white w-50 pa2 br4 fl ph5 shadow-4"
           style="position: relative; right: 10%"
         >
-          <h1 class="serif f-subheadline">Creating Change</h1>
+          <h1 class="serif f-subheadline mb0 mr0">Creating Change</h1>
           <p class="f3">{{ ipsum.generateSentences(1) }}</p>
         </div>
         <div class="mb5 tl pa2">
@@ -69,33 +69,94 @@
       <section>
         <div>
           <h1 class="f-subheadline serif mb0">Resources</h1>
-          <div class="center ma0 bg-white br-pill w-25 h1"></div>
-        </div>
-        <div class="flex ma2">
           <div
-            v-for="i in 4"
-            :key="i"
-            class="ma3 w-25 br4 bg-white overflow-hidden"
-            style="height: 450px"
-          >
-            <img
-              :src="
-                'https://picsum.photos/id/' +
-                (Math.floor(Math.random() * 100) +
-                i )+
-                '/700/400'
-              "
-            />
-            <h2>landgrabu.com</h2>
-            <!-- <picture class="relative">
+            id="title-underline"
+            class="center ma0 bg-white br-pill w-25 h1"
+          ></div>
+        </div>
+        <ul class="flex ma2 overflow-x-visible" id="resource-cards-container">
+          <a href="https://landgrabu.org">
+            <div
+              v-for="i in 4"
+              :key="i"
+              id="card"
+              class="ma3 w-25 br4 bg-white overflow-hidden shadow-4"
+              style="height: 450px"
+            >
+              <img
+                :src="
+                  'https://picsum.photos/id/' +
+                  (Math.floor(Math.random() * 100) + i) +
+                  '/700/450'
+                "
+                style="height: 85%"
+              />
+              <h2>{{ ipsum.generateWords(3) }}</h2>
+              <!-- <picture class="relative">
               <source src="../assets/indigenous-peoples.png">
               <img src="../assets/indigenous-peoples.png" alt="">
             </picture> -->
-          </div>
+            </div>
+          </a>
+        </ul>
+        <div
+          class="flex items-center justify-center"
+          id="gallery-btns-container"
+        >
+          <button
+            class="
+              br-100
+              bg-white
+              w2
+              h2
+              f2
+              grow
+              flex
+              bn
+              justify-center
+              items-center
+            "
+          >
+            <svg
+              class="w1"
+              data-icon="chevronLeft"
+              viewBox="0 0 32 32"
+              style="fill: currentcolor"
+            >
+              <title>chevronLeft icon</title>
+              <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+            </svg>
+          </button>
+          <button
+            v-for="j in 5"
+            :key="j"
+            class="w1 h1 bg-light-gray br-100 dib mh2 bn"
+          ></button>
+          <button
+            class="
+              br-100
+              bg-white
+              w2
+              h2
+              f2
+              grow
+              bn
+              flex
+              justify-center
+              items-center
+            "
+          >
+            <svg
+              class="w1"
+              data-icon="chevronRight"
+              viewBox="0 0 32 32"
+              style="fill: currentcolor"
+            >
+              <title>chevronRight icon</title>
+              <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+            </svg>
+          </button>
         </div>
-        <div class="br-100 bg-white w3 h3 f1 grow dib">&#x2190;</div>
-        <div v-for="j in 4" :key="j" class="w2 h2 bg-light-gray br-100 dib mh2"></div>
-        <div class="br-100 bg-white w3 h3 f1 grow dib">&#8594;</div>
       </section>
     </div>
   </div>
@@ -109,6 +170,28 @@ export default {
   data() {
     return {
       ipsum: ipsum,
+      resourceLinks: [
+        {
+          title: "",
+          url: "https://landgrabu.org",
+        },
+        {
+          title: "",
+          url: "https://landgrabu.org",
+        },
+        {
+          title: "",
+          url: "https://landgrabu.org",
+        },
+        {
+          title: "",
+          url: "https://landgrabu.org",
+        },
+        {
+          title: "",
+          url: "https://landgrabu.org",
+        },
+      ],
     };
   },
   computed: {

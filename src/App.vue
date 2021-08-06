@@ -109,4 +109,9 @@ $lgct-teal: #70B9B2;
   right: 0;
   box-shadow: 50px -50px 0 0 red;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+  display: inherit;
+}
 </style>
