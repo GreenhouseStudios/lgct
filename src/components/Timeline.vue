@@ -135,17 +135,6 @@ export default {
       );
     }
   },
-  //   updated () {
-  //       this.fp.reBuild();
-  //   },
-  //   beforeUpdate () {
-  //       this.fp.reBuild();
-  //   },
-  //   computed: {
-  //     fp() {
-  //       return window.fullpage_api;
-  //     },
-  //   },
 };
 </script>
 

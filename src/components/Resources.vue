@@ -40,47 +40,30 @@
       </div>
     </div>
 
-    <div class="section bg-lgct-red pa5-ns pa4 flex justify-end-ns justify-center">
-      <div
-        class="br4 bg-lgct-white w-75 pv4 ph5 shadow-4 dn db-l"
-        id="main-card"
-      >
-        <div
-          class="bg-dark-gray white w-50 pa2 br4 fl ph5 shadow-4"
-          id="title-card"
-          style="position: relative; right: 10%"
-        >
-          <h1 class="serif f-subheadline-sn f2 mb0 mr0">Creating Change</h1>
-          <p class="f3-ns f6">{{ ipsum.generateSentences(1) }}</p>
-        </div>
-        <div class="mb5 tl pa2">
-          <h2>Heading Sample</h2>
-          <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
-        </div>
-        <div class="mb5 tl pa2">
-          <h2>Heading Sample</h2>
-          <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
-        </div>
-        <div class="mb5 tl pa2">
-          <h2>Heading Sample</h2>
-          <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
-        </div>
-        <div class="mb5 tl pa2">
-          <h2>Heading Sample</h2>
-          <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
-        </div>
-      </div>
-
-      <div class="flex flex-column dn-ns">
-        <h1 class="serif white mb0">Creating Change</h1>
-        <p class="black f6 fw7">{{ipsum.generateSentences(1)}}</p>
-        <div class="br4 bg-lgct-white w-100 pv4 ph5-ns ph2 shadow-4">
-          <div v-for="i in 4" :key="i" class="tl">
-            <h1 class="f4 fw7">Heading 1</h1>
-            <p class="f5 fw7 i">{{ipsum.generateSentences(2)}}</p>
+    <div
+      class="section bg-lgct-red pa5-ns pa4 flex justify-end-ns justify-center"
+    >
+      <stacked-card>
+        <template v-slot:heading>Creating Change</template>
+     
+          <div class="tl pa2">
+            <h2>Heading Sample</h2>
+            <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
           </div>
-        </div>
-      </div>
+          <div class="tl pa2">
+            <h2>Heading Sample</h2>
+            <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
+          </div>
+          <div class="tl pa2">
+            <h2>Heading Sample</h2>
+            <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
+          </div>
+          <div class="tl pa2">
+            <h2>Heading Sample</h2>
+            <p class="f3 i fw1">{{ ipsum.generateParagraphs(1) }}</p>
+          </div>
+     
+      </stacked-card>
     </div>
 
     <div class="section bg-lgct-gold fw3 pa5">
@@ -92,13 +75,22 @@
             class="center ma0 bg-white br-pill w-25-ns w5 h1"
           ></div>
         </div>
-        <ul class="flex ma2 " id="resource-cards-container">
+        <ul class="flex ma2" id="resource-cards-container">
           <a href="https://landgrabu.org">
             <div
               v-for="i in 4"
               :key="i"
               id="card"
-              class="ma3-ns ma1 w-25-ns w5 br4 bg-white overflow-hidden shadow-4"
+              class="
+                ma3-ns
+                ma1
+                w-25-ns
+                w5
+                br4
+                bg-white
+                overflow-hidden
+                shadow-4
+              "
               style="height: 450px"
             >
               <img
@@ -178,9 +170,10 @@
 
 <script>
 import ipsum from "../ipsum.js";
-
+import StackedCard from "./StackedCard.vue";
 export default {
   name: "Resources",
+  components: { StackedCard },
   data() {
     return {
       ipsum: ipsum,

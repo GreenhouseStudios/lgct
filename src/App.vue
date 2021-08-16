@@ -30,6 +30,9 @@ export default {
 #ind {
   background-image: url(../src/assets/indigenous-peoples.png);
 }
+.section{
+  min-height: 100vh;
+}
 router-link{
     text-decoration: none;
 }
@@ -50,6 +53,12 @@ $lgct-teal: #70B9B2;
 }
 .bg-lgct-gold{
   background-color: #EDC35B,
+}
+.bg-lgct-black{
+  background-color: #000,
+}
+.lgct-black{
+  color: #000;
 }
 .lgct-white{
   color: #FEFCF5,
@@ -92,7 +101,7 @@ $lgct-teal: #70B9B2;
 #curved-corner-bottomleft:before {
   bottom: 0;
   left: 0;
-  box-shadow: -50px 50px 0 0 red;
+  box-shadow: -50px 50px 0 0;
 }
 #curved-corner-bottomright:before {
   bottom: 0;
