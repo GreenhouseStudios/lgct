@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section relative">
     <Nav></Nav>
     <img
       :src="require('/src/assets/lgct-logo.png')"

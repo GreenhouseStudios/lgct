@@ -1,10 +1,11 @@
 <template>
   <div>
-    <!-- <full-page ref="fullpage" :options="options" id="fullpage"> -->
+    <full-page ref="fullpage" :options="options" id="fullpage">
     <Home></Home>
     <MorrillAct></MorrillAct>
-    <div class="section bg-lgct-white relative">
-      <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray">
+    <div class="section bg-lgct-white relative ">
+      <div class="flex flex-column items-center justify-center h-100">
+      <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray" class="w-75">
         <template v-slot:heading>The Objective of Land Grab CT</template>
         <p class="f3 i">
           In 1862, the United States government passed “an Act donating public
@@ -23,6 +24,7 @@
           state of Connecticut paid $12,763.01.
         </p>
       </stacked-card>
+      </div>
       <curved-border :color="'black'"></curved-border>
     </div>
     <div
@@ -35,16 +37,7 @@
       </div>
       <curved-border :color="'white'" :left="true"></curved-border>
     </div>
-    <!-- <div class="section ph5-l pv5-l overflow-hidden">
-        <p class="f1-l f2 ph6-l pa4 mh5-l lh-title-ns i">
-          Land Grab Connecticut is an initiative created by Greenhouse Studios
-          at the University of Connecticut to recognize the weight and impact of
-          Land Grant Universities, institutionalized by the Morrill Act of 1862,
-          by highlighting the generational opportunity costs imposed on the
-          Indigenous communities affected by land seizure.
-        </p>
-      </div> -->
-    <div class="section">
+    <div class="section relative">
       <div
         class="flex flex-row-l flex-column w-100 justify-center overflow-hidden"
       >
@@ -89,10 +82,11 @@
         </div>
 
       </div>
+      <curved-border :color="'red'"></curved-border>
     </div>
 
-    <div class="section bg-lgct-red">
-      <div class="flex align-center h-100">
+    <div class="section bg-lgct-red relative">
+      <div class="flex items-center h-75">
       <stacked-card>
         <template v-slot:heading> From the Boat From the Shore </template>
         <p class="i f3">
@@ -108,9 +102,10 @@
         </p>
       </stacked-card>
       </div>
+      <curved-border :color="'teal'" :left="true"></curved-border>
     </div>
 
-    <div class="section bg-lgct">
+    <div class="section bg-lgct-teal relative">
       <div class="pa6-ns pa3">
         <span class="ma5-ns ma2 b--white flex flex-column white">
           <router-link
@@ -133,9 +128,10 @@
           </h2>
         </span>
       </div>
+      <curved-border :color="'red'" :left="true"></curved-border>
     </div>
 
-    <div class="section">
+    <div class="section relative bg-lgct-gold">
       <div class="pa7-ns ph3 pv5 white">
         <router-link
           to="/involvement"
@@ -153,15 +149,16 @@
           Learn more about contemporary indigenous cultures
         </p>
       </div>
+      <curved-border :color="'white'"></curved-border>
     </div>
 
-    <div class="section">
+    <div class="section bg-lgct-white relative">
       <div class="pv2 ph3">
         <router-link
           to="/resources"
           style="text-decoration: none; color: inherit"
         >
-          <h1 class="f1-l f3-m absolute-ns tl-ns ma5-ns grow">
+          <h1 class="f1-l f3-m relative-ns tl-ns ma5-ns grow">
             Activism and Resources
             <img
               src="../assets/Arrow.svg"
@@ -172,8 +169,8 @@
           </h1>
         </router-link>
       </div>
-      <div class="pv7-ns">
-        <div class="flex flex-row-ns flex-column items-center justify-center">
+      <div>
+        <div class="flex flex-row-ns flex-column items-center justify-center align-start">
           <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
             <a
               href="https://www.landgrabu.org"
@@ -197,11 +194,12 @@
           </div>
         </div>
       </div>
+      <curved-border :color="'red'"></curved-border>
     </div>
 
-    <div class="section white">
+    <div class="section white bg-lgct-red relative pa2">
       <router-link to="/about" style="text-decoration: none; color: inherit">
-        <h1 class="f-subheadline-ns f1 pv5 grow">
+        <h1 class="f-subheadline-ns f1 grow">
           About the Project
           <img
             src="../assets/Arrow-White.svg"
@@ -211,7 +209,7 @@
           />
         </h1>
       </router-link>
-      <p class="f1-ns f5 ph6-ns pa4 mh5-ns lh-title-ns i">
+      <p class="f1-ns f5 mh5-ns lh-title-ns i">
         Learn more about the process and team members
       </p>
       <div class="flex flex-row-ns flex-column items-center justify-center">
@@ -232,7 +230,7 @@
     </div>
 
     <Footer></Footer>
-    <!-- </full-page> -->
+    </full-page>
   </div>
 </template>
 
@@ -263,7 +261,8 @@ export default {
         sectionsColor: [
           "#FEFCF5",
           "#AA4F37",
-          "#000000",
+          "#FEFCF5",
+          "#000",
           "#FEFCF5",
           "#AA4F37",
           "#82b8b3",

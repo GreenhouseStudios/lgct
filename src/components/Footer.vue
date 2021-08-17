@@ -1,6 +1,5 @@
 <template>
     <div class="h6 w-100 bg-black white pa5">
-        <h1>Footer</h1>
         <h3>Copyright 2021 Greenhouse Studios</h3>
     </div>
 </template>
