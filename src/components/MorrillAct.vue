@@ -1,11 +1,11 @@
 <template>
   <div class="section bg-lgct-red relative">
     <div class="flex justify-center align-center items-center h-100 pa3">
-    <stacked-card class="ma3">
+    <stacked-card class="ml7">
       <template v-slot:heading>
         What is the Morrill Act?
       </template>
-        <p class="i fw4 f3">
+        <p class="i fw4 f2">
           In 1862, the United States government passed “an Act donating public
           lands to the several states and territories which may provide Colleges
           for the benefit of Agriculture and the Mechanic Arts,” known as the

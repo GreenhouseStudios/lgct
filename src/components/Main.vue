@@ -7,7 +7,7 @@
       <div class="flex flex-column items-center justify-center h-100">
       <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray" class="w-75">
         <template v-slot:heading>The Objective of Land Grab CT</template>
-        <p class="f3 i">
+        <p class="f2 i">
           In 1862, the United States government passed “an Act donating public
           lands to the several states and territories which may provide Colleges
           for the benefit of Agriculture and the Mechanic Arts,” known as the
