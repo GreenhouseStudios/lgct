@@ -30,7 +30,7 @@ export default {
   },
   mounted() {
     gsap.from("#hero", { opacity: 0, duration: 3, ease: "power2.out" });
-    gsap.from("nav", { x: 500, duration: 1, ease: "power2.out" });
+    gsap.from("nav", { x: -500, duration: 1, ease: "power2.out" });
   },
 };
 </script>
