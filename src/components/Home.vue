@@ -1,6 +1,6 @@
 <template>
   <div class="section relative">
-    <Nav></Nav>
+    <!-- <Nav></Nav> -->
     <img
       :src="require('/src/assets/lgct-logo.png')"
       id="hero"
@@ -21,12 +21,13 @@
 </template>
 
 <script>
-import Nav from "./Nav";
+// import Nav from "./Nav";
 import { gsap } from "gsap";
 import CurvedBorder from "./CurvedBorder.vue"
 export default {
   components: {
-    Nav, CurvedBorder
+    // Nav,
+    CurvedBorder
   },
   mounted() {
     gsap.from("#hero", { opacity: 0, duration: 3, ease: "power2.out" });

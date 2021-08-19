@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Nav></Nav>
     <full-page ref="fullpage" :options="options" id="fullpage">
     <Home></Home>
     <MorrillAct></MorrillAct>
@@ -241,6 +242,7 @@ import Footer from "./Footer";
 import MorrillAct from "./MorrillAct.vue";
 import StackedCard from "./StackedCard.vue";
 import CurvedBorder from "./CurvedBorder.vue";
+import Nav from "./Nav.vue"
 export default {
   name: "Landing",
   components: {
@@ -249,6 +251,7 @@ export default {
     MorrillAct,
     StackedCard,
     CurvedBorder,
+    Nav
   },
   data() {
     return {

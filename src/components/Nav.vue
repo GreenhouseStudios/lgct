@@ -1,7 +1,7 @@
 <template>
   <div>
-    <nav class="dt-l border-box left-0 top-0 absolute" style="width: 300px" v-if="navShow">
-      <ul>
+    <nav class="dt-l border-box" style="width: 300px; position:fixed;">
+      <ul v-if="navShow">
         <li
           @click="fp.moveTo(index + 1)"
           class="tl"
@@ -14,45 +14,8 @@
         </li>
         <li @click="toggleNav"><icon class="f1 fw6 white">&#8249;</icon></li>
       </ul>
+      <button  v-else class="bn f2 h3" style="width: 50px" @click="toggleNav"><i class="fa fa-bars white"></i></button>
     </nav>
-    <div v-else class="h-100">
-    <button class="dt-l border-box left-0 absolute bn f2" @click="toggleNav"><i class="fa fa-bars white"></i></button>
-    </div>
-    <!-- <div class="relative">
-      <div class="absolute top-0 left-0 w-100" v-show="navShow">
-        <div
-          class="
-            h3
-            f2
-            flex
-            items-center
-            justify-center
-            fw5
-            shadow-5
-            relative
-            top--1
-          "
-          :class="btnColors[index]"
-          v-for="(item, index) in navItems"
-          :key="item"
-          @click="moveMobile(index + 1)"
-        >
-          {{ item }}
-        </div>
-      </div>
-      <div class="absolute vh-100 w-100">
-        <a
-          @click="navShow = !navShow"
-          class="dn-ns f1 absolute bottom-0 h3 dim grow"
-        >
-          <svg viewbox="0 0 100 100">
-            <rect x="10" y="10" width="10%" height="1%"></rect>
-            <rect x="10" y="20" width="10%" height="1%"></rect>
-            <rect x="10" y="30" width="10%" height="1%"></rect>
-          </svg>
-        </a>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -80,7 +43,7 @@ export default {
         "bg-yellow z-1",
         "bg-silver z-0",
       ],
-      navShow: true,
+      navShow: false,
     };
   },
   mounted() {
