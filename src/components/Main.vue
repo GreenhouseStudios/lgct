@@ -6,9 +6,9 @@
     <MorrillAct></MorrillAct>
     <div class="section bg-lgct-white relative ">
       <div class="flex flex-column items-center justify-center h-100">
-      <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray" class="w-75">
+      <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray" class="ml7-l">
         <template v-slot:heading>The Objective of Land Grab CT</template>
-        <p class="f2 i">
+        <p class="f2-ns f5 i">
           In 1862, the United States government passed “an Act donating public
           lands to the several states and territories which may provide Colleges
           for the benefit of Agriculture and the Mechanic Arts,” known as the
@@ -40,16 +40,16 @@
     </div>
     <div class="section relative">
       <div
-        class="flex flex-row-l flex-column w-100 justify-center overflow-hidden"
+        class="flex flex-row-l flex-column w-100 justify-center items-center overflow-hidden"
       >
-        <div class="w6 bg-lgct-teal relative grow ma5 br4 overflow-hidden">
+        <div class="w6-l w-40 bg-lgct-teal serif relative grow ma5-l ma2 br4 overflow-hidden">
           <router-link
             to="/timeline/National Timeline"
             style="text-decoration: none; color: inherit"
           >
-            <img src="https://picsum.photos/500/500" alt="" />
+            <img src="https://picsum.photos/600/600" alt="" class="w-100"/>
             <div class="flex flex-column justify-center relative bottom-0">
-              <h1 class="f1-l f4 pa3 white">
+              <h1 class="f1-l f4 pa3-ns pa1 white">
                 National Timeline
                 <img
                   src="../assets/Arrow-White.svg"
@@ -62,14 +62,14 @@
           </router-link>
         </div>
 
-        <div class="w6 bg-lgct-teal relative grow ma5 br4 overflow-hidden">
+        <div class="w6-l w-40 bg-moon-gray serif black relative grow ma5-l ma2 br4 overflow-hidden">
           <router-link
             to="/timeline/Connecticut Timeline"
             style="text-decoration: none; color: inherit"
           >
-            <img src="https://picsum.photos/500/500" alt="" />
+            <img src="https://picsum.photos/600/600" alt="" />
             <div class="flex flex-column justify-center relative bottom-0">
-              <h1 class="f1-l f4 pa3 white">
+              <h1 class="f1-l f4 pa3-ns pa1 white">
                 CT Timeline
                 <img
                   src="../assets/Arrow-White.svg"
@@ -87,10 +87,10 @@
     </div>
 
     <div class="section bg-lgct-red relative">
-      <div class="flex items-center h-75">
-      <stacked-card>
+      <div class="flex flex-column items-center justify-center h-100">
+      <stacked-card class="ml7-ns">
         <template v-slot:heading> From the Boat From the Shore </template>
-        <p class="i f3">
+        <p class="i fw4 f2-ns f5">
           In 1862, the United States government passed “an Act donating public
           lands to the several states and territories which may provide Colleges
           for the benefit of Agriculture and the Mechanic Arts,” known as the
