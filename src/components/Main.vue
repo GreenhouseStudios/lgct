@@ -67,7 +67,7 @@
             to="/timeline/Connecticut Timeline"
             style="text-decoration: none; color: inherit"
           >
-            <img src="https://picsum.photos/600/600" alt="" />
+            <img src="https://picsum.photos/600/600" alt="" class="w-100"/>
             <div class="flex flex-column justify-center relative bottom-0">
               <h1 class="f1-l f4 pa3-ns pa1 white">
                 CT Timeline

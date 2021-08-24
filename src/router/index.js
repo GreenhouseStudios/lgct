@@ -7,6 +7,7 @@ import Assumption from '@/components/AssumptionTruth'
 import Involvement from '@/components/Involvement'
 import About from '@/components/About'
 import Resources from '@/components/Resources'
+import Vignettes from '@/components/Vignettes'
 import VueRouter from 'vue-router'
 Vue.use(
     VueRouter
@@ -19,6 +20,7 @@ const routes = [
     { path: "/involvement/", component: Involvement },
     { path: "/about/", component: About },
     { path: "/resources/", component: Resources },
+    { path: "/vignettes/", component: Vignettes },
     { path: '/', component: Main },
     { path: '*', component: Error },
 ]

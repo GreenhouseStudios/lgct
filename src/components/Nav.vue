@@ -12,7 +12,7 @@
             {{ item }}
           </a>
         </li>
-        <li @click="toggleNav"><icon class="f1 fw6 white">&#8249;</icon></li>
+        <li @click="toggleNav"><i class="f1 fw6 white">&#8249;</i></li>
       </ul>
       <button  v-else class="bn f2 h3" style="width: 50px" @click="toggleNav"><i class="fa fa-bars white"></i></button>
     </nav>
