@@ -19,9 +19,9 @@
       </p>
     </stacked-card-horizontal>
     <div class="lower serif lgct-white fw7 z-1">
-      <collapsible-tab style="bottom: 160px;" class="z-0">The Land Today</collapsible-tab>
-      <collapsible-tab style="bottom: 80px" class="z-1"> The Treaty of 1854</collapsible-tab>
-      <collapsible-tab style="bottom: 0; " class="z-2">Native Peoples on this Land</collapsible-tab>
+      <collapsible-tab style="bottom: 180px;" class="z-0">The Land Today</collapsible-tab>
+      <collapsible-tab style="bottom: 100px" class="z-1"> The Treaty of 1854</collapsible-tab>
+      <collapsible-tab style="bottom: 20px; " class="z-2">Native Peoples on this Land</collapsible-tab>
     </div>
     <curved-border :color="'white'" :left="true" style="z-index: 100"></curved-border>
   </div>
