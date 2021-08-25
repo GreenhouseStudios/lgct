@@ -40,9 +40,9 @@ div:hover {
   padding-bottom: 50px;
 }
 div::after {
-  height: 1000px;
+  height: 100px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   left: -1px;
   background: #70b9b2;
   content: "";
