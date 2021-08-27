@@ -1,41 +1,32 @@
 <template>
   <div
     @click="expandCard"
-    :class="{ expanded: isExpanded }"
-    class="
-      card
-      bg-light-gray
-      serif
-      pl5-ns
-      ph4
-      w-70-ns w-100
-      pt3
-      pb4
-      ma4-ns
-      relative
-    "
-    :id="id"
+    :class="{ expanded: isExpanded, compact: !isExpanded }"
+    class="card br4 serif pa5 w-70-ns w-100 ma4-ns relative shadow-4"
   >
-    <span class="tl test">
-      <h2>{{ date }}</h2>
+    <div
+      v-show="isExpanded"
+      class="fl mw6 relative br4 pv3 pl4 pr5 tl f3 shadow-4"
+      id="black-header-card"
+    >
+      <h2 class="normal sans-serif i">{{ date }}</h2>
       <h1>{{ heading }}</h1>
+    </div>
+    <span v-show="!isExpanded" class="tl" id="pre-click-header">
+      <h2 class="f3 normal sans-serif i">{{ date }}</h2>
+      <h1 class="f1">{{ heading }}</h1>
     </span>
     <div v-show="isExpanded">
       <span
-        class="absolute top-0 right-0 hover-bg-light-blue bg-moon-gray w3 h3"
+        class="absolute bottom-0 right-0 hover-bg-light-blue w3 h3"
         v-on:click.stop="collapseCard"
         ><div class="relative f1">
-          <span>&#10005;</span>
-        </div></span
-      >
-      <div class="flex flex-row-ns flex-column items-start">
-        <div class="w-50-ns order-2 order-0-ns">
-          <!-- <p v-for="(child, index) in blockChildren" :key="index" class="mt0">
-            {{ child[0].text }}
-          </p> -->
-          <p v-html="blocksToHTML({ blocks: body })"></p>
+          <span><i class="fa fa-chevron-down"></i></span></div
+      ></span>
+      <div>
+        <p v-html="blocksToHTML({ blocks: body })"></p>
 
-          <button
+        <!-- <button
             @click.stop.prevent="$emit('open-modal')"
             class="
               sans-serif
@@ -51,15 +42,8 @@
             "
           >
             Read More
-          </button>
-        </div>
-        <img
-          class="mw5 mh4-ns mb3 order-1"
-          :src="url"
-          alt="placeholder image"
-        />
+          </button> -->
       </div>
-      <div></div>
     </div>
   </div>
 </template>
@@ -94,8 +78,8 @@ export default {
       type: Object,
     },
     index: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
@@ -128,15 +112,29 @@ export default {
       this.isExpanded = false;
     },
   },
-  mounted() {
-    this.id = "card" + this.index
-    
-  },
+  // mounted() {
+  //   this.id = "card" + this.index;
+  // },
 };
 </script>
 
 <style lang="scss" scoped>
-.expanded {
-  overflow-y: hidden;
+div.compact {
+  background: #FEFCF5;
+  transition: 0.4s;
+}
+div.compact:hover {
+  background: #333;
+  color: white;
+}
+div.expanded {
+  background-color: white;
+}
+#black-header-card {
+  left: -20%;
+  shape-outside: polygon(0% 0, 60% 0%, 60% 100%, 0% 100%);
+  shape-margin: 1rem;
+  background-color: #333;
+  color: white;
 }
 </style>

@@ -1,33 +1,41 @@
 <template>
-  <div>
-    <!-- <full-page ref="fullpage" :options="options" id="fullpage"> -->
-    <nav class="db-ns dn dt-l w-10 border-box pa3 mt3 right-0 absolute">
-      <a @click="$router.push('/')" class="f4 fw6 black link dim ma3">Home</a>
-    </nav>
-    <div class="section pa7-ns">
-      <h1 class="f-headline-l f1">{{ this.$route.params.title }}</h1>
-      <div class="w2 h3 bl bw1 black line absolute"></div>
+  <div class="section bg-lgct-white">
+    <router-link to="/">
+      <img
+        src="../assets/lgct-logo-long.png"
+        alt="land grab connecticut logo long version"
+        class="mw4 absolute top-2 left-2 pa2 bg-white br3"
+      />
+    </router-link>
+    <div class="section pa7-ns relative">
+      <h1 class="f-headline-l f1 serif">{{ this.$route.params.title }}</h1>
+      <!-- <div class="w2 h3 bl bw1 black line absolute"></div> -->
+      <i class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white" style="transform: scale(2); z-index: 100;"></i>
     </div>
-    <div v-if="cards !== null" class="w-100">
-      <div
-        class="section pv6-ns pv3"
-        v-for="(card, index) in cards"
-        :key="card.heading"
-      >
-        <div class="flex flex-column items-center">
-          <div class="cardTrigger"></div>
-          <timeline-card
-            :heading="card.heading"
-            :body="card.body"
-            :date="card.date"
-            :img="card.img"
-            :index="index"
-            v-on:open-modal="openModal(index)"
-          >
-          </timeline-card>
+    <curved-border :tall="true"></curved-border>
+    <div class="bg-lgct-red">
+      <div v-if="cards !== null" class="w-100">
+        <div
+          class="section pv6-ns pv3"
+          v-for="(card, index) in cards"
+          :key="card.heading"
+        >
+          <div class="flex flex-column items-center">
+            <div class="cardTrigger"></div>
+            <timeline-card
+              :heading="card.heading"
+              :body="card.body"
+              :date="card.date"
+              :img="card.img"
+              :index="index"
+              v-on:open-modal="openModal(index)"
+            >
+            </timeline-card>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- </full-page> -->
     <detail-modal
       :showModal="showModal"
@@ -41,6 +49,7 @@
 import ipsum from "../ipsum.js";
 import TimelineCard from "./TimelineCard.vue";
 import DetailModal from "./DetailModal.vue";
+import CurvedBorder from "./CurvedBorder.vue";
 import axios from "axios";
 import _ from "lodash";
 import { gsap } from "gsap";
@@ -48,6 +57,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   components: {
     TimelineCard,
+    CurvedBorder,
     DetailModal,
   },
   props: {
@@ -61,7 +71,7 @@ export default {
     return {
       showModal: false,
       ipsum: ipsum,
-      activeCard: {fullBody: ""},
+      activeCard: { fullBody: "" },
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         menu: "#menu",
@@ -75,7 +85,7 @@ export default {
   },
   methods: {
     openModal(index) {
-      this.activeCard = this.cards[index]
+      this.activeCard = this.cards[index];
       this.showModal = true;
       console.log("show modal");
     },
@@ -98,7 +108,7 @@ export default {
           $vm.cards.push({
             heading: result[i].title,
             body: result[i].body,
-            fullBody : result[i].fullBody,
+            fullBody: result[i].fullBody,
             date: result[i].date ? result[i].date.substring(0, 4) : "1492",
             img: result[i].mainImage,
             citations: result[i].citations,
@@ -119,7 +129,7 @@ export default {
     gsap.registerPlugin(ScrollTrigger);
     for (let i = 0; i < this.cards.length; i++) {
       gsap.fromTo(
-        "#card"+i,
+        "#card" + i,
         {
           opacity: 0,
         },

@@ -200,7 +200,7 @@
 
     <div class="section white bg-lgct-red relative pa2">
       <router-link to="/about" style="text-decoration: none; color: inherit">
-        <h1 class="f-subheadline-ns f1 grow">
+        <h1 class="f1-l f3-m relative-ns tl-ns ma5-ns grow">
           About the Project
           <img
             src="../assets/Arrow-White.svg"
@@ -210,9 +210,9 @@
           />
         </h1>
       </router-link>
-      <p class="f1-ns f5 mh5-ns lh-title-ns i">
+      <!-- <p class="f1-ns f5 mh5-ns lh-title-ns i">
         Learn more about the process and team members
-      </p>
+      </p> -->
       <div class="flex flex-row-ns flex-column justify-start items-start">
         <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2 grow">
           <router-link to="/about" style="text-decoration: none; color: inherit">

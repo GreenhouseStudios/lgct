@@ -40,7 +40,7 @@ $lgct-white: #FEFCF5;
 $lgct-red: #AA4F37;
 $lgct-teal: #70B9B2;
 .bg-lgct-white{
-  background-color: #FEFCF5,
+  background-color: $lgct-white,
 }
 .bg-lgct-red{
   background-color: #AA4F37,
@@ -123,4 +123,15 @@ a{
   color: inherit;
   display: inherit;
 }
+h1{
+  font-family: "FrankRuhlLibre"  !important;
+}
+p{
+  font-family: "Karla" !important;
+}
+// @font-face {
+//   font-family: "frank ruhl libre";
+//   src: local("FrankRuhl"),
+//    url(./fonts/FrankRuhlLibre-Regular.tff) format("truetype");
+// }
 </style>

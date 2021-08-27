@@ -43,10 +43,10 @@ export default {
   },
   computed: {
     plankStyle() {
-      return "bg-lgct-" + this.color;
+      return "bg-lgct-" + this.color + (this.tall? " pb6" : "");
     },
     curveStyle() {
-      return "lgct-" + this.color;
+      return "lgct-" + this.color + (this.tall? " mb7" : "");
     },
   },
 };
