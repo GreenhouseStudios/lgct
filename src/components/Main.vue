@@ -135,10 +135,10 @@
     <div class="section relative bg-lgct-gold">
       <div class="pa7-ns ph3 pv5 white">
         <router-link
-          to="/involvement"
+          to="/vignettes"
           style="text-decoration: none; color: inherit"
           ><h1 class="f-headline-ns grow">
-            Cultural Involvement
+            Land Grab Parcels
             <img
               src="../assets/Arrow-White.svg"
               alt="arrow icon"
@@ -147,7 +147,7 @@
             /></h1
         ></router-link>
         <p class="f1-ns f3 lh-title">
-          Learn more about contemporary indigenous cultures
+          The stories of the lands
         </p>
       </div>
       <curved-border :color="'white'"></curved-border>
@@ -171,7 +171,7 @@
         </router-link>
       </div>
       <div>
-        <div class="flex flex-row-ns flex-column items-center justify-center align-start">
+        <div class="flex flex-row-ns flex-column items-center justify-start align-start">
           <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
             <a
               href="https://www.landgrabu.org"
@@ -213,9 +213,10 @@
       <p class="f1-ns f5 mh5-ns lh-title-ns i">
         Learn more about the process and team members
       </p>
-      <div class="flex flex-row-ns flex-column items-center justify-center">
-        <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2">
-          <h2 class="f2-ns f4">Team Member</h2>
+      <div class="flex flex-row-ns flex-column justify-start items-start">
+        <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2 grow">
+          <router-link to="/about" style="text-decoration: none; color: inherit">
+          <h2 class="f2-ns f4">Firstname Lastname</h2>
           <div
             class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
             style="background-color: #c5aa57"
@@ -226,6 +227,7 @@
             ></div>
           </div>
           <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
+          </router-link>
         </div>
       </div>
     </div>

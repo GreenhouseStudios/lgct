@@ -1,6 +1,23 @@
 <template>
   <div>
-    <div class="section bg-lgct-red flex justify-center items-center relative overflow-hidden">
+    <div
+      class="
+        section
+        bg-lgct-red
+        flex
+        justify-center
+        items-center
+        relative
+        overflow-hidden
+      "
+    >
+      <router-link to="/">
+        <img
+          src="../assets/lgct-logo-long.png"
+          alt="land grab connecticut logo long version"
+          class="mw4 absolute top-2 left-2 pa2 bg-white br3"
+        />
+      </router-link>
       <stacked-card-horizontal class="w-75 h-50 z-0">
         <template v-slot:heading>Nebraska</template>
         <template v-slot:subtitle
@@ -38,7 +55,17 @@
         style="z-index: 100"
       ></curved-border>
     </div>
-    <div class="section bg-lgct-white flex justify-center items-center relative overflow-hidden">
+    <div
+      class="
+        section
+        bg-lgct-white
+        flex
+        justify-center
+        items-center
+        relative
+        overflow-hidden
+      "
+    >
       <stacked-card-horizontal class="w-75 h-50 z-0" mainColor="bg-moon-gray">
         <template v-slot:heading>Nebraska</template>
         <template v-slot:subtitle
@@ -70,13 +97,19 @@
           >Native Peoples on this Land</collapsible-tab
         >
       </div>
-      <curved-border
-        :color="'white'"
-        :left="true"
-        style="z-index: 100"
-      ></curved-border>
+      <curved-border :color="'red'" style="z-index: 100"></curved-border>
     </div>
-    <div class="section bg-lgct-red flex justify-center items-center relative overflow-hidden">
+    <div
+      class="
+        section
+        bg-lgct-red
+        flex
+        justify-center
+        items-center
+        relative
+        overflow-hidden
+      "
+    >
       <stacked-card-horizontal class="w-75 h-50 z-0">
         <template v-slot:heading>Nebraska</template>
         <template v-slot:subtitle

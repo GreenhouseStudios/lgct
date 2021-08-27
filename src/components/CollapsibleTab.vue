@@ -1,7 +1,7 @@
 <template>
   <div class="tl pa5" @click="showParagraph = !showParagraph">
     <h1 class="title ml6"><slot></slot></h1>
-    <p v-show="showParagraph" class="sans-serif ml6">{{ sampleText }}</p>
+    <p v-show="showParagraph" class="sans-serif ml6 pb7">{{ sampleText }}</p>
   </div>
 </template>
 
