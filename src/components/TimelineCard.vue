@@ -19,30 +19,23 @@
     <div v-show="isExpanded">
       <span
         class="absolute bottom-0 right-0 hover-bg-light-blue w3 h3"
-        v-on:click.stop="collapseCard"
+        v-on:click.stop="showMore = true"
+        v-if="fullBody"
+        v-show="!showMore"
         ><div class="relative f1">
           <span><i class="fa fa-chevron-down"></i></span></div
       ></span>
+      <span
+        class="absolute bottom-0 right-0 hover-bg-light-blue w3 h3"
+        v-on:click.stop="showMore = false"
+        v-if="fullBody"
+        v-show="showMore"
+        ><div class="relative f1">
+          <span><i class="fa fa-chevron-up"></i></span></div
+      ></span>
       <div>
-        <p v-html="blocksToHTML({ blocks: body })"></p>
-
-        <!-- <button
-            @click.stop.prevent="$emit('open-modal')"
-            class="
-              sans-serif
-              blue
-              f5
-              bn
-              grow
-              hover-bg-light-blue
-              bg-moon-gray
-              pa2
-              no-underline
-              underline-hover
-            "
-          >
-            Read More
-          </button> -->
+        <p class="tl" v-html="blocksToHTML({ blocks: body })"></p>
+        <p v-if="fullBody" v-show="showMore" class="tl" v-html="blocksToHTML({blocks: fullBody})"></p>
       </div>
     </div>
   </div>
@@ -70,6 +63,10 @@ export default {
       type: Array,
       default: () => ["Hello"],
     },
+    fullBody: {
+      type: Array,
+      default: null,
+    },
     color: {
       type: String,
       default: "#F00",
@@ -88,6 +85,7 @@ export default {
       isExpanded: false,
       builder: imageUrlBuilder(client),
       blocksToHTML: require("@sanity/block-content-to-html"),
+      showMore: false,
     };
   },
   computed: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="section bg-lgct-white">
+  <div class="bg-lgct-white relative">
     <router-link to="/">
       <img
         src="../assets/lgct-logo-long.png"
@@ -7,12 +7,16 @@
         class="mw4 absolute top-2 left-2 pa2 bg-white br3"
       />
     </router-link>
-    <div class="section pa7-ns relative">
-      <h1 class="f-headline-l f1 serif">{{ this.$route.params.title }}</h1>
+    <div class="section flex justify-center items-center">
+      <h1 class="f-headline-l f1 serif ma0">{{ this.$route.params.title }}</h1>
       <!-- <div class="w2 h3 bl bw1 black line absolute"></div> -->
-      <i class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white" style="transform: scale(2); z-index: 100;"></i>
+      <i
+        class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
+        style="transform: scale(2); z-index: 100"
+      ></i>
+      <curved-border :tall="true" style="z-index: 999"></curved-border>
     </div>
-    <curved-border :tall="true"></curved-border>
+
     <div class="bg-lgct-red">
       <div v-if="cards !== null" class="w-100">
         <div
@@ -25,6 +29,7 @@
             <timeline-card
               :heading="card.heading"
               :body="card.body"
+              :fullBody="card.fullBody"
               :date="card.date"
               :img="card.img"
               :index="index"
@@ -126,24 +131,6 @@ export default {
     });
   },
   updated() {
-    gsap.registerPlugin(ScrollTrigger);
-    for (let i = 0; i < this.cards.length; i++) {
-      gsap.fromTo(
-        "#card" + i,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: "#card" + i,
-            start: "top center",
-          },
-        }
-      );
-    }
   },
 };
 </script>
