@@ -36,74 +36,15 @@
         <h1 class="f1 white">Mapping the Impact</h1>
         <img class="mw-30" :src="require('/src/assets/map.png')" />
       </div>
-      <curved-border :color="'white'" :left="true"></curved-border>
+      <curved-border :color="'red'" :left="true"></curved-border>
     </div>
     <div class="section relative">
-      <div
-        class="flex flex-row-l flex-column w-100 justify-center items-center overflow-hidden"
-      >
-        <div class="w6-l w-40 bg-lgct-teal serif relative grow ma5-l ma2 br4 overflow-hidden">
-          <router-link
-            to="/timeline/National Timeline"
-            style="text-decoration: none; color: inherit"
-          >
-            <img src="https://picsum.photos/600/600" alt="" class="w-100"/>
-            <div class="flex flex-column justify-center relative bottom-0">
-              <h1 class="f1-l f4 pa3-ns pa1 white">
-                National Timeline
-                <img
-                  src="../assets/Arrow-White.svg"
-                  alt="arrow icon"
-                  class="mw2"
-                  style="fill: white"
-                />
-              </h1>
-            </div>
-          </router-link>
-        </div>
-
-        <div class="w6-l w-40 bg-moon-gray serif black relative grow ma5-l ma2 br4 overflow-hidden">
-          <router-link
-            to="/timeline/Connecticut Timeline"
-            style="text-decoration: none; color: inherit"
-          >
-            <img src="https://picsum.photos/600/600" alt="" class="w-100"/>
-            <div class="flex flex-column justify-center relative bottom-0">
-              <h1 class="f1-l f4 pa3-ns pa1 white">
-                CT Timeline
-                <img
-                  src="../assets/Arrow-White.svg"
-                  alt="arrow icon"
-                  class="mw2"
-                  style="fill: white"
-                />
-              </h1>
-            </div>
-          </router-link>
-        </div>
-
-      </div>
-      <curved-border :color="'red'"></curved-border>
+      <rounded-card></rounded-card>
+      <curved-border :color="'white'"></curved-border>
     </div>
-
-    <div class="section bg-lgct-red relative">
-      <div class="flex flex-column items-center justify-center h-100">
-      <stacked-card class="ml7-ns">
-        <template v-slot:heading> From the Boat From the Shore </template>
-        <p class="i fw4 f2-ns f5">
-          In 1862, the United States government passed “an Act donating public
-          lands to the several states and territories which may provide Colleges
-          for the benefit of Agriculture and the Mechanic Arts,” known as the
-          Morrill Act. These public lands were established by the systematic and
-          violent dispossession. of Indigenous people by the United States
-          government. The land tied to UConn’s Land Grant status spans 12 states
-          originally stewarded by Indigenous tribes. The colleges established
-          benefitted white citizens then and continue to disproportionately
-          benefit white citizens today.
-        </p>
-      </stacked-card>
-      </div>
-      <curved-border :color="'teal'" :left="true"></curved-border>
+    <div class="section relative bg-lgct-white">
+      <rounded-card :flip="true" :buttonLink="'Connecticut Timeline'"></rounded-card>
+      <curved-border :color="'teal'"></curved-border>
     </div>
 
     <div class="section bg-lgct-teal relative">
@@ -244,6 +185,7 @@ import Footer from "./Footer";
 import MorrillAct from "./MorrillAct.vue";
 import StackedCard from "./StackedCard.vue";
 import CurvedBorder from "./CurvedBorder.vue";
+import RoundedCard from "./RoundedCard.vue"
 import Nav from "./Nav.vue"
 export default {
   name: "Landing",
@@ -253,6 +195,7 @@ export default {
     MorrillAct,
     StackedCard,
     CurvedBorder,
+    RoundedCard,
     Nav
   },
   data() {
@@ -264,15 +207,15 @@ export default {
         scrollBar: true,
         menu: "#menu",
         sectionsColor: [
+          "#FEFCF5", //white
+          "#AA4F37", //red
+          "#FEFCF5", //white
+          "#000",    //black
+          "#FEFCF5", //white
+          "#AA4F37", //red
           "#FEFCF5",
-          "#AA4F37",
-          "#FEFCF5",
-          "#000",
-          "#FEFCF5",
-          "#AA4F37",
-          "#82b8b3",
-          "#AA4F37",
-          "#FEFCF5",
+          "#FEFCF5", //teal
+          "#70B9B2",
           "#AA4F37",
         ],
 
