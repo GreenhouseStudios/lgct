@@ -10,7 +10,9 @@
           <slot name="heading"></slot>
         </h1>
       </div>
+      <div class="tl">
       <slot></slot>
+      </div>
     </div>
   </div>
 </template>

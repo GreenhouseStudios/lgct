@@ -20,7 +20,7 @@
           </div>
         </h1>
       </div>
-      <div class="i f3 lh-title">
+      <div class="i f3 lh-title tl">
         <slot></slot>
       </div>
     </div>
