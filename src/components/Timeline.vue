@@ -14,7 +14,7 @@
         class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
         style="transform: scale(2); z-index: 100"
       ></i>
-      <curved-border :tall="true" style="z-index: 999"></curved-border>
+      <curved-border :tall="true"></curved-border>
     </div>
 
     <div class="bg-lgct-red">

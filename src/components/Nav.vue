@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <nav class="dt-l border-box" style="width: 300px; position:fixed;">
-      <ul v-if="navShow">
+  <div >
+    <nav class="dt-l border-box" style="width: 300px; position:fixed;" >
+      <ul v-if="navShow" v-click-outside="handleClickOutside">
         <li
           @click="fp.moveTo(index + 1)"
           class="tl"
@@ -12,9 +12,9 @@
             {{ item }}
           </a>
         </li>
-        <li @click="toggleNav"><i class="f1 fw6 white">&#8249;</i></li>
+        <!-- <li @click="toggleNav"><i class="f1 fw6 white">&#8249;</i></li> -->
       </ul>
-      <button  v-else class="bn f2 h3" style="width: 50px" @click="toggleNav"><i class="fa fa-bars white"></i></button>
+      <button v-else class="bn f2 h3" style="width: 50px" @click="toggleNav"><i class="fa fa-bars white"></i></button>
     </nav>
   </div>
 </template>
@@ -45,6 +45,7 @@ export default {
         "bg-silver z-0",
       ],
       navShow: false,
+      justToggled: false,
     };
   },
   mounted() {
@@ -56,7 +57,16 @@ export default {
       this.fp.moveTo(index + 1);
     },
     toggleNav(){
+      console.log("Toggle")
       this.navShow = !this.navShow;
+      this.justToggled = true;
+    },
+    handleClickOutside(){
+      console.log("hello")
+      if(this.navShow && !this.justToggled){
+        this.navShow = false;
+      } 
+      this.justToggled = false;
     }
   },
   computed: {
