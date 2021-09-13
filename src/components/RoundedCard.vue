@@ -1,12 +1,14 @@
 <template>
   <div class="flex flex-column justify-center h-75 section">
     <div class="tl pa4 h-75 relative" :class="isFlipped">
-      <h1 class="f1">{{ heading }}</h1>
-      <p class="i fw8 lh-copy">{{ body }}</p>
+      <h1 class="f1" v-if="!isTitle">{{ heading }}</h1>
+      <h1 class="f-headline" v-else>{{ heading }}</h1>
+      <p class="i fw8 lh-copy" v-if="!isTitle">{{ body }}</p>
       <router-link
         to="/timeline/National Timeline"
         class="absolute bottom--1"
         style="text-decoration: none; color: inherit"
+        v-if="!isTitle"
       >
         <button class="bg-lgct-teal"><h1 class="white">Visit</h1></button>
       </router-link>
@@ -30,6 +32,10 @@ export default {
       type: String,
       default: "National Timeline",
     },
+    isTitle: {
+      type: Boolean,
+      default: false,
+    }
   },
   data() {
     return {

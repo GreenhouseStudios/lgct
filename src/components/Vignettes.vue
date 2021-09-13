@@ -1,5 +1,16 @@
 <template>
   <div>
+    <div class="section bg-lgct-white relative">
+      <router-link to="/">
+        <img
+          src="../assets/lgct-logo-long.png"
+          alt="land grab connecticut logo long version"
+          class="mw4 absolute top-2 left-2 pa2 bg-white br3"
+        />
+      </router-link>
+      <rounded-card :heading="'Land Parcels'" :isTitle="true"></rounded-card>
+      <curved-border :color="'red'"></curved-border>
+    </div>
     <div
       class="
         section
@@ -11,13 +22,7 @@
         overflow-hidden
       "
     >
-      <router-link to="/">
-        <img
-          src="../assets/lgct-logo-long.png"
-          alt="land grab connecticut logo long version"
-          class="mw4 absolute top-2 left-2 pa2 bg-white br3"
-        />
-      </router-link>
+      
       <stacked-card-horizontal class="w-75 h-50 z-0">
         <template v-slot:heading>Nebraska</template>
         <template v-slot:subtitle
@@ -39,11 +44,11 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab style="bottom: 180px" class="z-0"
+        <collapsible-tab style="bottom: 180px" class="z-0" :template="'landToday'"
           >The Land Today</collapsible-tab
         >
         <collapsible-tab style="bottom: 100px" class="z-1">
-          The Treaty of 1854</collapsible-tab
+          Settler Appropriation and Uses</collapsible-tab
         >
         <collapsible-tab style="bottom: 20px" class="z-2"
           >Native Peoples on this Land</collapsible-tab
@@ -87,11 +92,11 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab style="bottom: 180px" class="z-0"
+        <collapsible-tab style="bottom: 180px" class="z-0" :template="'landToday'"
           >The Land Today</collapsible-tab
         >
         <collapsible-tab style="bottom: 100px" class="z-1">
-          The Treaty of 1854</collapsible-tab
+          Settler Appropriation and Uses</collapsible-tab
         >
         <collapsible-tab style="bottom: 20px" class="z-2"
           >Native Peoples on this Land</collapsible-tab
@@ -131,11 +136,11 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab style="bottom: 180px" class="z-0"
+        <collapsible-tab style="bottom: 180px" class="z-0" :template="'landToday'"
           >The Land Today</collapsible-tab
         >
         <collapsible-tab style="bottom: 100px" class="z-1">
-          The Treaty of 1854</collapsible-tab
+          Settler Appropriation and Uses</collapsible-tab
         >
         <collapsible-tab style="bottom: 20px" class="z-2"
           >Native Peoples on this Land</collapsible-tab
@@ -155,14 +160,16 @@ import CurvedBorder from "./CurvedBorder.vue";
 import StackedCardHorizontal from "./StackedCardHorizontal.vue";
 import CollapsibleTab from "./CollapsibleTab.vue";
 import ipsum from "../ipsum.js";
+import RoundedCard from './RoundedCard.vue';
 export default {
   components: {
     StackedCardHorizontal,
     CurvedBorder,
     CollapsibleTab,
+    RoundedCard
   },
   data() {
-    return {
+   return {
       shownTabs: [false, false, false],
       ipsum: ipsum,
     };
