@@ -22,7 +22,6 @@
         overflow-hidden
       "
     >
-      
       <stacked-card-horizontal class="w-75 h-50 z-0">
         <template v-slot:heading>Nebraska</template>
         <template v-slot:subtitle
@@ -44,14 +43,27 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab style="bottom: 180px" class="z-0" :template="'landToday'"
-          >The Land Today</collapsible-tab
+        <collapsible-tab
+          style="bottom: 180px"
+          class="z-0"
+          :template="'landToday'"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
+          ><template v-slot:heading>The Land Today</template></collapsible-tab
         >
-        <collapsible-tab style="bottom: 100px" class="z-1">
-          Settler Appropriation and Uses</collapsible-tab
+        <collapsible-tab
+          style="bottom: 100px"
+          class="z-1"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
         >
-        <collapsible-tab style="bottom: 20px" class="z-2"
-          >Native Peoples on this Land</collapsible-tab
+          <template v-slot:heading>Appropriation and Uses</template>
+          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
+        >
+        <collapsible-tab
+          style="bottom: 20px"
+          class="z-2"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
+          ><template v-slot:heading>Native Peoples on this Land</template>
+          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
         >
       </div>
       <curved-border
@@ -92,14 +104,27 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab style="bottom: 180px" class="z-0" :template="'landToday'"
-          >The Land Today</collapsible-tab
+        <collapsible-tab
+          style="bottom: 180px"
+          class="z-0"
+          :template="'landToday'"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
+          ><template v-slot:heading>The Land Today</template></collapsible-tab
         >
-        <collapsible-tab style="bottom: 100px" class="z-1">
-          Settler Appropriation and Uses</collapsible-tab
+        <collapsible-tab
+          style="bottom: 100px"
+          class="z-1"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
         >
-        <collapsible-tab style="bottom: 20px" class="z-2"
-          >Native Peoples on this Land</collapsible-tab
+          <template v-slot:heading>Appropriation and Uses</template>
+          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
+        >
+        <collapsible-tab
+          style="bottom: 20px"
+          class="z-2"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
+          ><template v-slot:heading>Native Peoples on this Land</template>
+          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
         >
       </div>
       <curved-border :color="'red'" style="z-index: 100"></curved-border>
@@ -136,14 +161,27 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab style="bottom: 180px" class="z-0" :template="'landToday'"
-          >The Land Today</collapsible-tab
+        <collapsible-tab
+          style="bottom: 180px"
+          class="z-0"
+          :template="'landToday'"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
+          ><template v-slot:heading>The Land Today</template></collapsible-tab
         >
-        <collapsible-tab style="bottom: 100px" class="z-1">
-          Settler Appropriation and Uses</collapsible-tab
+        <collapsible-tab
+          style="bottom: 100px"
+          class="z-1"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
         >
-        <collapsible-tab style="bottom: 20px" class="z-2"
-          >Native Peoples on this Land</collapsible-tab
+          <template v-slot:heading>Appropriation and Uses</template>
+          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
+        >
+        <collapsible-tab
+          style="bottom: 20px"
+          class="z-2"
+          v-on:toggle-tab="toggleTab('toggle me', $event)"
+          ><template v-slot:heading>Native Peoples on this Land</template>
+          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
         >
       </div>
       <curved-border
@@ -160,23 +198,33 @@ import CurvedBorder from "./CurvedBorder.vue";
 import StackedCardHorizontal from "./StackedCardHorizontal.vue";
 import CollapsibleTab from "./CollapsibleTab.vue";
 import ipsum from "../ipsum.js";
-import RoundedCard from './RoundedCard.vue';
+import RoundedCard from "./RoundedCard.vue";
 export default {
+  name: "Vignettes",
   components: {
     StackedCardHorizontal,
     CurvedBorder,
     CollapsibleTab,
-    RoundedCard
+    RoundedCard,
   },
   data() {
-   return {
-      shownTabs: [false, false, false],
+    return {
       ipsum: ipsum,
+      tabs: this.$children,
+      activeTab: null,
     };
   },
   methods: {
-    toggleTab(i) {
-      this.shownTabs[i] = !this.shownTabs[i];
+    toggleTab(msg, e) {
+      console.log(msg);
+      console.log(e);
+      if (this.activeTab) this.activeTab.showContent = false;
+      if (this.activeTab === e) {
+        this.activeTab.showContent = false;
+        return;
+      }
+      this.activeTab = e;
+      this.activeTab.showContent = true;
     },
   },
 };
