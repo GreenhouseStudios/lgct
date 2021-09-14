@@ -2,21 +2,32 @@
   <div
     @click="expandCard"
     :class="{ expanded: isExpanded, compact: !isExpanded }"
-    class="card br4 serif pa5 w-70-ns w-100 ma4-ns relative shadow-4"
+    class="card br4 serif pa5-ns pa1 w-70-ns w-90 ma4-ns mv5 relative shadow-4"
   >
     <div
       v-show="isExpanded"
-      class="fl mw6 relative br4 pv3 pl4 pr5 tl f3 shadow-4"
+      class="
+        fl-ns
+        w-50-ns w-100
+        relative
+        br4
+        pv3
+        pl4-ns
+        pr5-ns
+        tl-ns
+        f3
+        shadow-4
+      "
       id="black-header-card"
     >
-      <h2 class="normal sans-serif i">{{ date }}</h2>
-      <h1>{{ heading }}</h1>
+      <h2 class="normal sans-serif i f2-ns f4">{{ date }}</h2>
+      <h1 class="f1-ns f3">{{ heading }}</h1>
     </div>
     <span v-show="!isExpanded" class="tl" id="pre-click-header">
-      <h2 class="f3 normal sans-serif i">{{ date }}</h2>
-      <h1 class="f1">{{ heading }}</h1>
+      <h2 class="f3-ns f5 normal sans-serif i">{{ date }}</h2>
+      <h1 class="f1-ns f3">{{ heading }}</h1>
     </span>
-    <div v-show="isExpanded">
+    <div v-show="isExpanded" id="expanded-card-body">
       <span
         class="absolute bottom-0 right-0 hover-bg-light-blue w3 h3"
         v-on:click.stop="showMore = true"
@@ -33,9 +44,14 @@
         ><div class="relative f1">
           <span><i class="fa fa-chevron-up"></i></span></div
       ></span>
-      <div>
+      <div class="ma2">
         <p class="tl" v-html="blocksToHTML({ blocks: body })"></p>
-        <p v-if="fullBody" v-show="showMore" class="tl" v-html="blocksToHTML({blocks: fullBody})"></p>
+        <p
+          v-if="fullBody"
+          v-show="showMore"
+          class="tl"
+          v-html="blocksToHTML({ blocks: fullBody })"
+        ></p>
       </div>
     </div>
   </div>
@@ -118,7 +134,7 @@ export default {
 
 <style lang="scss" scoped>
 div.compact {
-  background: #FEFCF5;
+  background: #fefcf5;
   transition: 0.4s;
 }
 div.compact:hover {
@@ -128,10 +144,21 @@ div.compact:hover {
 div.expanded {
   background-color: white;
 }
+@media screen and (min-width: 600px) {
+  #black-header-card {
+    left: -20%;
+    shape-outside: polygon(0% 0, 60% 0%, 60% 100%, 0% 100%);
+    shape-margin: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #black-header-card {
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+}
 #black-header-card {
-  left: -20%;
-  shape-outside: polygon(0% 0, 60% 0%, 60% 100%, 0% 100%);
-  shape-margin: 1rem;
   background-color: #333;
   color: white;
 }
