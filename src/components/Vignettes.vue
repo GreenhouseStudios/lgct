@@ -1,13 +1,7 @@
 <template>
   <div>
     <div class="section bg-lgct-white relative">
-      <router-link to="/">
-        <img
-          src="../assets/lgct-logo-long.png"
-          alt="land grab connecticut logo long version"
-          class="mw4 absolute top-2 left-2 pa2 bg-white br3"
-        />
-      </router-link>
+      <home-logo></home-logo>
       <rounded-card :heading="'Land Parcels'" :isTitle="true"></rounded-card>
       <curved-border :color="'red'"></curved-border>
     </div>
@@ -198,7 +192,8 @@ import CurvedBorder from "./CurvedBorder.vue";
 import StackedCardHorizontal from "./StackedCardHorizontal.vue";
 import CollapsibleTab from "./CollapsibleTab.vue";
 import ipsum from "../ipsum.js";
-import RoundedCard from "./RoundedCard.vue";
+import RoundedCard from './RoundedCard.vue';
+import HomeLogo from './HomeLogo.vue';
 export default {
   name: "Vignettes",
   components: {
@@ -206,6 +201,7 @@ export default {
     CurvedBorder,
     CollapsibleTab,
     RoundedCard,
+    HomeLogo
   },
   data() {
     return {

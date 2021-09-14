@@ -39,13 +39,6 @@ export default {
       type: String,
       default: "default",
     },
-    list: {
-      type: Array,
-      default: () =>
-        Array(12)
-          .fill(2)
-          .map((x) => ipsum.generateWords(x + Math.floor(Math.random() * 2))),
-    },
     showContent: {
       type: Boolean,
       default: false,
@@ -57,6 +50,7 @@ export default {
   },
   data() {
     return {
+      list: Array(12).fill(2).map(x => ipsum.generateWords(x + Math.floor(Math.random()*2))),
       ipsum: ipsum,
       sampleText: `The parcels sold in modern day Houghton county show how Indigenous land was surveyed, stolen and sold to private citizens for economic exploitation through acts like the Morrill Act.  From the perspective of the United States, the Ojibwe first formally established ties with the Americans in 1837 through the Treaty of St. Peters. However, the Ojibwe had political relationships with outsiders for many years before that. By this time, the Ojibwe “had a long history of beneficial alliances with European-descended peoples, commencing with the French in the 1660s and, after the French defeat in the Seven Years War in 1763, with the British.”[1] These alliances were “conducted within a framework largely derived from Native understandings”[2], and in in the earliest political contacts, the United States seemed to follow the this protocol. The first formal political conference between the Ojibwe and American representatives was in 1805 with the Zebulon M. Pike expedition. After the War of 1812, the United States again made efforts to establish friendly relations with the Indigenous people. The Ojibwe themselves dated the start of an actual alliance to the postwar years.[3] Major problems seem to have began in 1825, after Commissioners William Clark and Lewis Cass assembled over 3,000 representatives from numerous tribes at Prairie du Chien “with the object of promoting peace among the tribes of the northwest and establishing boundaries between each tribe.”[4] It is after this treaty that the United States began to act as though it possessed authority over the Ojibwe.
 The tribes of this area had been warring for some time, although their disputes were not like those of nation-states, where war is conducted to advance political objectives like the control of resources and land.[5] Nevertheless, in the 1825 meeting the United States suggested fixed boundaries where tribes could only hunt within the boundaries of another tribe with assent. The Treaty of Prairie du Chien did little to stop intertribal warfare, but it did establish a new type of relationship between the Ojibwe and American representatives and formally established the boundaries in the American mind and law, setting the people up for a future erosion of sovereignty and setting the land up for future partitioning and sale.

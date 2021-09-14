@@ -1,13 +1,7 @@
 <template>
   <div>
     <div class="section bg-lgct-white relative">
-      <router-link to="/">
-        <img
-          src="../assets/lgct-logo-long.png"
-          alt="land grab connecticut logo long version"
-          class="mw6 absolute top-2 left-2"
-        />
-      </router-link>
+      <home-logo></home-logo>
       <header
         class="
           mw-25 mw-25-ns
@@ -140,7 +134,11 @@
 
 <script>
 import ipsum from "../ipsum.js";
+import HomeLogo from "./HomeLogo.vue"
 export default {
+  components: {
+    HomeLogo,
+  },
   name: "About",
   data() {
     return {
