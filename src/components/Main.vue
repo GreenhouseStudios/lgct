@@ -206,6 +206,8 @@ export default {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         scrollBar: true,
         menu: "#menu",
+        autoScrolling: false,
+        fitToSection: false,
         sectionsColor: [
           "#FEFCF5", //white
           "#AA4F37", //red
