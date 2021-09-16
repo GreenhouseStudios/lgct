@@ -17,11 +17,12 @@
       "
     >
       <stacked-card-horizontal class="w-75 h-50 z-0">
-        <template v-slot:heading>Nebraska</template>
-        <template v-slot:subtitle
+        <template v-slot:gps> 40.3442 N 96.5325 W</template>
+        <template v-slot:heading
           >Jiwere (Otoe-Missouria), Pâri (Pawnee), Očhéthi Šakówiŋ
           Land</template
         >
+        <template v-slot:subtitle>Currently known as Nebraska</template>
         <template v-slot:plot>NE060100N0070E0SN170ANECT</template>
         <p>
           On March 15, 1854 under Treaty No. 265 was signed by the United States
@@ -32,7 +33,7 @@
           States $20.67. The land ceded was granted to the University of
           Connecticut in 1862, which made a return of six times the original
           price - $121.22 was raised for the university from this one parcel of
-          land. Today, residential homes and Nebraska Wesleyan University sit on
+          land. Today, residential homes and Currently known as Nebraska Wesleyan University sit on
           this parcel.
         </p>
       </stacked-card-horizontal>
@@ -78,11 +79,12 @@
       "
     >
       <stacked-card-horizontal class="w-75 h-50 z-0" mainColor="bg-moon-gray">
-        <template v-slot:heading>Nebraska</template>
-        <template v-slot:subtitle
+        <template v-slot:gps> 40.3442 N 96.5325 W</template>
+        <template v-slot:heading
           >Jiwere (Otoe-Missouria), Pâri (Pawnee), Očhéthi Šakówiŋ
           Land</template
         >
+        <template v-slot:subtitle>Currently known as Nebraska</template>
         <template v-slot:plot>NE060100N0070E0SN170ANECT</template>
         <p>
           On March 15, 1854 under Treaty No. 265 was signed by the United States
@@ -93,7 +95,7 @@
           States $20.67. The land ceded was granted to the University of
           Connecticut in 1862, which made a return of six times the original
           price - $121.22 was raised for the university from this one parcel of
-          land. Today, residential homes and Nebraska Wesleyan University sit on
+          land. Today, residential homes and Currently known as Nebraska Wesleyan University sit on
           this parcel.
         </p>
       </stacked-card-horizontal>
@@ -135,11 +137,12 @@
       "
     >
       <stacked-card-horizontal class="w-75 h-50 z-0">
-        <template v-slot:heading>Nebraska</template>
-        <template v-slot:subtitle
+        <template v-slot:gps> 40.3442 N 96.5325 W</template>
+        <template v-slot:heading
           >Jiwere (Otoe-Missouria), Pâri (Pawnee), Očhéthi Šakówiŋ
           Land</template
         >
+        <template v-slot:subtitle>Currently known as Nebraska</template>
         <template v-slot:plot>NE060100N0070E0SN170ANECT</template>
         <p>
           On March 15, 1854 under Treaty No. 265 was signed by the United States
@@ -150,7 +153,7 @@
           States $20.67. The land ceded was granted to the University of
           Connecticut in 1862, which made a return of six times the original
           price - $121.22 was raised for the university from this one parcel of
-          land. Today, residential homes and Nebraska Wesleyan University sit on
+          land. Today, residential homes and Currently known as Nebraska Wesleyan University sit on
           this parcel.
         </p>
       </stacked-card-horizontal>
@@ -192,8 +195,8 @@ import CurvedBorder from "./CurvedBorder.vue";
 import StackedCardHorizontal from "./StackedCardHorizontal.vue";
 import CollapsibleTab from "./CollapsibleTab.vue";
 import ipsum from "../ipsum.js";
-import RoundedCard from './RoundedCard.vue';
-import HomeLogo from './HomeLogo.vue';
+import RoundedCard from "./RoundedCard.vue";
+import HomeLogo from "./HomeLogo.vue";
 export default {
   name: "Vignettes",
   components: {
@@ -201,7 +204,7 @@ export default {
     CurvedBorder,
     CollapsibleTab,
     RoundedCard,
-    HomeLogo
+    HomeLogo,
   },
   data() {
     return {

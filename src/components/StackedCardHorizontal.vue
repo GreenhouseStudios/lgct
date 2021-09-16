@@ -11,8 +11,11 @@
         :class="headColor"
       >
         <h1 class="serif f1-l fw5 f3 mr0-ns mv3-ns tl">
+          <h5 class="lgct-teal f4 sans-serif i fw4 ma0">
+          <slot name="gps"></slot>
+          </h5>
           <slot name="heading"></slot>
-          <div class="f3 i sans-serif">
+          <div class="f3 fw4 sans-serif lgct-teal">
             <slot name="subtitle"></slot>
           </div>
           <div class="f6 lgct-red i sans-serif">
