@@ -5,7 +5,7 @@
       <h1 class="f-headline" v-else>{{ heading }}</h1>
       <p class="i fw8 lh-copy" v-if="!isTitle">{{ body }}</p>
       <router-link
-        to="/timeline/National Timeline"
+        :to="'/timeline/' + buttonLink"
         class="absolute bottom--1"
         style="text-decoration: none; color: inherit"
         v-if="!isTitle"

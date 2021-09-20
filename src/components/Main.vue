@@ -43,7 +43,7 @@
       <curved-border :color="'white'"></curved-border>
     </div>
     <div class="section relative bg-lgct-white">
-      <rounded-card :flip="true" :buttonLink="'Connecticut Timeline'"></rounded-card>
+      <rounded-card :flip="true" :buttonLink="'Connecticut Timeline'" :heading="'Connecticut Timeline'"></rounded-card>
       <curved-border :color="'teal'"></curved-border>
     </div>
 
