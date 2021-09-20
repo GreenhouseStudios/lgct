@@ -32,6 +32,7 @@ export default {
 }
 .section{
   min-height: 100vh;
+  overflow: hidden;
 }
 router-link{
     text-decoration: none;

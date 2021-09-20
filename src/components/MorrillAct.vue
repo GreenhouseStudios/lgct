@@ -1,11 +1,10 @@
 <template>
   <div class="section bg-lgct-red relative">
     <div class="flex justify-center align-center items-center h-100">
-    <stacked-card class="ml7-l">
+    <stacked-card>
       <template v-slot:heading>
         What is the Morrill Act?
       </template>
-        <p class="i fw4 f2-l f6">
           In 1862, the United States government passed “an Act donating public
           lands to the several states and territories which may provide Colleges
           for the benefit of Agriculture and the Mechanic Arts,” known as the
@@ -20,7 +19,6 @@
           from the 178190.04 acres of land and the $135,000.84 ($3,598,150.99
           today) raised from it through annual payments to the university. The
           state of Connecticut paid $12,763.01.
-        </p>
     </stacked-card>
     </div>
     <curved-border :left="true" :color="'white'"></curved-border>

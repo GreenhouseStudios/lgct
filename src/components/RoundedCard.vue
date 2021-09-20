@@ -1,16 +1,18 @@
 <template>
   <div class="flex flex-column justify-center h-75 section">
-    <div class="tl pa4 h-75 relative" :class="isFlipped">
-      <h1 class="f1" v-if="!isTitle">{{ heading }}</h1>
-      <h1 class="f-headline" v-else>{{ heading }}</h1>
-      <p class="i fw8 lh-copy" v-if="!isTitle">{{ body }}</p>
+    <div class="tl pa4-l pa2 h-75 relative" :class="isFlipped">
+      <h1 class="f1-l f3 mt5" v-if="!isTitle">{{ heading }}</h1>
+      <h1 class="f-headline-l f3"  v-else>{{ heading }}</h1>
+      <p class="i fw5 f2-l f6 lh-copy" v-if="!isTitle">{{ body }}</p>
       <router-link
         :to="'/timeline/' + buttonLink"
         class="absolute bottom--1"
         style="text-decoration: none; color: inherit"
         v-if="!isTitle"
       >
-        <button class="bg-lgct-teal"><h1 class="white">Visit</h1></button>
+        <button class="bg-lgct-teal w5-l w4">
+          <h1 class="white f1-l f3">Visit</h1>
+        </button>
       </router-link>
     </div>
   </div>
@@ -35,41 +37,65 @@ export default {
     isTitle: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   data() {
     return {
-      body: ipsum.generateSentences(15),
+      body: ipsum.generateSentences(10),
       ipsum: ipsum,
     };
   },
   computed: {
     isFlipped() {
-      return this.flip ? "container-flipped pr7 pl6" : "pl7 pr6 container";
+      return this.flip
+        ? "container-flipped pr7-l pl6-l"
+        : "pl7-l pr6-l container";
     },
+    isFlippedHeading(){
+      return this.flip ? "tr" : "tl";
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  background: #e0ddd5;
-  width: 80%;
-  position: relative;
-  top: 13%;
-  left: 0%;
-  border-radius: 0 300px 300px 0;
-  z-index: 1;
+@media screen and (min-width: 600px) {
+  .container {
+    background: #e0ddd5;
+    width: 80%;
+    position: relative;
+    top: 13%;
+    left: 0%;
+    border-radius: 0 300px 300px 0;
+    z-index: 1;
+  }
+  .container-flipped {
+    background: #e0ddd5;
+    width: 80%;
+    right: 0%;
+    top: 13%;
+    border-radius: 300px 0 0 300px;
+    float: right;
+    z-index: 1;
+    padding-left: 15%;
+  }
 }
-.container-flipped {
-  background: #e0ddd5;
-  width: 80%;
-  right: 0%;
-  top: 13%;
-  border-radius: 300px 0 0 300px;
-  float: right;
-  z-index: 1;
-  padding-left: 15%;
+@media screen and (max-width: 600px) {
+  .container {
+    background: #e0ddd5;
+    padding-right: 30%;
+    border-radius: 0 300px 300px 0;
+    z-index: 1;
+    height: 90%;
+  }
+  .container-flipped {
+    background: #e0ddd5;
+    border-radius: 300px 0 0 300px;
+    float: right;
+    z-index: 1;
+    padding-left: 30%;
+    height: 90%;
+  }
 }
 button {
   z-index: 3;
@@ -78,8 +104,6 @@ button {
   top: 6%;
   border-style: none;
   background: #70b9b2;
-  width: 309px;
-  height: 100px;
   border-radius: 16px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
   transition: 0.4s;
