@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div
       class="absolute bottom-0 right-0 w-100"
       style="height: 30px; box-shadow: -10px -5px 10px grey"
@@ -22,7 +21,6 @@
         ></div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

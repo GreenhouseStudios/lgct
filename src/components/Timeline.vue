@@ -1,59 +1,53 @@
 <template>
-  <div class="bg-lgct-white relative">
-    <router-link to="/">
-      <img
-        src="../assets/lgct-logo-long.png"
-        alt="land grab connecticut logo long version"
-        class="mw4 absolute top-2 left-2 pa2 bg-white br3"
-      />
-    </router-link>
-    <div class="section flex justify-center items-center">
-      <h1 class="f-headline-l f1 serif ma0">{{ this.$route.params.title }}</h1>
-      <!-- <div class="w2 h3 bl bw1 black line absolute"></div> -->
-      <i
-        class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
-        style="transform: scale(2); z-index: 100"
-      ></i>
-      <curved-border :tall="true"></curved-border>
-    </div>
+    <div class="bg-lgct-white relative">
+      <home-logo class="z-1"></home-logo>
+      <div class="section flex justify-center items-center relative">
+        <h1 class="f-headline-l f1 serif ma0">
+          {{ this.$route.params.title }}
+        </h1>
+        <i
+          class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
+          style="transform: scale(2); z-index: 100"
+        ></i>
+        <curved-border :tall="true"></curved-border>
+      </div>
 
-    <div class="bg-lgct-red">
-      <div v-if="cards !== null" class="w-100">
-        <div
-          class="section pv6-ns pv3"
-          v-for="(card, index) in cards"
-          :key="card.heading"
-        >
-          <div class="flex flex-column items-center">
-            <div class="cardTrigger"></div>
-            <timeline-card
-              :heading="card.heading"
-              :body="card.body"
-              :fullBody="card.fullBody"
-              :date="card.date"
-              :img="card.img"
-              :index="index"
-              v-on:open-modal="openModal(index)"
-            >
-            </timeline-card>
+      <div class="bg-lgct-red">
+        <div v-if="cards !== null" class="w-100">
+          <div
+            class="section pv6-ns pv3"
+            v-for="(card, index) in cards"
+            :key="card.heading"
+          >
+            <div class="flex flex-column items-center">
+              <div class="cardTrigger"></div>
+              <timeline-card
+                :heading="card.heading"
+                :body="card.body"
+                :fullBody="card.fullBody"
+                :date="card.date"
+                :img="card.img"
+                :index="index"
+                v-on:open-modal="openModal(index)"
+              >
+              </timeline-card>
+            </div>
           </div>
         </div>
       </div>
+      <detail-modal
+        :showModal="showModal"
+        :card="activeCard"
+        v-on:close-modal="closeModal()"
+      ></detail-modal>
     </div>
-
-    <!-- </full-page> -->
-    <detail-modal
-      :showModal="showModal"
-      :card="activeCard"
-      v-on:close-modal="closeModal()"
-    ></detail-modal>
-  </div>
 </template>
 
 <script>
 import ipsum from "../ipsum.js";
 import TimelineCard from "./TimelineCard.vue";
 import DetailModal from "./DetailModal.vue";
+import HomeLogo from "./HomeLogo.vue";
 import CurvedBorder from "./CurvedBorder.vue";
 import axios from "axios";
 import _ from "lodash";
@@ -64,6 +58,7 @@ export default {
     TimelineCard,
     CurvedBorder,
     DetailModal,
+    HomeLogo,
   },
   props: {
     timelineTitle: {
@@ -130,8 +125,7 @@ export default {
       ease: "power2.out",
     });
   },
-  updated() {
-  },
+  updated() {},
 };
 </script>
 
