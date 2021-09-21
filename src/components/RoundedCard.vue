@@ -1,9 +1,12 @@
 <template>
   <div class="flex flex-column justify-center h-75 section">
-    <div class="tl pa4-l pa2 h-75 relative" :class="isFlipped">
+    <div class="tl pa4-l pa2 relative" :class="isFlipped">
       <h1 class="f1-l f3 mt5" v-if="!isTitle">{{ heading }}</h1>
       <h1 class="f-headline-l f3"  v-else>{{ heading }}</h1>
-      <p class="i fw5 f2-l f6 lh-copy" v-if="!isTitle">{{ body }}</p>
+
+      <p class="i fw5 f2-l f4-m f6 lh-copy" v-if="!isTitle">
+        <slot></slot>
+      </p>
       <router-link
         :to="'/timeline/' + buttonLink"
         class="absolute bottom--1"
