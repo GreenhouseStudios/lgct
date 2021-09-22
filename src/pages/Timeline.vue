@@ -45,10 +45,10 @@
 
 <script>
 import ipsum from "../ipsum.js";
-import TimelineCard from "./TimelineCard.vue";
-import DetailModal from "./DetailModal.vue";
-import HomeLogo from "./HomeLogo.vue";
-import CurvedBorder from "./CurvedBorder.vue";
+import TimelineCard from "../components/TimelineCard.vue";
+import DetailModal from "../components/DetailModal.vue";
+import HomeLogo from "../components/HomeLogo.vue";
+import CurvedBorder from "../components/CurvedBorder.vue";
 import axios from "axios";
 import _ from "lodash";
 import { gsap } from "gsap";

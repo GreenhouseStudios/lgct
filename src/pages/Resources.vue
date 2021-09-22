@@ -170,7 +170,7 @@
 
 <script>
 import ipsum from "../ipsum.js";
-import StackedCard from "./StackedCard.vue";
+import StackedCard from "../components/StackedCard.vue";
 export default {
   name: "Resources",
   components: { StackedCard },

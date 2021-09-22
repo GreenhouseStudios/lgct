@@ -134,7 +134,7 @@
 
 <script>
 import ipsum from "../ipsum.js";
-import HomeLogo from "./HomeLogo.vue"
+import HomeLogo from "../components/HomeLogo.vue"
 export default {
   components: {
     HomeLogo,

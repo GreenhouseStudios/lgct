@@ -242,14 +242,14 @@
 
 <script>
 import ipsum from "../ipsum.js";
-import Home from "./Home";
-import Footer from "./Footer";
-import MorrillAct from "./MorrillAct.vue";
-import StackedCard from "./StackedCard.vue";
-import CurvedBorder from "./CurvedBorder.vue";
-import RoundedCard from "./RoundedCard.vue";
-import LinkButton from "./LinkButton.vue";
-import Nav from "./Nav.vue";
+import Home from "../components/Home.vue";
+import Footer from "../components/Footer.vue";
+import MorrillAct from "../components/MorrillAct.vue";
+import StackedCard from "../components/StackedCard.vue";
+import CurvedBorder from "../components/CurvedBorder.vue";
+import RoundedCard from "../components/RoundedCard.vue";
+import LinkButton from "../components/LinkButton.vue";
+import Nav from "../components/Nav.vue";
 export default {
   name: "Landing",
   components: {

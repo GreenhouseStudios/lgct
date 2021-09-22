@@ -191,12 +191,12 @@
 </template>
 
 <script>
-import CurvedBorder from "./CurvedBorder.vue";
-import StackedCardHorizontal from "./StackedCardHorizontal.vue";
-import CollapsibleTab from "./CollapsibleTab.vue";
+import CurvedBorder from "../components/CurvedBorder.vue";
+import StackedCardHorizontal from "../components/StackedCardHorizontal.vue";
+import CollapsibleTab from "../components/CollapsibleTab.vue";
 import ipsum from "../ipsum.js";
-import RoundedCard from "./RoundedCard.vue";
-import HomeLogo from "./HomeLogo.vue";
+import RoundedCard from "../components/RoundedCard.vue";
+import HomeLogo from "../components/HomeLogo.vue";
 export default {
   name: "Vignettes",
   components: {
