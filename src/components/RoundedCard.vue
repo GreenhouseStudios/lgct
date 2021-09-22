@@ -1,22 +1,17 @@
 <template>
-  <div class="flex flex-column justify-center section">
-    <div class="tl pa4-l pa2 relative" :class="isFlipped" :style="{ backgroundImage: 'url(' + img + ')' }" id="round-card">
+  <div>
+    <div
+      class="tl pa4-l pa2 relative h-75"
+      :class="isFlipped"
+      :style="{ backgroundImage: 'url(' + img + ')' }"
+      id="round-card"
+    >
       <h1 class="f1-l f3 mt5" v-if="!isTitle">{{ heading }}</h1>
-      <h1 class="f-headline-l f3"  v-else>{{ heading }}</h1>
+      <h1 class="f-headline-l f3" v-else>{{ heading }}</h1>
 
-      <p class="i fw5 f2-l f4-m f6 lh-copy" v-if="!isTitle">
+      <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
         <slot></slot>
       </p>
-      <router-link
-        :to="'/timeline/' + buttonLink"
-        class="absolute bottom--1"
-        style="text-decoration: none; color: inherit"
-        v-if="!isTitle"
-      >
-        <button class="bg-lgct-teal w5-l w4">
-          <h1 class="white f1-l f3">Visit</h1>
-        </button>
-      </router-link>
     </div>
   </div>
 </template>
@@ -29,10 +24,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    buttonLink: {
-      type: String,
-      default: "National Timeline",
-    },
+ 
     heading: {
       type: String,
       default: "National Timeline",
@@ -43,8 +35,8 @@ export default {
     },
     img: {
       type: String,
-      default: require("../assets/LG_usa-silhouette.png")
-    }
+      default: require("../assets/LG_usa-silhouette.png"),
+    },
   },
   data() {
     return {
@@ -55,10 +47,10 @@ export default {
   computed: {
     isFlipped() {
       return this.flip
-        ? "container-flipped pr7-l pl6-l " 
-        : "pl7-l pr6-l container "
+        ? "container-flipped pr7-l pl6-l "
+        : "pl7-l pr6-l container ";
     },
-    isFlippedHeading(){
+    isFlippedHeading() {
       return this.flip ? "tr" : "tl";
     },
   },
@@ -104,22 +96,23 @@ export default {
     height: 90%;
   }
 }
-button {
-  z-index: 3;
-  position: relative;
-  left: 45%;
-  top: 6%;
-  border-style: none;
-  background: #70b9b2;
-  border-radius: 16px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
-  transition: 0.4s;
-}
-button:hover {
-  background-color: #4d9ba3;
-}
-#round-card{
+// button {
+//   z-index: 3;
+//   position: relative;
+//   left: 45%;
+//   top: 6%;
+//   border-style: none;
+//   background: #70b9b2;
+//   border-radius: 16px;
+//   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
+//   transition: 0.4s;
+// }
+// button:hover {
+//   background-color: #4d9ba3;
+// }
+#round-card {
   background-repeat: no-repeat;
-  background-size: 75%;
+  background-size: 65%;
+  background-position: center;
 }
 </style>

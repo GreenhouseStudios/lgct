@@ -5,126 +5,218 @@
       <h1 class="dn-m dn-s hot-pink absolute top-0 right-0">Large</h1>
     </div>
     <full-page ref="fullpage" :options="options" id="fullpage">
-    <Home></Home>
-    <MorrillAct></MorrillAct>
-    <div class="section bg-lgct-white relative ">
-      <div class="flex flex-column items-center justify-center h-100">
-      <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray">
-        <template v-slot:heading>The Objective of Land Grab CT</template>
-          In 1862, the United States government passed “an Act donating public
-          lands to the several states and territories which may provide Colleges
-          for the benefit of Agriculture and the Mechanic Arts,” known as the
-          Morrill Act. These public lands were established by the systematic and
-          violent dispossession of Indigenous people by the United States
-          government. The land tied to UConn’s Land Grant status spans 12 states
-          originally stewarded by Indigenous tribes. The colleges established
-          benefitted white citizens then and continue to disproportionately
-          benefit white citizens today. The University of Connecticut became
-          Connecticut’s Land Grant college in 1893. Upon receiving land grant
-          status by the state, the University of Connecticut directly benefited
-          from the 178190.04 acres of land and the $135,000.84 ($3,598,150.99
-          today) raised from it through annual payments to the university. The
-          state of Connecticut paid $12,763.01.
-      </stacked-card>
+      <Home></Home>
+      <MorrillAct></MorrillAct>
+      <div class="section bg-lgct-white relative">
+        <div class="flex flex-column items-center justify-center h-100">
+          <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray">
+            <template v-slot:heading>The Objective of Land Grab CT</template>
+            In 1862, the United States government passed “an Act donating public
+            lands to the several states and territories which may provide
+            Colleges for the benefit of Agriculture and the Mechanic Arts,”
+            known as the Morrill Act. These public lands were established by the
+            systematic and violent dispossession of Indigenous people by the
+            United States government. The land tied to UConn’s Land Grant status
+            spans 12 states originally stewarded by Indigenous tribes. The
+            colleges established benefitted white citizens then and continue to
+            disproportionately benefit white citizens today. The University of
+            Connecticut became Connecticut’s Land Grant college in 1893. Upon
+            receiving land grant status by the state, the University of
+            Connecticut directly benefited from the 178190.04 acres of land and
+            the $135,000.84 ($3,598,150.99 today) raised from it through annual
+            payments to the university. The state of Connecticut paid
+            $12,763.01.
+          </stacked-card>
+        </div>
+        <curved-border :color="'black'"></curved-border>
       </div>
-      <curved-border :color="'black'"></curved-border>
-    </div>
-    <div
-      class="section overflow-hidden relative"
-      style="background-color: #000000"
-    >
-      <div class="flex flex-column justify-center align-center">
-        <h1 class="f1 white">Mapping the Impact</h1>
-        <img class="mw-30" :src="require('/src/assets/map.png')" />
+      <div
+        class="section overflow-hidden relative"
+        style="background-color: #000000"
+      >
+        <div class="flex flex-column justify-center align-center">
+          <h1 class="f1 white">Mapping the Impact</h1>
+          <img class="mw-30" :src="require('/src/assets/map.png')" />
+        </div>
+        <curved-border :color="'red'" :left="true"></curved-border>
       </div>
-      <curved-border :color="'red'" :left="true"></curved-border>
-    </div>
-    <div class="section relative">
-      <rounded-card >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consectetur magnam voluptates autem totam assumenda delectus corrupti incidunt enim atque unde ut, temporibus dolore maxime! Dolore, molestias minus aspernatur temporibus non totam neque magni deleniti facere praesentium. Illum, odio aliquam? Debitis corporis quia dolore sint id iste minus repellendus ea.
-      </rounded-card>
-      <curved-border :color="'white'"></curved-border>
-    </div>
-    
-    <div class="section relative bg-lgct-white">
-      <rounded-card :flip="true" :buttonLink="'Connecticut Timeline'" :heading="'Connecticut Timeline'" :img="require('../assets/LG_ct-silhouette.png')">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perspiciatis, consequatur facilis, est totam et alias eum ut dolorem sapiente sequi quod suscipit ab? Asperiores corporis at expedita, natus nostrum adipisci nobis necessitatibus non cum. Fugit aliquid, eius cupiditate mollitia cum iusto sequi itaque ipsa, magni, quidem necessitatibus obcaecati repellat?
-      </rounded-card>
-      <curved-border :color="'teal'"></curved-border>
-    </div>
+      <div class="section relative bg-lgct-red">
+        <div class="flex items-center">
+          <rounded-card>
+            <p>
+              The interference of colonialism on the territory we now know as
+              “The United States” disrupted the relationship of stewardship and
+              respect to the land and generated the current displacement and
+              destitution of Native Nations. The 1493 Doctrine of Discovery
+              claimed Christians had the right to legally steal and occupy lands
+              not yet claimed by their faith on the basis of Christianity's
+              “religious superiority.” Embedded in this doctrine were notions of
+              race and gender that further justified the supremacy of a white
+              Christian race. The United States adopted these notions in its
+              construction as a nation. Through these adoptions, the country and
+              its government have taken lands and rights from Native Nations in
+              the interest and gain of white settlers.
+            </p>
 
-    <div class="section bg-lgct-teal relative">
-      <div class="pa6-ns pa3">
-        <span class="ma5-ns ma2 b--white flex flex-column white">
+            <p>
+              Although not all encompassing, this timeline shows significant
+              historical events that reveal the patterns and strategies the
+              United States government implemented through its history to erode
+              the sovereignty and agency of Indigenous peoples, and their
+              relationship with their territory.
+            </p>
+          </rounded-card>
+          <div class="ma3 fr flex items-center">
+            <link-button
+              :buttonLink="'/timeline/National Timeline'"
+            ></link-button>
+          </div>
+        </div>
+        <curved-border :color="'white'"></curved-border>
+      </div>
+
+      <div class="section relative bg-lgct-white">
+        <rounded-card
+          :flip="true"
+          :heading="'Connecticut Timeline'"
+          :img="require('../assets/LG_ct-silhouette.png')"
+        >
+          The University of Connecticut is built on land originally stewarded by
+          Indigenous peoples and was taken by brutal force. The University of
+          Connecticut also continues to benefit from the Morrill Act of 1862, as
+          well as subsequent governmental acts, that were made possible by the
+          systematic dispossession of Indigenous peoples in other parts of the
+          country by the United States government. This timeline gives a glimpse
+          into how the state of Connecticut was formed and how the University of
+          Connecticut came to be its Land Grant University.
+        </rounded-card>
+        <div class="ma3 absolute right-1 bottom-1 flex items-center">
+            <link-button
+              :buttonLink="'/timeline/Connecticut Timeline'"
+            ></link-button>
+          </div>
+        <curved-border :color="'teal'"></curved-border>
+      </div>
+
+      <div class="section bg-lgct-teal relative">
+        <div class="pa6-ns pa3">
+          <span class="ma5-ns ma2 b--white flex flex-column white">
+            <router-link
+              to="/Assumption"
+              style="text-decoration: none; color: inherit"
+            >
+              <h1 class="w-40-ns w-25 f-headline-ns f1 tl v-mid grow">
+                Assumptions vs Truth
+                <img
+                  src="../assets/Arrow-White.svg"
+                  alt="arrow icon"
+                  class="mw3"
+                  style="fill: white"
+                />
+              </h1>
+            </router-link>
+            <h2>
+              Learn the truth about the University's role in dispossesing
+              generations of people from opportunity and prosperity.
+            </h2>
+          </span>
+        </div>
+        <curved-border :color="'red'" :left="true"></curved-border>
+      </div>
+
+      <div class="section relative bg-lgct-gold">
+        <div class="pa7-ns ph3 pv5 white">
           <router-link
-            to="/Assumption"
+            to="/vignettes"
             style="text-decoration: none; color: inherit"
-          >
-            <h1 class="w-40-ns w-25 f-headline-ns f1 tl v-mid grow">
-              Assumptions vs Truth
+            ><h1 class="f-headline-ns grow">
+              Land Grab Parcels
               <img
                 src="../assets/Arrow-White.svg"
+                alt="arrow icon"
+                class="mw3"
+                style="fill: white"
+              /></h1
+          ></router-link>
+          <p class="f1-ns f3 lh-title">The stories of the lands</p>
+        </div>
+        <curved-border :color="'white'"></curved-border>
+      </div>
+
+      <div class="section bg-lgct-white relative">
+        <div class="pv2 ph3">
+          <router-link
+            to="/resources"
+            style="text-decoration: none; color: inherit"
+          >
+            <h1 class="f1-l f3-m relative-ns tl-ns ma5-ns grow">
+              Activism and Resources
+              <img
+                src="../assets/Arrow.svg"
                 alt="arrow icon"
                 class="mw3"
                 style="fill: white"
               />
             </h1>
           </router-link>
-          <h2>
-            Learn the truth about the University's role in dispossesing
-            generations of people from opportunity and prosperity.
-          </h2>
-        </span>
+        </div>
+        <div>
+          <div
+            class="
+              flex flex-row-ns flex-column
+              items-center
+              justify-start
+              align-start
+            "
+          >
+            <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
+              <a
+                href="https://www.landgrabu.org"
+                style="text-decoration: none; color: inherit"
+              >
+                <h2 class="f2-ns f4">Land Grab U</h2>
+                <div
+                  class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
+                  style="background-color: #c5aa57"
+                >
+                  <div
+                    class="w5-ns h5-ns h3 w3 br-100"
+                    style="
+                      background-color: #232621;
+                      transform: translate(5px, -5px);
+                    "
+                  ></div>
+                </div>
+                <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <curved-border :color="'red'"></curved-border>
       </div>
-      <curved-border :color="'red'" :left="true"></curved-border>
-    </div>
 
-    <div class="section relative bg-lgct-gold">
-      <div class="pa7-ns ph3 pv5 white">
-        <router-link
-          to="/vignettes"
-          style="text-decoration: none; color: inherit"
-          ><h1 class="f-headline-ns grow">
-            Land Grab Parcels
+      <div class="section white bg-lgct-red relative pa2">
+        <router-link to="/about" style="text-decoration: none; color: inherit">
+          <h1 class="f1-l f3-m relative-ns tl-ns ma5-ns grow">
+            About the Project
             <img
               src="../assets/Arrow-White.svg"
-              alt="arrow icon"
-              class="mw3"
-              style="fill: white"
-            /></h1
-        ></router-link>
-        <p class="f1-ns f3 lh-title">
-          The stories of the lands
-        </p>
-      </div>
-      <curved-border :color="'white'"></curved-border>
-    </div>
-
-    <div class="section bg-lgct-white relative">
-      <div class="pv2 ph3">
-        <router-link
-          to="/resources"
-          style="text-decoration: none; color: inherit"
-        >
-          <h1 class="f1-l f3-m relative-ns tl-ns ma5-ns grow">
-            Activism and Resources
-            <img
-              src="../assets/Arrow.svg"
               alt="arrow icon"
               class="mw3"
               style="fill: white"
             />
           </h1>
         </router-link>
-      </div>
-      <div>
-        <div class="flex flex-row-ns flex-column items-center justify-start align-start">
-          <div v-for="i in 3" :key="i" class="w-33-ns h5 ph4-ns ph2 grow">
-            <a
-              href="https://www.landgrabu.org"
+        <!-- <p class="f1-ns f5 mh5-ns lh-title-ns i">
+        Learn more about the process and team members
+      </p> -->
+        <div class="flex flex-row-ns flex-column justify-start items-start">
+          <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2 grow">
+            <router-link
+              to="/about"
               style="text-decoration: none; color: inherit"
             >
-              <h2 class="f2-ns f4">Land Grab U</h2>
+              <h2 class="f2-ns f4">Firstname Lastname</h2>
               <div
                 class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
                 style="background-color: #c5aa57"
@@ -138,48 +230,12 @@
                 ></div>
               </div>
               <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
-      <curved-border :color="'red'"></curved-border>
-    </div>
 
-    <div class="section white bg-lgct-red relative pa2">
-      <router-link to="/about" style="text-decoration: none; color: inherit">
-        <h1 class="f1-l f3-m relative-ns tl-ns ma5-ns grow">
-          About the Project
-          <img
-            src="../assets/Arrow-White.svg"
-            alt="arrow icon"
-            class="mw3"
-            style="fill: white"
-          />
-        </h1>
-      </router-link>
-      <!-- <p class="f1-ns f5 mh5-ns lh-title-ns i">
-        Learn more about the process and team members
-      </p> -->
-      <div class="flex flex-row-ns flex-column justify-start items-start">
-        <div v-for="i in 3" :key="i" class="w-33-ns ph3-ns ph2 grow">
-          <router-link to="/about" style="text-decoration: none; color: inherit">
-          <h2 class="f2-ns f4">Firstname Lastname</h2>
-          <div
-            class="w5-ns h5-ns h3 w3 br-100 mv4-ns dib"
-            style="background-color: #c5aa57"
-          >
-            <div
-              class="w5-ns h5-ns h3 w3 br-100"
-              style="background-color: #232621; transform: translate(5px, -5px)"
-            ></div>
-          </div>
-          <p class="f6">{{ ipsum.generateParagraphs(1) }}</p>
-          </router-link>
-        </div>
-      </div>
-    </div>
-
-    <Footer></Footer>
+      <Footer></Footer>
     </full-page>
   </div>
 </template>
@@ -191,8 +247,9 @@ import Footer from "./Footer";
 import MorrillAct from "./MorrillAct.vue";
 import StackedCard from "./StackedCard.vue";
 import CurvedBorder from "./CurvedBorder.vue";
-import RoundedCard from "./RoundedCard.vue"
-import Nav from "./Nav.vue"
+import RoundedCard from "./RoundedCard.vue";
+import LinkButton from "./LinkButton.vue";
+import Nav from "./Nav.vue";
 export default {
   name: "Landing",
   components: {
@@ -202,7 +259,8 @@ export default {
     StackedCard,
     CurvedBorder,
     RoundedCard,
-    Nav
+    Nav,
+    LinkButton,
   },
   data() {
     return {
@@ -218,12 +276,12 @@ export default {
           "#FEFCF5", //white
           "#AA4F37", //red
           "#FEFCF5", //white
-          "#000",    //black
-          "#FEFCF5", //white
+          "#000", //black
           "#AA4F37", //red
-          "#FEFCF5",
-          "#FEFCF5", //teal
-          "#70B9B2",
+          "#FEFCF5", //white
+          "#70B9B2", //teal
+          "#AA4F37", //red
+          "#FEFCF5", //white
           "#AA4F37",
         ],
 
