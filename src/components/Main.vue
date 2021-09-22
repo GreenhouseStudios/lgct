@@ -40,14 +40,14 @@
       <curved-border :color="'red'" :left="true"></curved-border>
     </div>
     <div class="section relative">
-      <rounded-card>
+      <rounded-card >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consectetur magnam voluptates autem totam assumenda delectus corrupti incidunt enim atque unde ut, temporibus dolore maxime! Dolore, molestias minus aspernatur temporibus non totam neque magni deleniti facere praesentium. Illum, odio aliquam? Debitis corporis quia dolore sint id iste minus repellendus ea.
       </rounded-card>
       <curved-border :color="'white'"></curved-border>
     </div>
     
     <div class="section relative bg-lgct-white">
-      <rounded-card :flip="true" :buttonLink="'Connecticut Timeline'" :heading="'Connecticut Timeline'">
+      <rounded-card :flip="true" :buttonLink="'Connecticut Timeline'" :heading="'Connecticut Timeline'" :img="require('../assets/LG_ct-silhouette.png')">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perspiciatis, consequatur facilis, est totam et alias eum ut dolorem sapiente sequi quod suscipit ab? Asperiores corporis at expedita, natus nostrum adipisci nobis necessitatibus non cum. Fugit aliquid, eius cupiditate mollitia cum iusto sequi itaque ipsa, magni, quidem necessitatibus obcaecati repellat?
       </rounded-card>
       <curved-border :color="'teal'"></curved-border>

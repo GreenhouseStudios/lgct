@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-column justify-center h-75 section">
-    <div class="tl pa4-l pa2 relative" :class="isFlipped">
+  <div class="flex flex-column justify-center section">
+    <div class="tl pa4-l pa2 relative" :class="isFlipped" :style="{ backgroundImage: 'url(' + img + ')' }" id="round-card">
       <h1 class="f1-l f3 mt5" v-if="!isTitle">{{ heading }}</h1>
       <h1 class="f-headline-l f3"  v-else>{{ heading }}</h1>
 
@@ -41,6 +41,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    img: {
+      type: String,
+      default: require("../assets/LG_usa-silhouette.png")
+    }
   },
   data() {
     return {
@@ -51,12 +55,12 @@ export default {
   computed: {
     isFlipped() {
       return this.flip
-        ? "container-flipped pr7-l pl6-l"
-        : "pl7-l pr6-l container";
+        ? "container-flipped pr7-l pl6-l " 
+        : "pl7-l pr6-l container "
     },
     isFlippedHeading(){
       return this.flip ? "tr" : "tl";
-    }
+    },
   },
 };
 </script>
@@ -113,5 +117,9 @@ button {
 }
 button:hover {
   background-color: #4d9ba3;
+}
+#round-card{
+  background-repeat: no-repeat;
+  background-size: 75%;
 }
 </style>
