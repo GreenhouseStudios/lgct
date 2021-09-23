@@ -19,9 +19,9 @@
             v-for="(card, index) in cards"
             :key="card.heading"
           >
-            <div class="flex flex-column items-center">
+            <div class="flex flex-column items-start ph7">
               <div class="cardTrigger"></div>
-              <timeline-card
+              <timeline-card-round
                 :heading="card.heading"
                 :body="card.body"
                 :fullBody="card.fullBody"
@@ -30,7 +30,7 @@
                 :index="index"
                 v-on:open-modal="openModal(index)"
               >
-              </timeline-card>
+              </timeline-card-round>
             </div>
           </div>
         </div>
@@ -45,7 +45,8 @@
 
 <script>
 import ipsum from "../ipsum.js";
-import TimelineCard from "../components/TimelineCard.vue";
+// import TimelineCard from "../components/TimelineCard.vue";
+import TimelineCardRound from "../components/TimelineCardRound.vue"
 import DetailModal from "../components/DetailModal.vue";
 import HomeLogo from "../components/HomeLogo.vue";
 import CurvedBorder from "../components/CurvedBorder.vue";
@@ -55,7 +56,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   components: {
-    TimelineCard,
+    // TimelineCard,
+    TimelineCardRound,
     CurvedBorder,
     DetailModal,
     HomeLogo,
