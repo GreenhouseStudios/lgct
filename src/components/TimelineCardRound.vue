@@ -4,61 +4,67 @@
     @mouseover="hover = true"
     @mouseleave="hover = false"
     class="flex justify-start items-start"
-    
   >
-  <div class="bg-lgct-white w3 h5 o-10 relative shadow-4" :class="{'card-bg': hover, 'card-exp': isExpanded}">
-      <!-- <div class="w5 h5 br-100 bg-white absolute dn" :class="{'card-circle': hover}"></div> -->
-  </div>
-    <!-- <div
-      v-show="isExpanded"
-      class="
-        fl-ns
-        relative
-        o-10
-        pv3
-        pl4-ns
-        pr5-ns
-        tl-ns
-        f3
-        shadow-4
-      "
+    <div
+      class="bg-lgct-white w3 h5 o-10 relative shadow-4 absolute"
+      :class="{ 'card-bg': hover, 'card-exp': isExpanded }"
     >
-      <h2 class="normal sans-serif i f2-ns f4">{{ date }}</h2>
-      <h1 class="f1-ns f3">{{ heading }}</h1>
-    </div> -->
-    <div class="tl mh7 mv4 absolute" id="pre-click-header" :class="{'content-clicked': isExpanded}">
+    
+    </div>
+ 
+    <div
+      class="tl mh7 mv4 z-1"
+      id="pre-click-header"
+      :class="{ 'content-clicked': isExpanded }"
+    >
       <h2 class="f3-ns f5 normal sans-serif i">{{ date }}</h2>
       <h1 class="f1-ns f3">{{ heading }}</h1>
 
       <div v-show="isExpanded" id="expanded-card-body">
-      <span
-        class="absolute bottom-0 right-0 hover-bg-light-blue w3 h3"
-        v-on:click.stop="showMore = true"
-        v-if="fullBody"
-        v-show="!showMore"
-        ><div class="relative f1">
-          <span><i class="fa fa-chevron-down"></i></span></div
-      ></span>
-      <span
-        class="absolute bottom-0 right-0 hover-bg-light-blue w3 h3"
-        v-on:click.stop="showMore = false"
-        v-if="fullBody"
-        v-show="showMore"
-        ><div class="relative f1">
-          <span><i class="fa fa-chevron-up"></i></span></div
-      ></span>
-      <div class="ma2">
-        <p class="tl" v-html="blocksToHTML({ blocks: body })"></p>
-        <p
+        <span
+          id="read-more-button"
+          class="
+            absolute
+            right-0
+            bg-moon-gray
+            br-100
+            hover-bg-light-blue
+          "
+          v-on:click.stop="showMore = true"
+          v-if="fullBody"
+          v-show="!showMore"
+          ><div class="relative flex justify-center items-center f2">
+            <span><i class="fa fa-2x fa-chevron-down"></i></span></div
+        ></span>
+        <span
+          id="read-less-button"
+          class="
+            absolute
+            right-0
+            bg-moon-gray
+            br-100
+            hover-bg-light-blue
+          "
+          v-on:click.stop="showMore = false"
           v-if="fullBody"
           v-show="showMore"
-          class="tl"
-          v-html="blocksToHTML({ blocks: fullBody })"
-        ></p>
+          ><div class="relative flex justify-center items-center f2">
+            <span><i class="fa fa-2x fa-chevron-up"></i></span></div
+        ></span>
+        <div class="ma2">
+          <p class="tl" v-html="blocksToHTML({ blocks: body })"></p>
+          <p
+            v-if="fullBody"
+            v-show="showMore"
+            class="tl"
+            v-html="blocksToHTML({ blocks: fullBody })"
+          ></p>
+        </div>
+        <div>
+          <button class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib mid-gray">Optional Button</button>
+        </div>
       </div>
     </div>
-    </div>
-    
   </div>
 </template>
 
@@ -67,7 +73,6 @@ import ipsum from "../ipsum.js";
 import client from "../sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "TimelineCardRound",
   components: {},
@@ -131,19 +136,36 @@ export default {
       if (event.stopPropagation) event.stopPropagation();
       this.isExpanded = false;
     },
-    onCardHover(){
-        console.log("heyyy")
-    }
+    onCardHover() {
+      console.log("heyyy");
+    },
   },
   mounted() {
-    // this.id = "card" + this.index;
-    gsap.to(".card-bg", {duration: 1, opacity: 0.5, width: '1000px', borderRadius: "0% 0% 50% 50%"})
+    gsap.to(".card-bg", {
+      duration: 1,
+      opacity: 0.5,
+      width: "1000px",
+      borderRadius: "0% 0% 50% 50%",
+    });
   },
-  updated () {
-    gsap.to(".card-bg", {duration: 1, opacity: 0.5, width: '1000px', borderRadius: "0% 150px 150px 0%"})
-    // gsap.to(".card-circle", {duration: 1, opacity: 0.5, right: '-13%', display: 'block'})
-    gsap.to(".content-clicked", {duration: 1, x: '-250px'})
-    gsap.to(".card-exp", {duration: 1, height: '800px', width: '1800px', x: '-300px', borderRadius: "0% 300px 300px 0%"})
+  updated() {
+    gsap.to(".card-bg", {
+      duration: 1,
+      opacity: 0.5,
+      width: "1000px",
+      borderRadius: "0% 150px 150px 0%",
+       ease: 'back'
+    });
+    
+    gsap.to(".content-clicked", { duration: 1, x: "-250px" ,  ease: 'back'});
+    gsap.to(".card-exp", {
+      duration: 1,
+      height: "800px",
+      width: "1800px",
+      x: "-300px",
+      borderRadius: "0% 300px 300px 0%",
+      ease: 'back'
+    });
   },
 };
 </script>
@@ -174,17 +196,21 @@ div.expanded {
     right: 0;
   }
 }
-.card-hover{
-    padding-right: 800px;
-    opacity: 0.4;
+.card-hover {
+  padding-right: 800px;
+  opacity: 0.4;
 }
-.card-circle{
+.card-circle {
   right: -13%;
 }
-.content-clicked{
-
+.content-clicked {
 }
-.card-exp{
-
+.card-exp {
+}
+#read-more-button {
+  right: -30%;
+}
+#read-less-button {
+  right: -30%;
 }
 </style>

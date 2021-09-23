@@ -8,6 +8,7 @@ import Involvement from '@/pages/Involvement'
 import About from '@/pages/About'
 import Resources from '@/pages/Resources'
 import Vignettes from '@/pages/Vignettes'
+import Preview from '@/components/Preview'
 import VueRouter from 'vue-router'
 Vue.use(
     VueRouter
@@ -21,7 +22,8 @@ const routes = [
     { path: "/about/", component: About },
     { path: "/resources/", component: Resources },
     { path: "/vignettes/", component: Vignettes },
-    { path: '/', component: Main },
+    {path: "/main/", component: Main},
+    { path: '/', component: Preview },
     { path: '*', component: Error },
 ]
 
