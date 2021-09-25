@@ -1,13 +1,28 @@
 <template>
-  <div>
+  <div class="h-100">
     <div
       class="tl pa4-l pa2 relative h-75"
       :class="isFlipped"
-      :style="{ backgroundImage: 'url(' + img + ')' }"
+      :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
+      v-if="img !== ''"
       id="round-card"
     >
-      <h1 class="f1-l f3 mt5" v-if="!isTitle">{{ heading }}</h1>
-      <h1 class="f-headline-l f3" v-else>{{ heading }}</h1>
+      <h1 class="f-headline-l f3" v-if="isTitle">{{ heading }}</h1>
+      <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
+
+      <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
+        <slot></slot>
+      </p>
+    </div>
+    <div
+      v-else
+      class="tl pa4-l pa2 relative h-75"
+      :class="isFlipped"
+      :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
+      id="round-card"
+    >
+      <h1 class="f-headline-l f3" v-if="isTitle">{{ heading }}</h1>
+      <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
 
       <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
         <slot></slot>
@@ -35,8 +50,12 @@ export default {
     },
     img: {
       type: String,
-      default: require("../assets/LG_usa-silhouette.png"),
+      default: ""
     },
+    bgColor: {
+      type: String,
+      default:"#e0ddd5"
+    }
   },
   data() {
     return {
@@ -60,20 +79,18 @@ export default {
 <style lang="scss" scoped>
 @media screen and (min-width: 600px) {
   .container {
-    background: #e0ddd5;
     width: 80%;
     position: relative;
     top: 13%;
     left: 0%;
-    border-radius: 0 300px 300px 0;
+    border-radius: 0 500px 500px 0;
     z-index: 1;
   }
   .container-flipped {
-    background: #e0ddd5;
     width: 80%;
     right: 0%;
     top: 13%;
-    border-radius: 300px 0 0 300px;
+    border-radius: 500px 0 0 500px;
     float: right;
     z-index: 1;
     padding-left: 15%;
@@ -81,14 +98,12 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .container {
-    background: #e0ddd5;
     padding-right: 30%;
     border-radius: 0 300px 300px 0;
     z-index: 1;
     height: 90%;
   }
   .container-flipped {
-    background: #e0ddd5;
     border-radius: 300px 0 0 300px;
     float: right;
     z-index: 1;
@@ -96,20 +111,6 @@ export default {
     height: 90%;
   }
 }
-// button {
-//   z-index: 3;
-//   position: relative;
-//   left: 45%;
-//   top: 6%;
-//   border-style: none;
-//   background: #70b9b2;
-//   border-radius: 16px;
-//   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
-//   transition: 0.4s;
-// }
-// button:hover {
-//   background-color: #4d9ba3;
-// }
 #round-card {
   background-repeat: no-repeat;
   background-size: 65%;

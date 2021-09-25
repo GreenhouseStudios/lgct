@@ -5,7 +5,7 @@
       id="hero"
       class="w-50-ns w-70 ma6-ns mv7"
     />
-    <h1 class="sans-serif f1">LandGrabCT.org will be available on October 11th, 2021</h1>
+    <h1 class=" f1">LandGrabCT.org will be available on October 11th, 2021</h1>
     <curved-border :color="'red'"></curved-border>
   </div>
 </template>
@@ -27,4 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
 </style>

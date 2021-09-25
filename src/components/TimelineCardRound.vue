@@ -1,35 +1,40 @@
 <template>
   <div
     @click="expandCard"
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
-    class="flex justify-start items-start"
+    @mouseover="onCardHover(true)"
+    @mouseleave="onCardHover(false)"
+    class="pa3 br--right w-100 h-100"
+    id="root"
   >
+    <div class="bg-lgct-white w-100 h-100 z-2"></div>
+    <!-- <div
+        class="bg-lgct-white w3 h5 o-10 absolute shadow-4 card-bg z-0"
+        :class="{ hovered: hover, 'card-exp': isExpanded }"
+        id="card-background"
+      ></div> -->
+
     <div
-      class="bg-lgct-white w3 h5 o-10 relative shadow-4 absolute"
-      :class="{ 'card-bg': hover, 'card-exp': isExpanded }"
-    >
-    
-    </div>
- 
-    <div
-      class="tl mh7 mv4 z-1"
+      class="tl mh7-l mh4 mv4 z-1"
       id="pre-click-header"
       :class="{ 'content-clicked': isExpanded }"
     >
-      <h2 class="f3-ns f5 normal sans-serif i">{{ date }}</h2>
-      <h1 class="f1-ns f3">{{ heading }}</h1>
-
+      <div
+        :class="{
+          'dark-gray': hover || isExpanded,
+          'lgct-white': !hover && !isExpanded,
+        }"
+      >
+        <h2 class="f3-ns f5 normal sans-serif i">
+          {{ date }}
+        </h2>
+        <h1 class="f1-ns f3">
+          {{ heading }}
+        </h1>
+      </div>
       <div v-show="isExpanded" id="expanded-card-body">
         <span
           id="read-more-button"
-          class="
-            absolute
-            right-0
-            bg-moon-gray
-            br-100
-            hover-bg-light-blue
-          "
+          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue"
           v-on:click.stop="showMore = true"
           v-if="fullBody"
           v-show="!showMore"
@@ -38,13 +43,7 @@
         ></span>
         <span
           id="read-less-button"
-          class="
-            absolute
-            right-0
-            bg-moon-gray
-            br-100
-            hover-bg-light-blue
-          "
+          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue"
           v-on:click.stop="showMore = false"
           v-if="fullBody"
           v-show="showMore"
@@ -61,7 +60,11 @@
           ></p>
         </div>
         <div>
-          <button class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib mid-gray">Optional Button</button>
+          <button
+            class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib mid-gray"
+          >
+            Optional Button
+          </button>
         </div>
       </div>
     </div>
@@ -113,6 +116,7 @@ export default {
       blocksToHTML: require("@sanity/block-content-to-html"),
       showMore: false,
       hover: false,
+      timeline: null,
     };
   },
   computed: {
@@ -123,6 +127,33 @@ export default {
     },
     blockChildren() {
       return this.body.map((x) => x.children).filter((x) => x.text !== "\n");
+    },
+    width() {
+      return window.innerWidth;
+    },
+    containerHeight() {
+      if (this.rawHeight < 30) return "30em";
+      else return this.rawHeight + "em";
+    },
+    rawHeight() {
+      return Math.floor(
+        this.body
+          .map((x) =>
+            x.children
+              .map((y) => y.text.split(" ").length)
+              .reduce(function (acc, a) {
+                return acc + a;
+              })
+          )
+          .reduce(function (acc, a) {
+            return acc + a;
+          }) / 8
+      );
+    },
+    bodyChildren() {
+      return this.body.map((x) =>
+        x.children.map((y) => y.text.split(" ").length)
+      );
     },
   },
   methods: {
@@ -136,36 +167,42 @@ export default {
       if (event.stopPropagation) event.stopPropagation();
       this.isExpanded = false;
     },
-    onCardHover() {
+    onCardHover(state) {
       console.log("heyyy");
+      if (state != this.hover) {
+        this.hover = state;
+        this.timeline.reversed(!this.timeline.reversed());
+      }
     },
   },
-  mounted() {
-    gsap.to(".card-bg", {
-      duration: 1,
-      opacity: 0.5,
-      width: "1000px",
-      borderRadius: "0% 0% 50% 50%",
-    });
-  },
   updated() {
-    gsap.to(".card-bg", {
+    this.timeline = gsap.timeline().to(".hovered.card-bg", {
       duration: 1,
       opacity: 0.5,
-      width: "1000px",
+      width: "80vw",
       borderRadius: "0% 150px 150px 0%",
-       ease: 'back'
+      ease: "back",
     });
-    
-    gsap.to(".content-clicked", { duration: 1, x: "-250px" ,  ease: 'back'});
-    gsap.to(".card-exp", {
-      duration: 1,
-      height: "800px",
-      width: "1800px",
-      x: "-300px",
-      borderRadius: "0% 300px 300px 0%",
-      ease: 'back'
-    });
+
+    gsap.to(".content-clicked", { duration: 1, x: "-10vw", ease: "back" });
+    if (this.width > 600)
+      gsap.to(".card-exp", {
+        duration: 1,
+        height: this.containerHeight,
+        width: "100vw",
+        x: "-20%",
+        borderRadius: "0% 500px 500px 0%",
+        ease: "back",
+      });
+    else
+      gsap.to(".card-exp", {
+        duration: 1,
+        height: "150vh",
+        width: "100vw",
+        x: "-10%",
+        borderRadius: "0% 200px 200px 0%",
+        ease: "back",
+      });
   },
 };
 </script>
@@ -212,5 +249,28 @@ div.expanded {
 }
 #read-less-button {
   right: -30%;
+}
+#root {
+  border-radius: 0 10000px 10000px 0;
+  // clip-path: polygon(0 0, 10px 0, 10px 100%, 0% 100%);
+  background-size: 10%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2) 100%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-position: right;
+  transition: 1s ease-out;
+  
+}
+#root:hover {
+  transition: 1s ease-out;
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(255, 255, 255, 0.2),
+  //   rgba(255, 255, 255, 0.2) 10%
+  // );
+  background-size: 109%;
 }
 </style>

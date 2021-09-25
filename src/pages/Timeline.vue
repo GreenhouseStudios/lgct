@@ -15,11 +15,11 @@
       <div class="bg-lgct-red">
         <div v-if="cards !== null" class="w-100">
           <div
-            class="section pv6-ns pv3"
+            class="pv6-ns pv3 mb5"
             v-for="(card, index) in cards"
             :key="card.heading"
           >
-            <div class="flex flex-column items-start ph7">
+            <div class="flex flex-column items-start ph7-l ph4">
               <div class="cardTrigger"></div>
               <timeline-card-round
                 :heading="card.heading"
