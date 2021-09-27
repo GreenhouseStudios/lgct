@@ -19,8 +19,7 @@
             v-for="(card, index) in cards"
             :key="card.heading"
           >
-            <div class="flex flex-column items-start ph7-l ph4">
-              <div class="cardTrigger"></div>
+            <div class="flex flex-column items-start ph7-l pl5 pr6">
               <timeline-card-round
                 :heading="card.heading"
                 :body="card.body"

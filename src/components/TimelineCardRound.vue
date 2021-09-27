@@ -4,13 +4,9 @@
     @mouseover="onCardHover(true)"
     @mouseleave="onCardHover(false)"
     class="pa5 br--right w-100 h-100"
-    :class="{'root': !isExpanded, 'root-expanded': isExpanded}"
+    :class="{ root: !isExpanded, 'root-expanded': isExpanded }"
   >
-
-    <div
-      class="tl z-1 pa2"
-      :class="{ 'content-clicked': isExpanded }"
-    >
+    <div class="tl z-1 pa2 pr6-m" :class="{ 'content-clicked': isExpanded }">
       <div
         :class="{
           'dark-gray': hover || isExpanded,
@@ -25,24 +21,6 @@
         </h1>
       </div>
       <div v-show="isExpanded" id="expanded-card-body">
-        <span
-          id="read-more-button"
-          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue dn db-l"
-          v-on:click.stop="toggleReadMore"
-          v-if="fullBody"
-          v-show="!showMore"
-          ><div class="relative flex justify-center items-center f2">
-            <span><i class="fa fa-2x fa-chevron-down"></i></span></div
-        ></span>
-        <span
-          id="read-less-button"
-          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue dn db-l"
-          v-on:click.stop="toggleReadMore"
-          v-if="fullBody"
-          v-show="showMore"
-          ><div class="relative flex justify-center items-center f2">
-            <span><i class="fa fa-2x fa-chevron-up"></i></span></div
-        ></span>
         <div class="ma2">
           <p class="tl" v-html="blocksToHTML({ blocks: body })"></p>
           <p
@@ -52,6 +30,26 @@
             v-html="blocksToHTML({ blocks: fullBody })"
           ></p>
         </div>
+
+        <span
+          id="read-more-button"
+          class="relative right-0 br-100 hover-bg-light-blue"
+          v-on:click.stop="toggleReadMore"
+          v-if="fullBody"
+          v-show="!showMore"
+          ><div class="relative flex justify-center items-center f2">
+            <span><i class="fa fa-lg fa-chevron-down"></i></span></div
+        ></span>
+        <span
+          id="read-less-button"
+          class="relative right-0 br-100 hover-bg-light-blue"
+          v-on:click.stop="toggleReadMore"
+          v-if="fullBody"
+          v-show="showMore"
+          ><div class="relative flex justify-center items-center f2">
+            <span><i class="fa fa-lg fa-chevron-up"></i></span></div
+        ></span>
+
         <div>
           <button
             class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib mid-gray"
@@ -156,9 +154,8 @@ export default {
     collapseCard() {
       this.isExpanded = false;
     },
-    toggleReadMore(){
+    toggleReadMore() {
       this.showMore = !this.showMore;
-
     },
     onCardHover(state) {
       console.log("heyyy");
@@ -177,8 +174,12 @@ export default {
       ease: "back",
     });
 
-    // gsap.to(".content-clicked", { duration: 1, x: "-8vw", ease: "back" });
-    gsap.to(".root-expanded", { duration: 1, x: "-10vw", width: "70vw", ease: "back" });
+    gsap.to(".root-expanded", {
+      duration: 1,
+      x: "-10vw",
+      width: "70vw",
+      ease: "back",
+    });
   },
 };
 </script>
@@ -217,7 +218,6 @@ div.expanded {
   right: -13%;
 }
 .content-clicked {
- 
 }
 .card-exp {
 }
@@ -243,7 +243,7 @@ div.expanded {
 .root:hover {
   background-position: left bottom;
 }
-.root-expanded{
+.root-expanded {
   border-radius: 0 10000px 10000px 0;
   // clip-path: polygon(0 0, 10px 0, 10px 100%, 0% 100%);
   background-size: 200% !important;
