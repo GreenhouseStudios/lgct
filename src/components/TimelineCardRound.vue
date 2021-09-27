@@ -4,7 +4,7 @@
     @mouseover="onCardHover(true)"
     @mouseleave="onCardHover(false)"
     class="pa3 br--right w-100 h-100"
-    id="root"
+    :class="{'root': !isExpanded, 'root-expanded': isExpanded}"
   >
     <div class="bg-lgct-white w-100 h-100 z-2"></div>
     <!-- <div
@@ -158,13 +158,9 @@ export default {
   },
   methods: {
     expandCard() {
-      event.cancelBubble = true;
-      if (event.stopPropagation) event.stopPropagation();
       this.isExpanded = true;
     },
     collapseCard() {
-      event.cancelBubble = true;
-      if (event.stopPropagation) event.stopPropagation();
       this.isExpanded = false;
     },
     onCardHover(state) {
@@ -250,27 +246,31 @@ div.expanded {
 #read-less-button {
   right: -30%;
 }
-#root {
+.root {
   border-radius: 0 10000px 10000px 0;
   // clip-path: polygon(0 0, 10px 0, 10px 100%, 0% 100%);
-  background-size: 10%;
+  background-size: 200% !important;
   background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.2) 100%,
+    to right,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4) 52%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  background-position: right bottom;
+  transition: all 0.6s cubic-bezier(0.68, 0.35, 0.265, 1);
+}
+.root:hover {
+  background-position: left bottom;
+}
+.root-expanded{
+  border-radius: 0 10000px 10000px 0;
+  // clip-path: polygon(0 0, 10px 0, 10px 100%, 0% 100%);
+  background-size: 200% !important;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4) 100%,
     rgba(255, 255, 255, 0) 100%
   );
-  background-position: right;
-  transition: 1s ease-out;
-  
-}
-#root:hover {
-  transition: 1s ease-out;
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(255, 255, 255, 0.2),
-  //   rgba(255, 255, 255, 0.2) 10%
-  // );
-  background-size: 109%;
 }
 </style>
