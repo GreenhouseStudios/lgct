@@ -3,19 +3,12 @@
     @click="expandCard"
     @mouseover="onCardHover(true)"
     @mouseleave="onCardHover(false)"
-    class="pa3 br--right w-100 h-100"
+    class="pa5 br--right w-100 h-100"
     :class="{'root': !isExpanded, 'root-expanded': isExpanded}"
   >
-    <div class="bg-lgct-white w-100 h-100 z-2"></div>
-    <!-- <div
-        class="bg-lgct-white w3 h5 o-10 absolute shadow-4 card-bg z-0"
-        :class="{ hovered: hover, 'card-exp': isExpanded }"
-        id="card-background"
-      ></div> -->
 
     <div
-      class="tl mh7-l mh4 mv4 z-1"
-      id="pre-click-header"
+      class="tl z-1 pa2"
       :class="{ 'content-clicked': isExpanded }"
     >
       <div
@@ -34,8 +27,8 @@
       <div v-show="isExpanded" id="expanded-card-body">
         <span
           id="read-more-button"
-          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue"
-          v-on:click.stop="showMore = true"
+          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue dn db-l"
+          v-on:click.stop="toggleReadMore"
           v-if="fullBody"
           v-show="!showMore"
           ><div class="relative flex justify-center items-center f2">
@@ -43,8 +36,8 @@
         ></span>
         <span
           id="read-less-button"
-          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue"
-          v-on:click.stop="showMore = false"
+          class="absolute right-0 bg-moon-gray br-100 hover-bg-light-blue dn db-l"
+          v-on:click.stop="toggleReadMore"
           v-if="fullBody"
           v-show="showMore"
           ><div class="relative flex justify-center items-center f2">
@@ -163,6 +156,10 @@ export default {
     collapseCard() {
       this.isExpanded = false;
     },
+    toggleReadMore(){
+      this.showMore = !this.showMore;
+
+    },
     onCardHover(state) {
       console.log("heyyy");
       if (state != this.hover) {
@@ -180,25 +177,8 @@ export default {
       ease: "back",
     });
 
-    gsap.to(".content-clicked", { duration: 1, x: "-10vw", ease: "back" });
-    if (this.width > 600)
-      gsap.to(".card-exp", {
-        duration: 1,
-        height: this.containerHeight,
-        width: "100vw",
-        x: "-20%",
-        borderRadius: "0% 500px 500px 0%",
-        ease: "back",
-      });
-    else
-      gsap.to(".card-exp", {
-        duration: 1,
-        height: "150vh",
-        width: "100vw",
-        x: "-10%",
-        borderRadius: "0% 200px 200px 0%",
-        ease: "back",
-      });
+    // gsap.to(".content-clicked", { duration: 1, x: "-8vw", ease: "back" });
+    gsap.to(".root-expanded", { duration: 1, x: "-10vw", width: "70vw", ease: "back" });
   },
 };
 </script>
@@ -237,6 +217,7 @@ div.expanded {
   right: -13%;
 }
 .content-clicked {
+ 
 }
 .card-exp {
 }
