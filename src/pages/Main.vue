@@ -36,7 +36,11 @@
       >
         <div class="flex flex-column justify-center align-center">
           <h1 class="f1 white">Mapping the Impact</h1>
-          <img class="mw-30" :src="require('/src/assets/map.png')" />
+          <!-- <img class="mw-30" :src="require('/src/assets/map.png')" /> -->
+          <!-- <div style="background-image: url('require')"></div> -->
+          <video autoplay loop>
+            <source :src="require('../assets/Film - 1822.mp4')" loop type="video/mp4">
+          </video>
         </div>
         <curved-border :color="'red'" :left="true"></curved-border>
       </div>
