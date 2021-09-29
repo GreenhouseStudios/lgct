@@ -1,21 +1,12 @@
 <template>
   <div class="section relative">
-    <!-- <Nav></Nav> -->
+    <div class="flex justify-center items-center h-100">
     <img
       :src="require('/src/assets/lgct-logo.png')"
       id="hero"
       class="w-50-ns w-70 ma6-ns mv7"
     />
-    <!-- <div
-      class="absolute bottom-0 right-0 w-100 bg-lgct-red"
-      style="height: 10vh"
-    >
-      <div
-        id="curved-corner-bottomright"
-        class="fr relative"
-        style="top: -100px"
-      ></div>
-    </div> -->
+    </div>
     <curved-border :color="'red'"></curved-border>
   </div>
 </template>
