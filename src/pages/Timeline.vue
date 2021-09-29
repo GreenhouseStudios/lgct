@@ -1,54 +1,60 @@
 <template>
-    <div class="bg-lgct-white relative">
-      <home-logo class="z-1"></home-logo>
-      <div class="section flex justify-center items-center relative">
-        <h1 class="f-headline-l f1 serif ma0">
+  <div class="bg-lgct-white relative">
+    <home-logo class="z-1"></home-logo>
+    <div class="section relative">
+      <div class="h-100 flex justify-center items-end">
+        <!-- <h1 class="f-headline-l f1 serif ma0">
           {{ this.$route.params.title }}
-        </h1>
-        <i
-          class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
-          style="transform: scale(2); z-index: 100"
-        ></i>
-        <curved-border :tall="true"></curved-border>
+        </h1> -->
+        <rounded-card-vertical>
+          {{this.$route.params.title}}
+        </rounded-card-vertical>
       </div>
+      <i
+        class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
+        style="transform: scale(2); z-index: 100"
+      ></i>
+      <curved-border :tall="true"></curved-border>
+    </div>
 
-      <div class="bg-lgct-red">
-        <div v-if="cards !== null" class="w-100">
-          <div
-            class="pv6-ns pv3 mb5"
-            v-for="(card, index) in cards"
-            :key="card.heading"
-          >
-            <div class="flex flex-column items-start ph7-l pl5 pr6">
-              <timeline-card-round
-                :heading="card.heading"
-                :body="card.body"
-                :fullBody="card.fullBody"
-                :date="card.date"
-                :img="card.img"
-                :index="index"
-                v-on:open-modal="openModal(index)"
-              >
-              </timeline-card-round>
-            </div>
+    <div class="bg-lgct-red">
+      <div v-if="cards !== null" class="w-100">
+        <div
+          class="pv6-ns pv3 mb5"
+          v-for="(card, index) in cards"
+          :key="card.heading"
+        >
+          <div class="flex flex-column items-start ph7-l pl5 pr6">
+            <timeline-card-round
+              :heading="card.heading"
+              :body="card.body"
+              :fullBody="card.fullBody"
+              :date="card.date"
+              :img="card.img"
+              :index="index"
+              v-on:open-modal="openModal(index)"
+            >
+            </timeline-card-round>
           </div>
         </div>
       </div>
-      <detail-modal
-        :showModal="showModal"
-        :card="activeCard"
-        v-on:close-modal="closeModal()"
-      ></detail-modal>
     </div>
+    <detail-modal
+      :showModal="showModal"
+      :card="activeCard"
+      v-on:close-modal="closeModal()"
+    ></detail-modal>
+  </div>
 </template>
 
 <script>
 import ipsum from "../ipsum.js";
 // import TimelineCard from "../components/TimelineCard.vue";
-import TimelineCardRound from "../components/TimelineCardRound.vue"
+import TimelineCardRound from "../components/TimelineCardRound.vue";
 import DetailModal from "../components/DetailModal.vue";
 import HomeLogo from "../components/HomeLogo.vue";
 import CurvedBorder from "../components/CurvedBorder.vue";
+import RoundedCardVertical from "../components/RoundedCardVertical.vue"
 import axios from "axios";
 import _ from "lodash";
 import { gsap } from "gsap";
@@ -60,6 +66,7 @@ export default {
     CurvedBorder,
     DetailModal,
     HomeLogo,
+    RoundedCardVertical
   },
   props: {
     timelineTitle: {
@@ -140,5 +147,8 @@ export default {
   transform: translateX(30vw) translateY(15vh);
   height: 1000vh;
   z-index: -10;
+}
+.section{
+  height: 100vh;
 }
 </style>
