@@ -1,6 +1,6 @@
 <template>
   <div class="section bg-lgct-red relative">
-    <div class="flex justify-center align-center items-center h-100">
+    <div class="flex justify-center items-center h-100">
     <stacked-card>
       <template v-slot:heading>
         What is the Morrill Act?

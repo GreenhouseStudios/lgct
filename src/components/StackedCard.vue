@@ -1,12 +1,25 @@
 <template>
-  <div class="z-1 ph5-l ph3 ml7-l mh2-m">
+  <div class="z-1 w-75-l h-90-l mb3 ph3">
     <div
-      class="br4 pv4-ns pv2 ph5-l ph3 shadow-4 db-l h-100"
+      class="br4 ph4-l ph4-m ph3 pv2 shadow-4 db-l"
       id="main-card"
       :class="mainColor"
     >
       <div
-        class="white w-40-l pa4-l pa2 br4 fl-ns shadow-4 relative-ns"
+        class="
+          white
+          w-40-l
+          pa4-l
+          pa2
+          ma3
+          mv3-ns
+          mv1
+          mb0-l
+          br4
+          fl-ns
+          shadow-4
+          relative-ns
+        "
         id="title-card"
         :class="headColor"
       >
@@ -15,7 +28,7 @@
         </h1>
       </div>
       <div class="tl">
-        <p class="f2-l i">
+        <p class="f2-l f4-m f6">
           <slot></slot>
         </p>
       </div>
@@ -45,9 +58,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#title-card {
-  left: -20%;
-  shape-outside: polygon(0% 0, 55% 0%, 55% 100%, 0% 100%);
-  shape-margin: 1rem;
+@media (min-width: 1000px) {
+  #title-card {
+    position: relative;
+    left: -20%;
+    shape-outside: polygon(0% 0, 55% 0%, 55% 100%, 0% 100%);
+    shape-margin: 1rem;
+  }
+  p{
+    font-size: 2vw;
+  }
+  h1{
+    font-size: 3vw;
+  }
 }
+@media (max-width: 600px) {
+  #title-card {
+    margin-left: -7%;
+    margin-right: -7%;
+  }
+  #main-card {
+  }
+}
+
+// @media (min-width: 2000px) {
+//   h1{
+//     font-size: 3em;
+//   }
+//   p{
+//     font-size: 3em;
+//   }
+// }
 </style>
