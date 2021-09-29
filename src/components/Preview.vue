@@ -1,11 +1,13 @@
 <template>
   <div class="section relative">
+    <div class="flex flex-column justify-center items-center h-100"> 
     <img
       :src="require('/src/assets/lgct-logo.png')"
       id="hero"
-      class="w-50-ns w-70 ma6-ns mv7"
+      class="w-40-l w-70"
     />
-    <h1 class=" f1">LandGrabCT.org will be available on October 11th, 2021</h1>
+    <h1 class="tc pv4 f1-l f3">Coming October 11th, 2021</h1>
+    </div>
     <curved-border :color="'red'"></curved-border>
   </div>
 </template>
@@ -28,6 +30,9 @@ export default {
 
 <style lang="scss" scoped>
 h1{
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: Helvetica, sans-serif !important;
+}
+.section{
+  height: 100vh;
 }
 </style>
