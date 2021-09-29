@@ -74,8 +74,8 @@ export default {
 }
 @media (max-width: 600px) {
   #title-card {
-    margin-left: -7%;
-    margin-right: -7%;
+    margin-left: -10%;
+    margin-right: -10%;
   }
   #main-card {
   }
