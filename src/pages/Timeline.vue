@@ -6,9 +6,10 @@
         <!-- <h1 class="f-headline-l f1 serif ma0">
           {{ this.$route.params.title }}
         </h1> -->
-        <rounded-card-vertical>
+        <!-- <rounded-card-vertical>
           {{this.$route.params.title}}
-        </rounded-card-vertical>
+        </rounded-card-vertical> -->
+        <rounded-card :isTitle="true" :heading="this.$route.params.title" class="fl"></rounded-card>
       </div>
       <i
         class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"
@@ -22,17 +23,12 @@
         <div
           class="pv6-ns pv3 mb5"
           v-for="(card, index) in cards"
-          :key="card.heading"
+          :key="index"
         >
           <div class="flex flex-column items-start ph7-l pl5 pr6">
             <timeline-card-round
-              :heading="card.heading"
-              :body="card.body"
-              :fullBody="card.fullBody"
-              :date="card.date"
-              :img="card.img"
-              :index="index"
-              v-on:open-modal="openModal(index)"
+              :event="card"
+              v-on:open-modal="openModal(post)"
             >
             </timeline-card-round>
           </div>
@@ -49,24 +45,24 @@
 
 <script>
 import ipsum from "../ipsum.js";
-// import TimelineCard from "../components/TimelineCard.vue";
 import TimelineCardRound from "../components/TimelineCardRound.vue";
 import DetailModal from "../components/DetailModal.vue";
 import HomeLogo from "../components/HomeLogo.vue";
 import CurvedBorder from "../components/CurvedBorder.vue";
-import RoundedCardVertical from "../components/RoundedCardVertical.vue"
+import RoundedCard from "../components/RoundedCard.vue"
 import axios from "axios";
 import _ from "lodash";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   components: {
-    // TimelineCard,
     TimelineCardRound,
     CurvedBorder,
     DetailModal,
     HomeLogo,
-    RoundedCardVertical
+    RoundedCard
+    // RoundedCardVertical
+
   },
   props: {
     timelineTitle: {
@@ -92,8 +88,9 @@ export default {
     };
   },
   methods: {
-    openModal(index) {
-      this.activeCard = this.cards[index];
+    openModal(post) {
+      // this.activeCard = this.cards[index];
+      console.log(post)
       this.showModal = true;
       console.log("show modal");
     },
@@ -107,21 +104,30 @@ export default {
     this.cards = [];
     axios
       .get(
-        `https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2CfullBody%2Ccitations%2Cdate%2CmainImage%2C%20categories%0A%7D&%24keyword=%22${this.$route.params.title}%22`
+        `https://hl710q4f.api.sanity.io/v1/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%20%26%26%20%24keyword%20in%20categories%5B%5D-%3Etitle%5D%20%7C%20order(date)%7B%0A%20%20title%2Cbody%2CfullBody%2Ccitations%2Cdate%2CmainImage%2CchildPosts%2C_id%2C%20categories%0A%7D&%24keyword=%22${this.$route.params.title}%22`
       )
       .then(function (response) {
         const result = response.data.result;
         console.log(result);
         for (let i = 0; i < result.length; i++) {
           $vm.cards.push({
+            id: result[i]._id,
             heading: result[i].title,
             body: result[i].body,
             fullBody: result[i].fullBody,
             date: result[i].date ? result[i].date.substring(0, 4) : "1492",
             img: result[i].mainImage,
             citations: result[i].citations,
+            childPosts: result[i].childPosts
           });
         }
+        $vm.cards.forEach((el) =>{
+          if(el.childPosts){
+            for(var i = 0; i < el.childPosts.length; i++){
+              el.childPosts[i] = $vm.cards.find(x => x.id === el.childPosts[i]._ref)
+            }
+          }
+        })
         // $vm.fp.destroy()
         // $vm.fp.reBuild();
       });

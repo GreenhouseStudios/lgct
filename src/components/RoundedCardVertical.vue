@@ -1,6 +1,6 @@
 <template>
-    <div id="rounded-card-vertical" class="bg-moon-gray w-50-l w-90 pa2 h-75 flex items-center justify-center shadow-4 z-0">
-        <h1 class="f-headline-l f1 mb7">
+    <div id="rounded-card-vertical" class="bg-light-gray w-66-l w-90 pa4 flex items-center justify-center shadow-4 z-0" style="height: 85%">
+        <h1 class="f-headline-l f1 mb7 pa4">
         <slot></slot>
         </h1>
     </div>

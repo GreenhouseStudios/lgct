@@ -14,20 +14,20 @@
         }"
       >
         <h2 class="f3-ns f5 normal sans-serif i">
-          {{ date }}
+          {{ event.date }}
         </h2>
         <h1 class="f1-ns f3">
-          {{ heading }}
+          {{ event.heading }}
         </h1>
       </div>
       <div v-show="isExpanded" id="expanded-card-body">
         <div class="ma2">
-          <p class="tl" v-html="blocksToHTML({ blocks: body })"></p>
+          <p class="tl" v-html="blocksToHTML({ blocks: event.body })"></p>
           <p
-            v-if="fullBody"
+            v-if="event.fullBody"
             v-show="showMore"
             class="tl"
-            v-html="blocksToHTML({ blocks: fullBody })"
+            v-html="blocksToHTML({ blocks: event.fullBody })"
           ></p>
         </div>
 
@@ -35,7 +35,7 @@
           id="read-more-button"
           class="relative right-0 br-100 hover-bg-light-blue"
           v-on:click.stop="toggleReadMore"
-          v-if="fullBody"
+          v-if="event.fullBody"
           v-show="!showMore"
           ><div class="relative flex justify-center items-center f2">
             <span><i class="fa fa-lg fa-chevron-down"></i></span></div
@@ -44,17 +44,20 @@
           id="read-less-button"
           class="relative right-0 br-100 hover-bg-light-blue"
           v-on:click.stop="toggleReadMore"
-          v-if="fullBody"
+          v-if="event.fullBody"
           v-show="showMore"
           ><div class="relative flex justify-center items-center f2">
             <span><i class="fa fa-lg fa-chevron-up"></i></span></div
         ></span>
 
-        <div>
+        <div v-if="event.childPosts">
           <button
+            v-for="post in event.childPosts"
+            :key="post.id"
+            @click="showModal(post)"
             class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib mid-gray"
           >
-            Optional Button
+            {{ post.heading }}
           </button>
         </div>
       </div>
@@ -71,6 +74,9 @@ export default {
   name: "TimelineCardRound",
   components: {},
   props: {
+    event: {
+      type: Object,
+    },
     date: {
       type: String,
       default: "1492",
@@ -148,6 +154,9 @@ export default {
     },
   },
   methods: {
+    showModal(post){
+      this.$emit('open-modal',post);
+    },
     expandCard() {
       this.isExpanded = true;
     },

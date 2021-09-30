@@ -4,7 +4,7 @@
       <div>
         <button
           @click="$emit('close-modal')"
-          class="b f3 bn w3 h3 fixed top-1 right-1"
+          class="b f3 bn w3 h3 fixed top-1 right-1 z-4"
         >
           X
         </button>
