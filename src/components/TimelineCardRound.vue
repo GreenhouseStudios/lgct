@@ -22,7 +22,7 @@
       </div>
       <div v-show="isExpanded" id="expanded-card-body">
         <div class="ma2">
-          <p class="tl" v-html="blocksToHTML({ blocks: event.body })"></p>
+          <p class="tl lh-copy fw8 f5" v-html="blocksToHTML({ blocks: event.body })"></p>
           <p
             v-if="event.fullBody"
             v-show="showMore"
