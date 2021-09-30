@@ -1,7 +1,7 @@
 <template>
   <div class="z-1 w-75-l h-90-l mb3 ph3">
     <div
-      class="br4 ph4-l ph4-m ph3 pv2 shadow-4 db-l"
+      class="br4 ph5-l ph4-m ph3 pv2 shadow-4 db-l"
       id="main-card"
       :class="mainColor"
     >
@@ -27,7 +27,7 @@
           <slot name="heading"></slot>
         </h1>
       </div>
-      <div class="tl">
+      <div class="tl lh-title">
         <p class="f2-l f4-m f6">
           <slot></slot>
         </p>
@@ -66,10 +66,10 @@ export default {
     shape-margin: 1rem;
   }
   p{
-    font-size: 2vw;
+    font-size: 1.75vw;
   }
   h1{
-    font-size: 3vw;
+    font-size: 2vw;
   }
 }
 @media (max-width: 600px) {

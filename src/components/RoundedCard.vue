@@ -1,13 +1,13 @@
 <template>
-  <div class="h-100">
+  <div class="h-100 relative">
     <div
-      class="tl pa4-l pa2 relative h-75"
+      class="tl pa4-l pa2 relative h-75 shadow-4 right-0"
       :class="isFlipped"
       :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
       v-if="img !== ''"
       id="round-card"
     >
-      <h1 class="f-headline-l f3" v-if="isTitle">{{ heading }}</h1>
+      <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
       <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
 
       <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
@@ -16,12 +16,12 @@
     </div>
     <div
       v-else
-      class="tl pa4-l pa2 relative h-75"
+      class="tl pa4-l pa2 relative h-75 left-0 shadow-4"
       :class="isFlipped"
       :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
       id="round-card"
     >
-      <h1 class="f-headline-l f3" v-if="isTitle">{{ heading }}</h1>
+      <h1 class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
       <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
 
       <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">

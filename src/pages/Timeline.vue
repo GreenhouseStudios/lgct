@@ -2,14 +2,11 @@
   <div class="bg-lgct-white relative">
     <home-logo class="z-1"></home-logo>
     <div class="section relative">
-      <div class="h-100 flex justify-center items-end">
-        <!-- <h1 class="f-headline-l f1 serif ma0">
-          {{ this.$route.params.title }}
-        </h1> -->
+      <div class="h-75 pt5 tr">
         <!-- <rounded-card-vertical>
           {{this.$route.params.title}}
         </rounded-card-vertical> -->
-        <rounded-card :isTitle="true" :heading="this.$route.params.title" class="fl"></rounded-card>
+        <rounded-card :isTitle="true" :heading="this.$route.params.title"></rounded-card>
       </div>
       <i
         class="fa fa-chevron-down absolute bottom-2 mb4 lgct-white"

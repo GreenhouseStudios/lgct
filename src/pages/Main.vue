@@ -113,7 +113,7 @@
         <curved-border :color="'gold'"></curved-border>
       </div>
 
-      <div class="section white bg-lgct-red relative pa2">
+      <div class="section white bg-lgct-red relative">
         <rounded-card
           :isTitle="true"
           :heading="'About the Project'"
@@ -163,7 +163,7 @@ export default {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         scrollBar: true,
         menu: "#menu",
-        autoScrolling: false,
+        autoScrolling: true,
         fitToSection: false,
         sectionsColor: [
           "#FEFCF5", //white
