@@ -7,12 +7,22 @@
       v-if="img !== ''"
       id="round-card"
     >
-      <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
-      <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
+      <div class="flex items-center h-100">
+        <div>
+          <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
+          <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
 
-      <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
-        <slot></slot>
-      </p>
+          <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
+            <slot></slot>
+          </p>
+        </div>
+        <div v-show="buttonurl" class="ma3 fr flex items-center">
+          <link-button
+              :buttonLink="buttonurl"
+              :btnColor="buttoncolor"
+          ></link-button>
+        </div>
+      </div>
     </div>
     <div
       v-else
@@ -33,7 +43,11 @@
 
 <script>
 import ipsum from "../ipsum.js";
+import LinkButton from "../components/LinkButton.vue";
 export default {
+  components: {
+    LinkButton,
+  },
   props: {
     flip: {
       type: Boolean,
@@ -55,6 +69,14 @@ export default {
     bgColor: {
       type: String,
       default:"#e0ddd5"
+    },
+    buttonurl: {
+      type: String,
+      default: ""
+    },
+    buttoncolor: {
+      type: String,
+      default: ""
     }
   },
   data() {
@@ -66,7 +88,7 @@ export default {
   computed: {
     isFlipped() {
       return this.flip
-        ? "container-flipped pr7-l pl6-l "
+        ? "container-flipped pl6-l "
         : "pl7-l pr6-l container ";
     },
     isFlippedHeading() {
@@ -115,5 +137,12 @@ export default {
   background-repeat: no-repeat;
   background-size: 65%;
   background-position: center;
+  display: table;
+  overflow: hidden;
+}
+.f-headline-l {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 </style>

@@ -45,7 +45,7 @@
         <curved-border :color="'red'" :left="true"></curved-border>
       </div>
       <div class="section relative bg-lgct-red">
-        <div class="flex items-center">
+        <div class="flex items-center h-100">
           <rounded-card :img="require('../assets/LG_usa-silhouette.png')">
             <p>
               The interference of colonialism on the territory we now know as
@@ -85,6 +85,8 @@
           :flip="true"
           :heading="'Connecticut Timeline'"
           :img="require('../assets/LG_ct-silhouette.png')"
+          :buttonurl="'/timeline/Connecticut Timeline'"
+          :buttoncolor="'#aa4f37'"
         >
           The University of Connecticut is built on land originally stewarded by
           Indigenous peoples and was taken by brutal force. The University of
@@ -95,22 +97,20 @@
           into how the state of Connecticut was formed and how the University of
           Connecticut came to be its Land Grant University.
         </rounded-card>
-        <div class="ma3 absolute right-1 bottom-1 flex items-center">
-          <link-button
-            :buttonLink="'/timeline/Connecticut Timeline'"
-          ></link-button>
-        </div>
         <curved-border :color="'teal'"></curved-border>
       </div>
 
       <div class="section relative bg-lgct-gold">
-        <rounded-card :isTitle="true" :heading="'Land Parcels'"></rounded-card>
-          <div class="ma3 absolute right-1 bottom-1 flex items-center">
+        <div class="flex items-center h-75">
+        <rounded-card :isTitle="true" :heading="'Land Parcels'" style="flex:1 !important"></rounded-card>
+        <div class="ma3 fr flex items-center">
+          <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
           <link-button
             :buttonLink="'/vignettes'"
           ></link-button>
         </div>
         <curved-border :color="'gold'"></curved-border>
+        </div>
       </div>
 
       <div class="section white bg-lgct-red relative">
@@ -119,13 +119,9 @@
           :heading="'About the Project'"
           :img="require('../assets/LG_horizontal-yellow-shape-progression.png')"
           :flip="true"
+          :buttonurl="'/about'"
           bgColor="#EAC574"
         ></rounded-card>
-        <div class="ma3 absolute right-1 bottom-1 flex items-center z-1">
-          <link-button
-            :buttonLink="'/about'"
-          ></link-button>
-        </div>
       </div>
 
       <Footer></Footer>
