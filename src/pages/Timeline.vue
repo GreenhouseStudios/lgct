@@ -26,7 +26,7 @@
           <div class="flex flex-column items-start ph7-l pl5 pr6">
             <timeline-card-round
               :event="card"
-              v-on:open-modal="openModal(post)"
+              v-on:open-modal="openModal"
             >
             </timeline-card-round>
           </div>
@@ -88,13 +88,11 @@ export default {
   methods: {
     openModal(post) {
       // this.activeCard = this.cards[index];
-      console.log(post)
+      this.activeCard = post;
       this.showModal = true;
-      console.log("show modal");
     },
     closeModal() {
       this.showModal = false;
-      console.log("close modal");
     },
   },
   mounted() {
@@ -106,7 +104,6 @@ export default {
       )
       .then(function (response) {
         const result = response.data.result;
-        console.log(result);
         for (let i = 0; i < result.length; i++) {
           $vm.cards.push({
             id: result[i]._id,

@@ -21,12 +21,11 @@
         </h1>
       </div>
       <div v-show="isExpanded" id="expanded-card-body">
-        <div class="ma2">
-          <p class="tl lh-copy fw8 f3" v-html="blocksToHTML({ blocks: event.body })"></p>
+        <div class="ma2 tl lh-copy fw8 f3 pr7">
+          <p v-html="blocksToHTML({ blocks: event.body })"></p>
           <p
             v-if="event.fullBody"
             v-show="showMore"
-            class="tl"
             v-html="blocksToHTML({ blocks: event.fullBody })"
           ></p>
         </div>
@@ -53,9 +52,9 @@
         <div v-if="event.childPosts">
           <button
             v-for="post in event.childPosts"
-            :key="post.id"
-            @click="showModal(post)"
-            class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib mid-gray"
+            :key="post.heading"
+            @click.stop="$emit('open-modal',post)"
+            class="f4 fw7 lgct-red bn shadow-1 serif grow no-underline br-pill ba ph3 pv2 mb2 mh3 dib mid-gray"
           >
             {{ post.heading }}
           </button>
@@ -77,31 +76,9 @@ export default {
     event: {
       type: Object,
     },
-    date: {
-      type: String,
-      default: "1492",
-    },
-    heading: {
-      type: String,
-      default: "Card Heading Here",
-    },
-    body: {
-      type: Array,
-      default: () => ["Hello"],
-    },
-    fullBody: {
-      type: Array,
-      default: null,
-    },
     color: {
       type: String,
       default: "#F00",
-    },
-    img: {
-      type: Object,
-    },
-    index: {
-      type: Number,
     },
   },
   data() {
@@ -154,9 +131,6 @@ export default {
     },
   },
   methods: {
-    showModal(post){
-      this.$emit('open-modal',post);
-    },
     expandCard() {
       this.isExpanded = true;
     },
@@ -167,7 +141,6 @@ export default {
       this.showMore = !this.showMore;
     },
     onCardHover(state) {
-      console.log("heyyy");
       if (state != this.hover) {
         this.hover = state;
         this.timeline.reversed(!this.timeline.reversed());
@@ -262,5 +235,6 @@ div.expanded {
     rgba(255, 255, 255, 0.4) 100%,
     rgba(255, 255, 255, 0) 100%
   );
+  box-shadow: 10px 5px 5px rgba(50,50,50,0.2);
 }
 </style>

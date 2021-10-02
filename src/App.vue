@@ -130,7 +130,7 @@ a {
   color: inherit;
   display: inherit;
 }
-h1 {
+h1 , h2, h3, h4, h5, h6 , button{
   font-family: "FrankRuhlLibre" !important;
 }
 p {

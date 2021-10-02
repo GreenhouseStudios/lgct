@@ -1,23 +1,33 @@
 <template>
   <transition name="fade">
-    <div v-if="showModal" class="fixed top-0 left-0 overlay bg-white">
-      <div>
-        <button
-          @click="$emit('close-modal')"
-          class="b f3 bn w3 h3 fixed top-1 right-1 z-4"
-        >
-          X
-        </button>
-      </div>
-      <div class="pa4 flex flex-column items-center">
-        <h1 class="f-headline-ns">Detail Modal</h1>
-        <p v-if="card.fullBody" class="ma3 pv3 w-30-ns" v-html="blocksToHTML({ blocks: card.fullBody })"></p>
-         <p v-else class="ma3 pv3 w-30-ns">
-          {{ ipsum.generateParagraphs(1) }}
-        </p>
-
-        <h3>Citations</h3>
-        <p v-if="card.fullBody" class="ma3 pv3 w-30-ns" v-html="blocksToHTML({ blocks: card.citations })"></p>
+    <div v-if="showModal && card" class="fixed overlay flex items-center justify-center pa4 z-2 ">
+      <div class="bg-white m3 br4 relative mw-50-l z-4" v-click-outside="handleClickOutside">
+        <div class="f1 bn absolute top-1 right-1 br-100">
+          <button @click="$emit('close-modal')" class="br-100 w3 h3 flex items-center pl2 bn bg-moon-gray">
+            <!-- <i class="fa fa-times"></i> -->
+            <i class="fa fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="pa4 flex flex-column items-start tl">
+          <h1 class="f1 lgct-red">{{ card.heading }}</h1>
+          <div class="ma3 pv3 lh-copy f4">
+            <p
+              v-if="card.fullBody"
+              v-html="blocksToHTML({ blocks: card.fullBody })"
+            ></p>
+            <p v-else>
+              {{ ipsum.generateParagraphs(1) }}
+            </p>
+          </div>
+          <div v-if="card.citations">
+            <h3>Citations</h3>
+            <p
+              v-if="card.fullBody"
+              class="ma3 pv3 w-30-ns"
+              v-html="blocksToHTML({ blocks: card.citations })"
+            ></p>
+          </div>
+        </div>
       </div>
     </div>
   </transition>
@@ -34,12 +44,13 @@ export default {
     card: {
       type: Object,
       default: () => {},
-    }
+    },
   },
   data() {
     return {
       ipsum: ipsum,
       blocksToHTML: require("@sanity/block-content-to-html"),
+      justToggled: true,
     };
   },
   computed: {
@@ -47,20 +58,29 @@ export default {
       return this.body.map((x) => x.children).filter((x) => x.text !== "\n");
     },
   },
+  methods: {
+    handleClickOutside() {
+      console.log("click outside")
+      if(this.showModal){
+        this.$emit('close-modal')
+      } 
+    }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .overlay {
-  //   background-image: linear-gradient(transparent 50vh, #fff 0, #fff);
-  height: 100%;
-  width: 100%;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
   overflow-y: scroll;
-  //   transition: transform 0.8s cubic-bezier(0, 0.7, 0.4, 1),
-  //     visibility 0s cubic-bezier(0, 0.7, 0.4, 1) 0.8s;
+  background-color: rgba(50, 50, 50, 0.9);
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

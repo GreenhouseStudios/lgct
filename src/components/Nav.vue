@@ -47,12 +47,10 @@ export default {
       this.fp.moveTo(index + 1);
     },
     toggleNav(){
-      console.log("Toggle")
       this.navShow = !this.navShow;
       this.justToggled = true;
     },
     handleClickOutside(){
-      console.log("hello")
       if(this.navShow && !this.justToggled){
         this.navShow = false;
       } 

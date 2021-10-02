@@ -215,8 +215,6 @@ export default {
   },
   methods: {
     toggleTab(msg, e) {
-      console.log(msg);
-      console.log(e);
       if (this.activeTab) this.activeTab.showContent = false;
       if (this.activeTab === e) {
         this.activeTab.showContent = false;
