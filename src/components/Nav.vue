@@ -1,6 +1,6 @@
 <template>
   <div >
-    <nav class="dt-l border-box" style="width: 300px; position:fixed;" >
+    <nav class="dt-l border-box" style="position:fixed;" >
       <ul v-if="navShow" v-click-outside="handleClickOutside">
         <li
           @click="fp.moveTo(index + 1)"
@@ -14,7 +14,7 @@
         </li>
         <!-- <li @click="toggleNav"><i class="f1 fw6 white">&#8249;</i></li> -->
       </ul>
-      <button v-else class="bn f2 h3" style="width: 50px" @click="toggleNav"><i class="fa fa-bars white"></i></button>
+      <button v-else class="bn f2 h3 w3 " @click="toggleNav"><i class="fa fa-bars"></i></button>
     </nav>
   </div>
 </template>
@@ -92,9 +92,12 @@ li a {
 
 li a:hover {
   background-color:#4d9ba3;
-  font-size:26px;
+  font-weight: 1000;
 }
 button{
-  background-color: #70b9b2;
+  background-color: rgba(0, 0, 0, 0);
+}
+button > i{
+ color:#363839;
 }
 </style>
