@@ -23,7 +23,7 @@
           v-show="!card.hideInTimeline"
           :key="index"
         >
-          <div class="flex flex-column items-start ph7-l pl5 pr6">
+          <div class="flex flex-column items-start">
             <timeline-card-round
               :event="card"
               v-on:open-modal="openModal"

@@ -3,10 +3,10 @@
     @click="expandCard"
     @mouseover="onCardHover(true)"
     @mouseleave="onCardHover(false)"
-    class="pa5 br--right w-100 h-100"
+    class="pa5 br--right w-80-l w-100 h-100 ml6-ns"
     :class="{ root: !isExpanded, 'root-expanded': isExpanded }"
   >
-    <div class="tl z-1 pa2 pr6-m" :class="{ 'content-clicked': isExpanded }">
+    <div class="tl z-1 pa2" :class="{ 'content-clicked': isExpanded }">
       <div
         :class="{
           'dark-gray': hover || isExpanded,
@@ -21,7 +21,7 @@
         </h1>
       </div>
       <div v-show="isExpanded" id="expanded-card-body">
-        <div class="ma2 tl lh-copy fw8 f3 pr7">
+        <div class="ma2 pr6-ns tl lh-copy fw8 f3-ns f6 w-100">
           <p v-html="blocksToHTML({ blocks: event.body })"></p>
           <p
             v-if="event.fullBody"
@@ -54,7 +54,7 @@
             v-for="post in event.childPosts"
             :key="post.heading"
             @click.stop="$emit('open-modal',post)"
-            class="f4 fw7 lgct-red bn shadow-1 serif grow no-underline br-pill ba ph3 pv2 mb2 mh3 dib mid-gray"
+            class="f4-ns f6 fw7 lgct-red bn shadow-1 serif grow no-underline br-pill ba ph3 pv2 mb2 mh3 dib mid-gray"
           >
             {{ post.heading }}
           </button>
@@ -151,15 +151,15 @@ export default {
     this.timeline = gsap.timeline().to(".hovered.card-bg", {
       duration: 1,
       opacity: 0.5,
-      width: "80vw",
+
       borderRadius: "0% 150px 150px 0%",
       ease: "back",
     });
 
     gsap.to(".root-expanded", {
       duration: 1,
-      x: "-10vw",
-      width: "70vw",
+      margin: 0,
+      paddingLeft: "4%",
       ease: "back",
     });
   },
@@ -211,7 +211,6 @@ div.expanded {
 }
 .root {
   border-radius: 0 10000px 10000px 0;
-  // clip-path: polygon(0 0, 10px 0, 10px 100%, 0% 100%);
   background-size: 200% !important;
   background: linear-gradient(
     to right,
@@ -227,7 +226,6 @@ div.expanded {
 }
 .root-expanded {
   border-radius: 0 10000px 10000px 0;
-  // clip-path: polygon(0 0, 10px 0, 10px 100%, 0% 100%);
   background-size: 200% !important;
   background: linear-gradient(
     to right,
