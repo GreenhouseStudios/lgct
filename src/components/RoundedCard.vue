@@ -10,7 +10,7 @@
       <div class="flex items-center h-100">
         <div>
           <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
-          <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
+          <h1 class="f1-l f3" v-else>{{ heading }}</h1>
 
           <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
             <slot></slot>
@@ -32,7 +32,7 @@
       id="round-card"
     >
       <h1 class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
-      <h1 class="f1-l f3 mt5" v-else>{{ heading }}</h1>
+      <h1 class="f1-l f3" v-else>{{ heading }}</h1>
 
       <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
         <slot></slot>
@@ -89,7 +89,7 @@ export default {
     isFlipped() {
       return this.flip
         ? "container-flipped pl6-l "
-        : "pl7-l pr6-l container ";
+        : "pr6-l container ";
     },
     isFlippedHeading() {
       return this.flip ? "tr" : "tl";
@@ -99,6 +99,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p{
+  font-size: 1.5vw;
+}
 @media screen and (min-width: 600px) {
   .container {
     width: 80%;
