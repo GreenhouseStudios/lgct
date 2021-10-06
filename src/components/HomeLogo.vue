@@ -1,5 +1,5 @@
 <template>
-  <div class="mw4 absolute top-2 left-2 pa2 bg-white br3">
+  <div class="mw4 absolute top-2 left-2 pa2 bg-white br3 shadow-2">
     <router-link to="/">
       <img
         src="../assets/lgct-logo-long.png"
