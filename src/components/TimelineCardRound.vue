@@ -22,7 +22,7 @@
       </div>
       <div v-show="isExpanded" id="expanded-card-body">
         <div class="ma2 pr6-ns tl lh-copy fw8 f3-ns f6 w-100">
-          <p v-html="blocksToHTML({ blocks: event.body })"></p>
+          <p v-if="event.body" v-html="blocksToHTML({ blocks: event.body })"></p>
           <p
             v-if="event.fullBody"
             v-show="showMore"
@@ -143,7 +143,6 @@ export default {
     onCardHover(state) {
       if (state != this.hover) {
         this.hover = state;
-        this.timeline.reversed(!this.timeline.reversed());
       }
     },
   },
