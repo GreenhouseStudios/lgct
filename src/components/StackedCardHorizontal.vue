@@ -1,29 +1,29 @@
 <template>
-  <div class="z-1 ph3 ph5-m mb6 mw9">
+  <div class="z-1 ph4 mb6 mw9">
     <div
-      class="br4 pv4-ns pv2 ph3-ns ph3 pa2 shadow-4 flex-ns flex-row-l flex-column justify-between"
+      class="br4 pv4-ns pv1 ph3-ns ph3 pa2 shadow-4 flex-ns flex-row-l flex-column justify-between"
       id="main-card"
       :class="mainColor"
     >
       <div
-        class="white mw6-l pl4-ns br4 shadow-4"
+        class="white mw6-l ph4-ns br4 shadow-4"
         id="title-card"
         :class="headColor"
       >
         <h1 class="serif f1-l fw5 f3 mr0-ns mb3-ns tl pv2">
-          <h5 class="lgct-teal f4 sans-serif i fw4 ma0 pv3">
+          <h5 class="lgct-teal f3-l f5 sans-serif i fw4 ma0 pv3-ns pv1">
             <slot name="gps"></slot>
           </h5>
-          <slot name="heading"></slot>
-          <div class="f3 fw4 sans-serif lgct-teal pv3">
+          <div class="f2-l f4"><slot name="heading"></slot></div>
+          <div class="f4-l f6 fw4 sans-serif lgct-teal pv3-ns pv1">
             <slot name="subtitle"></slot>
           </div>
-          <div class="f6 lgct-red i sans-serif">
+          <div class="f4-l f6 lgct-red i sans-serif">
             <slot name="plot"></slot>
           </div>
         </h1>
       </div>
-      <div class="f3-l f4-m f5 lh-title tl ma3 w-75-ns">
+      <div class="f3-l f4-m f5 lh-title tl ma3-l ma1 w-75-ns">
         <slot></slot>
       </div>
     </div>
@@ -67,6 +67,13 @@ export default {
   #title-card {
     margin-left: -5%;
     margin-right: -5%;
+    padding: 0 10% ;
+  }
+}
+@media screen and (max-width:30em) {
+  #title-card {
+    margin-left: -15%;
+    margin-right: -15%;
     padding: 0 10% ;
   }
 }
