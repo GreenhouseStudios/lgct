@@ -1,8 +1,12 @@
 <template>
   <div>
-    <div class="section bg-lgct-white relative">
+    <div class="section bg-lgct-white relative flex items-center">
       <home-logo></home-logo>
-      <rounded-card :heading="'Land Parcels'" :isTitle="true"></rounded-card>
+      <rounded-card
+        :heading="'Land Parcels'"
+        class="w-100"
+        :isTitle="true"
+      ></rounded-card>
       <curved-border :color="'red'"></curved-border>
     </div>
     <div
@@ -16,7 +20,7 @@
         overflow-hidden
       "
     >
-      <stacked-card-horizontal class="w-75-l w-90 h-50 z-0">
+      <stacked-card-horizontal class="w-75-l z-0">
         <template v-slot:gps> 46.5 N 93.9 W </template>
         <template v-slot:heading
           ><div>Jiwere (Otoe-Missouria),</div>
@@ -79,14 +83,12 @@
         overflow-hidden
       "
     >
-      <stacked-card-horizontal
-        class="w-75-l w-90 h-50 z-0"
-        mainColor="bg-moon-gray"
-      >
+      <stacked-card-horizontal class="w-75-l z-0" mainColor="bg-moon-gray">
         <template v-slot:gps> 40.3442 N 96.5325 W</template>
         <template v-slot:heading
-          >Jiwere (Otoe-Missouria), Pâri (Pawnee), Očhéthi Šakówiŋ
-          Land</template
+          ><div>Jiwere (Otoe-Missouria),</div>
+          <div>Pâri (Pawnee),</div>
+          <div>Očhéthi Šakówiŋ Land</div></template
         >
         <template v-slot:subtitle>Currently known as Nebraska</template>
         <template v-slot:plot>NE060100N0070E0SN170ANECT</template>
@@ -189,10 +191,11 @@
         overflow-hidden
       "
     >
-      <stacked-card-horizontal class="w-75-l w-90 h-50 z-0">
+      <stacked-card-horizontal class="w-75-l z-0">
         <template v-slot:gps> 47.0326 N 88.5842 W</template>
         <template v-slot:heading
-          >Anishinabewaki ᐊᓂᔑᓈᐯᐗᑭ, Očhéthi Šakówiŋ Land</template
+          ><div>Anishinabewaki ᐊᓂᔑᓈᐯᐗᑭ,</div>
+          <div>Očhéthi Šakówiŋ Land</div></template
         >
         <template v-slot:subtitle
           >Currently known as Michigan - Houghton County</template
@@ -377,10 +380,7 @@
         overflow-hidden
       "
     >
-      <stacked-card-horizontal
-        class="w-75-l w-90 h-50 z-0"
-        mainColor="bg-moon-gray"
-      >
+      <stacked-card-horizontal class="w-75-l z-0" mainColor="bg-moon-gray">
         <template v-slot:gps> 40.3442 N 96.5325 W</template>
         <template v-slot:heading>Southern Pomo Land</template>
         <template v-slot:subtitle>Currently known as California</template>

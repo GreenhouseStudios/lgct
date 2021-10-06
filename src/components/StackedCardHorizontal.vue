@@ -1,16 +1,16 @@
 <template>
-  <div class="z-1 ph2 mb6 mw9 h-100">
+  <div class="z-1 ph3 ph5-m mb6 mw9">
     <div
-      class="br4 pv4-ns pv2 ph3-l ph3 pa2 shadow-4 db-l"
+      class="br4 pv4-ns pv2 ph3-ns ph3 pa2 shadow-4 flex-ns flex-row-l flex-column justify-between"
       id="main-card"
       :class="mainColor"
     >
       <div
-        class="white w-40-l pl4-l pa3 br4 fl-l shadow-4 relative-ns h-100"
+        class="white mw6-l pl4-ns br4 shadow-4"
         id="title-card"
         :class="headColor"
       >
-        <h1 class="serif f1-l fw5 f3 mr0-ns mv3-l tl pv2">
+        <h1 class="serif f1-l fw5 f3 mr0-ns mb3-ns tl pv2">
           <h5 class="lgct-teal f4 sans-serif i fw4 ma0 pv3">
             <slot name="gps"></slot>
           </h5>
@@ -23,7 +23,7 @@
           </div>
         </h1>
       </div>
-      <div class="f3-ns f5 lh-title tl">
+      <div class="f3-l f4-m f5 lh-title tl ma3 w-75-ns">
         <slot></slot>
       </div>
     </div>
@@ -53,22 +53,21 @@ export default {
 
 <style lang="scss" scoped>
 @media screen and (min-width: 60em) {
-  #title-card {
-    left: -15em;
-    shape-outside: polygon(0% 0, 50% 0%, 50% 100%, 0% 100%);
-    shape-margin: 1rem;
-  }
   p {
     font-size: 1.5vw;
   }
   h1 {
     font-size: 1.75vw;
   }
+  #title-card{
+    margin-left: -5%;
+  }
 }
-@media screen and (max-width: 60em) {
+@media screen and (max-width:60em) {
   #title-card {
-    margin-left: -10%;
-    margin-right: -10%;
+    margin-left: -5%;
+    margin-right: -5%;
+    padding: 0 10% ;
   }
 }
 </style>
