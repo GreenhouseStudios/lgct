@@ -1,27 +1,41 @@
 <template>
   <div class="tl pa5 ml5-l ml3" @click="toggleTab">
     <h1 class="title f3-l f4 ml6-l ml5"><slot name="heading"></slot></h1>
-    <span class="flex" v-show="showContent">
-      <span v-show="template === 'default'" class="sans-serif ml6 pb7 pr7">
-        <slot></slot>
-      </span>
-      <ul
+    <span class="flex">
+      <span class="w-40 h-100"></span>
+      <span
+        class="flex flex-column overflow-scroll pa4 br4 lh-title"
+        id="main-content"
+        v-show="showContent"
+      >
+        <span v-show="template === 'default'" class="sans-serif">
+          <slot></slot>
+        </span>
+        <span
+          class="sans-serif ml6 lh-copy w-50 mr3 f3 fw5"
+          v-if="template === 'landToday'"
+        >
+          <slot></slot>
+        </span>
+        <!-- <ul
         v-if="template === 'landToday'"
         class="list sans-serif f4 ml6 tl fw4 flex flex-column flex-wrap w-50 h5"
       >
         <li v-for="item in list" :key="item" class="i pa2">{{ item }}</li>
-      </ul>
-      <span
-        v-if="template === 'landToday'"
-        class="br4 pa4 relative"
-        style="background: #fefcf5"
-      >
-        <img src="https://picsum.photos/300/300" alt="" />
-        <a :href="link" class="lgct-red sans-serif pt2 fw4 tc"
-          >Link to the place here</a
+      </ul> -->
+        <span
+          v-if="template === 'landToday'"
+          class="br4 pa4 relative"
+          style="background: #fefcf5"
         >
-      </span></span
-    >
+          <img src="https://picsum.photos/300/300" alt="" />
+          <a :href="link" class="lgct-red sans-serif pt2 fw4 tc"
+            >Link to the place here</a
+          >
+        </span></span
+      >
+      <span class="w-50 h-100"></span>
+    </span>
   </div>
 </template>
 
@@ -73,9 +87,15 @@ div {
   box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.6);
   border-radius: 70px 0 0 0;
   height: auto;
-  transition: 0.2s;
+  transition: 0.3s;
   position: absolute;
   width: 100%;
+}
+
+#main-content {
+  height: auto;
+  max-height: 70vh;
+  background: #64aaa3;
 }
 
 div:hover {
@@ -89,7 +109,7 @@ div::after {
   left: 0;
   background: #70b9b2;
   content: "";
-  transition: 0.2s;
+  transition: 0.3s;
 }
 div:hover::after {
   background: #4d9ba3;
