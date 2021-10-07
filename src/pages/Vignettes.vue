@@ -500,7 +500,7 @@
     <div
       class="
         section
-        bg-lgct-white
+        bg-lgct-red
         flex
         justify-center
         items-center
@@ -626,7 +626,6 @@
           </p></collapsible-tab
         >
       </div>
-      <curved-border :color="'red'" style="z-index: 100"></curved-border>
     </div>
   </div>
 </template>
