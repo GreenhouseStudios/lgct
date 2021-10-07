@@ -8,11 +8,11 @@
         id="main-content"
         v-show="showContent"
       >
-        <span v-show="template === 'default'" class="sans-serif">
+        <span v-show="template === 'default'" class="sans-serif f4">
           <slot></slot>
         </span>
         <span
-          class="sans-serif ml6 lh-copy w-50 mr3 f3 fw5"
+          class="sans-serif lh-copy mr3 f3 fw5"
           v-if="template === 'landToday'"
         >
           <slot></slot>
@@ -91,11 +91,19 @@ div {
   position: absolute;
   width: 100%;
 }
-
-#main-content {
+@media screen and (max-width: 60em) {
+  #main-content {
+  height: auto;
+  max-height: 60vh;
+  background: #64aaa3;
+}
+}
+@media screen and (min-width: 60em) {
+  #main-content {
   height: auto;
   max-height: 70vh;
   background: #64aaa3;
+}
 }
 
 div:hover {
