@@ -129,7 +129,7 @@ export default {
     changeIndex(dir) {
       this.index =
         this.index === 0 && dir < 0
-          ? this.people.length
+          ? this.people.length - 1
           : (this.index + dir) % this.people.length;
     },
   },
