@@ -21,7 +21,7 @@ const routes = [
     { path: "/involvement/", component: Involvement },
     { path: "/about/", component: About },
     { path: "/resources/", component: Resources },
-    { path: "/vignettes/", component: Vignettes },
+    { path: "/parcels/", component: Vignettes },
     {path: "/main/", component: Main},
     { path: '/', component: Preview },
     { path: '*', component: Error },
