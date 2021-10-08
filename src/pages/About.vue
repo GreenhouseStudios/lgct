@@ -100,8 +100,9 @@
       </section>
     </div>
 
+    <profile></profile>
     
-    <div class="section bg-lgct-gold fw3">
+    <!-- <div class="section bg-lgct-gold fw3">
       <section class="tl mh5">
         <h1 class="f1 serif ma0 pv4">The Team</h1>
         <div class="flex flex-wrap w-100 justify-between">
@@ -127,7 +128,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </div> -->
 
      <div class="section bg-lgct-teal fw3">
       <section class="tl mh5 white">
@@ -163,9 +164,11 @@
 <script>
 import ipsum from "../ipsum.js";
 import HomeLogo from "../components/HomeLogo.vue"
+import Profile from "../components/Profile.vue"
 export default {
   components: {
     HomeLogo,
+    Profile
   },
   name: "About",
   data() {
