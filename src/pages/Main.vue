@@ -103,7 +103,7 @@
 
       <div class="section relative bg-lgct-gold">
         <div class="flex items-center h-100">
-        <rounded-card :isTitle="true" :heading="'Land Parcels'" style="flex:1 !important"></rounded-card>
+        <rounded-card :isTitle="true" :heading="'Land Parcels'" :img="require('../assets/LG_horizontal-blue-shape-progression-06.png')" style="flex:1 !important"></rounded-card>
         <div class="ma3 fr flex items-center">
           <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
           <link-button
