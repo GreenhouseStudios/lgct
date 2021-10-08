@@ -107,7 +107,7 @@
         <div class="ma3 fr flex items-center">
           <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
           <link-button
-            :buttonLink="'/vignettes'"
+            :buttonLink="'/parcels'"
           ></link-button>
         </div>
         <curved-border :color="'gold'"></curved-border>
