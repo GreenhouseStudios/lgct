@@ -20,22 +20,21 @@
         overflow-hidden
       "
     >
-      <stacked-card-horizontal class="w-75-l z-0">
-        <template v-slot:gps> 46.5 N 93.9 W </template>
-        <template v-slot:heading><div>Minnesota People (needed)</div></template>
-        <template v-slot:subtitle>Currently known as Minnesota</template>
-        <template v-slot:plot>MN051360N0260w0sn250</template>
+      <stacked-card-horizontal class="w-75-l z-0" mainColor="bg-moon-gray">
+        <template v-slot:gps>45.4594 N, 112.2694 W</template>
+        <template v-slot:heading><div>Niitsítpiis-stahkoii ᖹᐟᒧᐧᐨᑯᐧ ᓴᐦᖾᐟ (Blackfoot / Niitsítapi ᖹᐟᒧᐧᒣᑯ) </div>
+<div>Michif Piyii (Métis) Apsaalooké (Crow) Salish Kootenai (Flathead) Očhéthi Šakówiŋ </div>
+</template>
+        <template v-slot:subtitle>Currently known as Montana - Madison County</template>
+        <template v-slot:plot>MT200040S0050W0SN300AS1/2NWCT</template>
         <p>
-          Need text here (On March 15, 1854 under Treaty No. 265 was signed by
-          the United States government and the Otoe and Missouria People, ceding
-          thousands of acres of Native land to the US Government to create land
-          parcels that would eventually become part of the land used in the
-          Morrill Act. One particular land parcel was 160 acres in size and cost
-          the United States $20.67. The land ceded was granted to the University
-          of Connecticut in 1862, which made a return of six times the original
-          price - $121.22 was raised for the university from this one parcel of
-          land. Today, residential homes and Currently known as Nebraska
-          Wesleyan University sit on this parcel.)
+          On October 17, 1855, the United States government signed a treaty with
+          the Blackfoot people and Ontonagon band of the Chippewa that
+          relinquished the land as common hunting ground. This 80 acre parcel
+          was granted to the state of Connecticut in 1862 and accepted by the
+          university in 1893. The parcel raised $60.35 for the University - a
+          22x return on the land. Adjusting for 2021 inflation, that equates to
+          $1751.88 raised.
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
@@ -52,21 +51,94 @@
           v-on:toggle-tab="toggleTab('toggle me', $event)"
         >
           <template v-slot:heading>Settler Appropriation and Uses</template>
-          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
-        >
+          <p>
+            Connecticut Land Grant scrip was redeemed in 1877 for two parcels in
+            northern Sonoma County by John Comstock and Daniel Sink.
+          </p>
+          <p>
+            Originally the homelands of the Southern Pomo people and the site of
+            a village of ?iy.o.tok.o wi (‘at the lower field’), these parcels
+            were close to a nearly 9,000 acre Mexican Rancheria, Rancho Rincon
+            de Musalacon, granted by Governor Pio Pico to Francisco Berreyesa in
+            1846. While the US agreed to honor the Mexican land grants when it
+            took control of California following the Mexican-American War of
+            1848, the US laid claim to these parcels and other California
+            indigenous lands through a series of treaties negotiated in the
+            early 1850s. As with treaties in other parts of the US, these
+            treaties provided for minimal monetary compensation and small
+            reservations of tribal lands. However, through the vigorous
+            opposition of California’s senators, the Senate declined to ratify
+            the treaties and the Native land rights were terminated through fiat
+            with no monetary compensation or land reserves.
+          </p>
+          <p>
+            The failure to ratify the treaties effectively endorsed the
+            extra-judicial seizure of land by white settlers which was rampant
+            in the Gold Rush period. This seizure was accompanied by a series of
+            extermination campaigns which Benjamin Madley has characterized as
+            an American Genocide. In what is now known as the Bloody Island
+            Massacre, a large community of Pomo were surrounded and massacred by
+            US Army forces on May 15, 1850. Madley estimates between 60 and 800
+            Pomo were murdered in that attack, perhaps making it the largest
+            settler killing of North American natives—larger than the murders of
+            Lakota at Wounded Knee or of Pequot at Mystic.
+          </p>
+          <p>
+            These parcels lay just to the northwest of the city of Cloverdale,
+            which Daniel Sink had helped to found in 1872. Sink created a road
+            on these lands, for which he charged travelers a toll to use, and
+            later planted grapes. His son, William Sink would establish a winery
+            in 1893, joining the burgeoning California wine industry.
+            [https://soconews.org/cloverdale_reveille/opinion/columns/cloverdale-pioneers-daniel-sink/article_5f67d3c6-6c56-11e9-8101-575aba603257.html]
+          </p>
+        </collapsible-tab>
         <collapsible-tab
           style="bottom: 2em"
           class="z-2"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
           ><template v-slot:heading>Native Peoples of this Land</template>
-          <p>{{ ipsum.generateParagraphs(5) }}</p></collapsible-tab
-        >
+          <p>
+            The Pomo people have lived for millenia in what is today parts of
+            the Northern California counties of Sonoma, Mendocino, and Lake.
+            Prior to European contact, the Pomo lived in several culturally and
+            linguistically distinct bands and tribes along the Pacific coast,
+            redwood forests, Russian River valley, and Clear Lake areas. These
+            parcels are located near the northern end of the Southern Pomo
+            territory, close to the likely site of a village of ?iy.o.tok.o wi
+            (‘at the lower field’). The foothills of the Russian River valley
+            were rich in acorn oaks, buckeyes, small and large game, and other
+            resources, and supported a flourishing population of 3,950 to 6,300
+            Southern Pomo by the turn of the nineteenth century.
+          </p>
+          <p>
+            Targeted by US settlers for extermination in the 19th century,
+            including at the Bloody Island Massacre at Clear Lake on May 15,
+            1850. The Pomo had previously survived expropriation and forced
+            labor at the hands of Russian colonists at Fort Ross, the Spanish
+            Mission system, and the Mexican rancherias. With encroachment and
+            depredation, Pomo resisted, adapted, and endured, continuing to
+            practice traditional arts, like basketweaving, and adopting new
+            practices, like the Ghost Dance. These systematic efforts at
+            displacement, assimilation, and/or extermination took a profound
+            toll, with Pomo populations decimated and lands reduced by 99
+            percent. Nevertheless, the Pomo people survived this attempted
+            genocide, with several communities achieving Federal recognition in
+            the 20th century.
+          </p>
+          <p>
+            One such community is the Cloverdale Rancheria of Pomo Indians.
+            First federally recognized in 1921, the tribe was “terminated” under
+            the Rancheria Act of 1958. Thanks to the leadership of Pomo elder
+            Tillie Harwick, the termination was overturned in 1983 and the
+            Rancheria works to preserve, revive, and extend Pomo traditions
+            including basketweaving and dance. Today including nearly 500
+            members, the Cloverdale Rancheria provides key Tribal services,
+            sustains and grows cultural traditions, and is working toward
+            self-sufficiency and sovereignty in the Cloverdale area.
+          </p></collapsible-tab>
+        
       </div>
-      <curved-border
-        :color="'white'"
-        :left="true"
-        style="z-index: 100"
-      ></curved-border>
+        <curved-border :color="'white'" :left="true" class="z-5" ></curved-border>
     </div>
     <div
       class="
@@ -497,136 +569,6 @@
       </div>
       <curved-border :color="'red'" style="z-index: 100"></curved-border>
     </div>
-    <div
-      class="
-        section
-        bg-lgct-red
-        flex
-        justify-center
-        items-center
-        relative
-        overflow-hidden
-      "
-    >
-      <stacked-card-horizontal class="w-75-l z-0" mainColor="bg-moon-gray">
-        <template v-slot:gps>45°27’34’’N 112°16’10’’W</template>
-        <template v-slot:heading><div>Native People Inhabiting the Land: </div><div>Niitsítpiis-stahkoii ᖹᐟᒧᐧᐨᑯᐧ ᓴᐦᖾᐟ (Blackfoot / Niitsítapi ᖹᐟᒧᐧᒣᑯ) </div>
-<div>Michif Piyii (Métis) Apsaalooké (Crow) Salish Kootenai (Flathead) Očhéthi Šakówiŋ </div>
-</template>
-        <template v-slot:subtitle>Currently known as Montana - Madison County</template>
-        <template v-slot:plot>MT200040S0050W0SN300AS1/2NWCT</template>
-        <p>
-          On October 17, 1855, the United States government signed a treaty with
-          the Blackfoot people and Ontonagon band of the Chippewa that
-          relinquished the land as common hunting ground. This 80 acre parcel
-          was granted to the state of Connecticut in 1862 and accepted by the
-          university in 1893. The parcel raised $60.35 for the University - a
-          22x return on the land. Adjusting for 2021 inflation, that equates to
-          $1751.88 raised.
-        </p>
-      </stacked-card-horizontal>
-      <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab
-          style="bottom: 10em"
-          class="z-0"
-          :template="'landToday'"
-          v-on:toggle-tab="toggleTab('toggle me', $event)"
-          ><template v-slot:heading>The Land Today</template></collapsible-tab
-        >
-        <collapsible-tab
-          style="bottom: 6em"
-          class="z-1"
-          v-on:toggle-tab="toggleTab('toggle me', $event)"
-        >
-          <template v-slot:heading>Settler Appropriation and Uses</template>
-          <p>
-            Connecticut Land Grant scrip was redeemed in 1877 for two parcels in
-            northern Sonoma County by John Comstock and Daniel Sink.
-          </p>
-          <p>
-            Originally the homelands of the Southern Pomo people and the site of
-            a village of ?iy.o.tok.o wi (‘at the lower field’), these parcels
-            were close to a nearly 9,000 acre Mexican Rancheria, Rancho Rincon
-            de Musalacon, granted by Governor Pio Pico to Francisco Berreyesa in
-            1846. While the US agreed to honor the Mexican land grants when it
-            took control of California following the Mexican-American War of
-            1848, the US laid claim to these parcels and other California
-            indigenous lands through a series of treaties negotiated in the
-            early 1850s. As with treaties in other parts of the US, these
-            treaties provided for minimal monetary compensation and small
-            reservations of tribal lands. However, through the vigorous
-            opposition of California’s senators, the Senate declined to ratify
-            the treaties and the Native land rights were terminated through fiat
-            with no monetary compensation or land reserves.
-          </p>
-          <p>
-            The failure to ratify the treaties effectively endorsed the
-            extra-judicial seizure of land by white settlers which was rampant
-            in the Gold Rush period. This seizure was accompanied by a series of
-            extermination campaigns which Benjamin Madley has characterized as
-            an American Genocide. In what is now known as the Bloody Island
-            Massacre, a large community of Pomo were surrounded and massacred by
-            US Army forces on May 15, 1850. Madley estimates between 60 and 800
-            Pomo were murdered in that attack, perhaps making it the largest
-            settler killing of North American natives—larger than the murders of
-            Lakota at Wounded Knee or of Pequot at Mystic.
-          </p>
-          <p>
-            These parcels lay just to the northwest of the city of Cloverdale,
-            which Daniel Sink had helped to found in 1872. Sink created a road
-            on these lands, for which he charged travelers a toll to use, and
-            later planted grapes. His son, William Sink would establish a winery
-            in 1893, joining the burgeoning California wine industry.
-            [https://soconews.org/cloverdale_reveille/opinion/columns/cloverdale-pioneers-daniel-sink/article_5f67d3c6-6c56-11e9-8101-575aba603257.html]
-          </p>
-        </collapsible-tab>
-        <collapsible-tab
-          style="bottom: 2em"
-          class="z-2"
-          v-on:toggle-tab="toggleTab('toggle me', $event)"
-          ><template v-slot:heading>Native Peoples of this Land</template>
-          <p>
-            The Pomo people have lived for millenia in what is today parts of
-            the Northern California counties of Sonoma, Mendocino, and Lake.
-            Prior to European contact, the Pomo lived in several culturally and
-            linguistically distinct bands and tribes along the Pacific coast,
-            redwood forests, Russian River valley, and Clear Lake areas. These
-            parcels are located near the northern end of the Southern Pomo
-            territory, close to the likely site of a village of ?iy.o.tok.o wi
-            (‘at the lower field’). The foothills of the Russian River valley
-            were rich in acorn oaks, buckeyes, small and large game, and other
-            resources, and supported a flourishing population of 3,950 to 6,300
-            Southern Pomo by the turn of the nineteenth century.
-          </p>
-          <p>
-            Targeted by US settlers for extermination in the 19th century,
-            including at the Bloody Island Massacre at Clear Lake on May 15,
-            1850. The Pomo had previously survived expropriation and forced
-            labor at the hands of Russian colonists at Fort Ross, the Spanish
-            Mission system, and the Mexican rancherias. With encroachment and
-            depredation, Pomo resisted, adapted, and endured, continuing to
-            practice traditional arts, like basketweaving, and adopting new
-            practices, like the Ghost Dance. These systematic efforts at
-            displacement, assimilation, and/or extermination took a profound
-            toll, with Pomo populations decimated and lands reduced by 99
-            percent. Nevertheless, the Pomo people survived this attempted
-            genocide, with several communities achieving Federal recognition in
-            the 20th century.
-          </p>
-          <p>
-            One such community is the Cloverdale Rancheria of Pomo Indians.
-            First federally recognized in 1921, the tribe was “terminated” under
-            the Rancheria Act of 1958. Thanks to the leadership of Pomo elder
-            Tillie Harwick, the termination was overturned in 1983 and the
-            Rancheria works to preserve, revive, and extend Pomo traditions
-            including basketweaving and dance. Today including nearly 500
-            members, the Cloverdale Rancheria provides key Tribal services,
-            sustains and grows cultural traditions, and is working toward
-            self-sufficiency and sovereignty in the Cloverdale area.
-          </p></collapsible-tab
-        >
-      </div>
-    </div>
   </div>
 </template>
 
@@ -638,7 +580,7 @@ import ipsum from "../ipsum.js";
 import RoundedCard from "../components/RoundedCard.vue";
 import HomeLogo from "../components/HomeLogo.vue";
 export default {
-  name: "Vignettes",
+  name: "Parcels",
   components: {
     StackedCardHorizontal,
     CurvedBorder,
