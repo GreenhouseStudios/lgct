@@ -1,22 +1,16 @@
 <template>
-  <div class="h-100 relative">
+  <div class="h-100 relative flex-center"
+  v-bind:class="{ 'flex-center': isTitle }">
     <div
-      class="tl pa4-l pa2 relative h-75 shadow-4 right-0"
+      class="dn-l dn-m dt tl pa3 relative h-10 shadow-4 right-0 mt3 mb3"
       :class="isFlipped"
       :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
-      v-if="img !== ''"
       id="round-card"
     >
       <div class="flex items-center h-100">
-        <div>
-          <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
-          <h1 class="f1-l f3" v-else>{{ heading }}</h1>
-
-          <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
-            <slot></slot>
-          </p>
-        </div>
-        <div v-show="buttonurl" class="ma3 fr flex items-center">
+        <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
+        <h1 class="f3" v-else>{{ heading }}</h1>
+        <div v-show="buttonurl" class="ml2 mr2 fr flex items-center">
           <link-button
               :buttonLink="buttonurl"
               :btnColor="buttoncolor"
@@ -25,20 +19,61 @@
       </div>
     </div>
     <div
-      v-else
-      class="tl pa4-l pa2 relative h-75 left-0 shadow-4"
+      class="dn-l dn-m dt tl pa3 relative h-75 shadow-4 right-0"
       :class="isFlipped"
       :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
+      v-show="!isTitle"
       id="round-card"
     >
-      <h1 class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
-      <h1 class="f1-l f3" v-else>{{ heading }}</h1>
-
-      <p class="i fw5 f3-l f6-m f6 lh-copy" v-if="!isTitle">
-        <slot></slot>
-      </p>
+      <div class="flex items-center h-100" style="justify-content: space-around;">
+        <div>
+          <p class="i fw5 f6 pr5-m lh-copy" v-if="!isTitle">
+            <slot></slot>
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
+    
+    
+      <div
+        class="dt-l dt-m dn tl pa4-l pa3 relative h-75 w-100-m w-90-l shadow-4 right-0"
+        :class="isFlipped"
+        :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
+        v-if="img !== ''"
+        id="round-card"
+      >
+        <div class="flex items-center h-100">
+          <div>
+            <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
+            <h1 class="f1-l f3" v-else>{{ heading }}</h1>
+
+            <p class="i fw5 f5-l f6-m f6 pr5-m lh-copy" v-if="!isTitle">
+              <slot></slot>
+            </p>
+          </div>
+          <div v-show="this.flip" class="ma3 fr flex items-center">
+            <link-button
+                :buttonLink="buttonurl"
+                :btnColor="buttoncolor"
+            ></link-button>
+          </div>
+        </div>
+      </div>
+      <div
+        v-else
+        class="dt-l dt-m dn tl pa4-l pa3 relative h-75 w-100-m w-90-l left-0 shadow-4"
+        :class="isFlipped"
+        :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
+        id="round-card"
+      >
+        <h1 class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
+        <h1 class="f1-l f3" v-else>{{ heading }}</h1>
+
+        <p class="i fw5 f5-l f6-m f6 lh-copy" v-if="!isTitle">
+          <slot></slot>
+        </p>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -99,12 +134,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-  font-size: 1.5vw;
-}
 @media screen and (min-width: 600px) {
   .container {
-    width: 80%;
     position: relative;
     top: 13%;
     left: 0%;
@@ -112,7 +143,6 @@ p{
     z-index: 1;
   }
   .container-flipped {
-    width: 80%;
     right: 0%;
     top: 13%;
     border-radius: 500px 0 0 500px;
@@ -121,26 +151,53 @@ p{
     padding-left: 15%;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (min-width: 480px) {
   .container {
-    padding-right: 30%;
-    border-radius: 0 300px 300px 0;
+    // position: relative;
+    // top: 13%;
+    // left: 0%;
+    border-radius: 0 150px 150px 0;
     z-index: 1;
-    height: 90%;
   }
   .container-flipped {
-    border-radius: 300px 0 0 300px;
+    // top: 13%;
+    // right: 0%;
+    border-radius: 150px 0 0 150px;
     float: right;
     z-index: 1;
-    padding-left: 30%;
-    height: 90%;
+    padding-left: 15%;
+  }
+  .flex-center{
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 479px) {
+  .container {
+    padding-right: 15%;
+    border-radius: 0 100px 100px 0;
+    z-index: 1;
+    // height: 90%;
+  }
+  .container-flipped {
+    border-radius: 100px 0 0 100px;
+    float: right;
+    z-index: 1;
+    padding-left: 15%;
+    // height: 90%;
+  }
+  .flex-center{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 #round-card {
   background-repeat: no-repeat;
   background-size: 65%;
   background-position: center;
-  display: table;
+  // display: table;
   overflow: hidden;
 }
 .f-headline-l {

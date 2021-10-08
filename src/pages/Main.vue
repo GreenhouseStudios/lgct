@@ -46,7 +46,8 @@
       </div>
       <div class="section relative bg-lgct-red">
         <div class="flex items-center h-100">
-          <rounded-card :img="require('../assets/LG_usa-silhouette.png')">
+          <rounded-card :img="require('../assets/LG_usa-silhouette.png')"
+          :buttonurl="'/timeline/Connecticut Timeline'">
             <p>
               The interference of colonialism on the territory we now know as
               “The United States” disrupted the relationship of stewardship and
@@ -73,7 +74,7 @@
           <div class="ma3 fr flex items-center">
             <link-button
               :buttonLink="'/timeline/National Timeline'"
-              
+              class="db-l db-m dn"
             ></link-button>
           </div>
         </div>
