@@ -1,6 +1,6 @@
 <template>
-  <div class="section bg-lgct-gold">
-    <div class="h-100 flex items-center justify-between">
+  <div class="section bg-lgct-gold pa0-ns pa2">
+    <div class="h-100 flex items-center justify-between" id="largescreen">
       <button
         @click="changeIndex(-1)"
         class="w3 h3 bg-moon-gray br-100 bn grow shadow-4 absolute left-2"
@@ -23,6 +23,33 @@
         <i class="white fa fa-2x fa-chevron-right"></i>
       </button>
     </div>
+    <div id="smallscreen">
+      <div class="flex flex-column">
+        <div class="f6 bg-light-gray br3 shadow-2">
+          <h1>{{ currentPerson.name }}</h1>
+        </div>
+        <div class="bg-light-gray br4 pa1 ph2 shadow-2">
+          <img :src="currentPerson.img" alt="image of team member" />
+          <p>{{ currentPerson.bio }}</p>
+        </div>
+      </div>
+      <div class="flex justify-center mv2 w-100">
+        <button
+          @click="changeIndex(-1)"
+          class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 mh2"
+          :style="{ backgroundColor: this.btnColor }"
+        >
+          <i class="white fa fa-chevron-left"></i>
+        </button>
+        <button
+          @click="changeIndex(1)"
+          class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 m2"
+          :style="{ backgroundColor: this.btnColor }"
+        >
+          <i class="white fa fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,34 +67,54 @@ export default {
       ipsum: ipsum,
       people: [
         {
-          name: "Name Here",
+          name: "Luisa Fernanda Arrieta Fernandez",
           bio: ipsum.generateParagraphs(1),
-          img: "../assets/lgct-logo.png",
+          img: require("../assets/lgct-logo.png"),
         },
         {
-          name: "Name Name",
+          name: "Tom Lee",
           bio: ipsum.generateParagraphs(1),
-          img: "../assets/lgct-logo.png",
+          img: require("../assets/lgct-logo.png"),
         },
         {
-          name: "Name Here",
+          name: "Mackenzie Fox",
           bio: ipsum.generateParagraphs(1),
-          img: "../assets/lgct-logo.png",
+          img: require("../assets/lgct-logo.png"),
         },
         {
-          name: "Name Here",
+          name: "Miles Waterbury",
           bio: ipsum.generateParagraphs(1),
-          img: "../assets/lgct-logo.png",
+          img: require("../assets/lgct-logo.png"),
         },
         {
-          name: "Name Here",
+          name: "Sage Phillips (she/her)",
           bio: ipsum.generateParagraphs(1),
-          img: "../assets/lgct-logo.png",
+          img: require("../assets/lgct-logo.png"),
         },
         {
-          name: "Name Here",
+          name: "Carly Wanner-Hyde (she/her)",
           bio: ipsum.generateParagraphs(1),
-          img: "../assets/lgct-logo.png",
+          img: require("../assets/lgct-logo.png"),
+        },
+        {
+          name: "Lauren Harland (she/her)",
+          bio: ipsum.generateParagraphs(1),
+          img: require("../assets/lgct-logo.png"),
+        },
+        {
+          name: "Cameron Slocum",
+          bio: ipsum.generateParagraphs(1),
+          img: require("../assets/lgct-logo.png"),
+        },
+        {
+          name: "Roya Movahed",
+          bio: ipsum.generateParagraphs(1),
+          img: require("../assets/lgct-logo.png"),
+        },
+        {
+          name: "Glenn Mitoma",
+          bio: ipsum.generateParagraphs(1),
+          img: require("../assets/lgct-logo.png"),
         },
       ],
       index: 0,
@@ -80,7 +127,10 @@ export default {
   },
   methods: {
     changeIndex(dir) {
-      this.index = this.index + dir;
+      this.index =
+        this.index === 0 && dir < 0
+          ? this.people.length
+          : (this.index + dir) % this.people.length;
     },
   },
 };
@@ -99,5 +149,21 @@ export default {
 }
 #text-card {
   border-radius: 0 1000px 1000px 0;
+}
+@media screen and (min-width: 60em) {
+  #largescreen {
+    display: flex;
+  }
+  #smallscreen {
+    display: none;
+  }
+}
+@media screen and (max-width: 60em) {
+  #largescreen {
+    display: none;
+  }
+  #smallscreen {
+    display: inline;
+  }
 }
 </style>
