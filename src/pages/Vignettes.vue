@@ -178,6 +178,7 @@
           style="bottom: 10em"
           class="z-0"
           :template="'landToday'"
+          :sitesObj="landTodayObjs[0]"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
           ><template v-slot:heading>The Land Today</template></collapsible-tab
         >
@@ -593,6 +594,27 @@ export default {
       ipsum: ipsum,
       tabs: this.$children,
       activeTab: null,
+      landTodayObjs: [
+        {
+          name: "Nebraska",
+          sites: [
+            {name: "Nebraska Wesleyan Campus",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+           {name: "Walgreens",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Lincoln Police Dept Northeast Team Station",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Ayers & Ayers, Inc. Construction Company",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Makovicka Physical Therapy",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "United Methodist Church",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Art Studio/Gallery",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Beauty  and Tattoo Salons",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Plumbing Business",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Massage Studio - Empowered Healing",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Automotive Shop",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Sorority and Fraternity House",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Chain Restaurants",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Building Consultancy - Branch Pattern",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
+{name: "Jeweler",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')}],
+        }
+      ]
     };
   },
   methods: {

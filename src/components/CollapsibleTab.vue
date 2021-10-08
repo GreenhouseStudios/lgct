@@ -17,12 +17,12 @@
         >
           <slot></slot>
         </span>
-        <!-- <ul
+        <ul
         v-if="template === 'landToday'"
         class="list sans-serif f4 ml6 tl fw4 flex flex-column flex-wrap w-50 h5"
       >
-        <li v-for="item in list" :key="item" class="i pa2">{{ item }}</li>
-      </ul> -->
+        <li v-for="item in sitesObj.sites" :key="item.name" class="i pa2">{{ item.name }}</li>
+      </ul>
         <span
           v-if="template === 'landToday'"
           class="br4 pa4 relative"
@@ -57,6 +57,9 @@ export default {
       default:
         "https://www.google.com/maps/@41.8070688,-72.2515152,3a,75y,144.77h,90t/data=!3m7!1e1!3m5!1sFkuA0rIA97tcwL4Z8buwCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DFkuA0rIA97tcwL4Z8buwCA%26cb_client%3Dsearch.revgeo_and_fetch.gps%26w%3D96%26h%3D64%26yaw%3D144.77007%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656",
     },
+    sitesObj: {
+      type: Object,
+      default: () => { }
   },
   data() {
     return {
