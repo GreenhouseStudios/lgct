@@ -12,7 +12,7 @@
           pa4-l
           pa2
           ma3
-          mv3-ns
+          mt3-ns
           mv1
           mb0-l
           br4
@@ -23,12 +23,12 @@
         id="title-card"
         :class="headColor"
       >
-        <h1 class="serif f1-l f4 mr0-ns mv3-ns">
+        <h1 class="serif f4 mr0-ns mv3-ns">
           <slot name="heading"></slot>
         </h1>
       </div>
       <div class="tl lh-title">
-        <p class="f2-l f4-m f6">
+        <p class="f4-l f4-m f6">
           <slot></slot>
         </p>
       </div>
@@ -72,7 +72,7 @@ export default {
     font-size: 2vw;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 479px) {
   #title-card {
     margin-left: -10%;
     margin-right: -10%;
