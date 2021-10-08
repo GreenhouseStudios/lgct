@@ -13,7 +13,7 @@
           'lgct-white': !hover && !isExpanded,
         }"
       >
-        <h2 class="f3-ns f5 normal sans-serif i">
+        <h2 class="f3-ns f5 normal sans-serif i" v-if="showDate">
           {{ event.date }}
         </h2>
         <h1 class="f1-ns f3">
@@ -80,6 +80,10 @@ export default {
       type: String,
       default: "#F00",
     },
+    showDate: {
+      type: Boolean,
+      default: true
+    }
   },
   data() {
     return {

@@ -26,6 +26,7 @@
           <div class="flex flex-column items-start">
             <timeline-card-round
               :event="card"
+              :showDate="index !== 0"
               v-on:open-modal="openModal"
             >
             </timeline-card-round>
@@ -59,8 +60,6 @@ export default {
     DetailModal,
     HomeLogo,
     RoundedCard
-    // RoundedCardVertical
-
   },
   props: {
     timelineTitle: {
