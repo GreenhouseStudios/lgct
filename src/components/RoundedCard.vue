@@ -6,10 +6,27 @@
       :class="isFlipped"
       :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
       id="round-card"
+      v-if="isTitle"
     >
       <div class="flex items-center h-100">
-        <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
-        <h1 class="f3" v-else>{{ heading }}</h1>
+        <h1 id="heading-title-version" class="f-headline-l f1">{{ heading }}</h1>
+        <div v-show="buttonurl" class="ml2 mr2 fr flex items-center">
+          <link-button
+              :buttonLink="buttonurl"
+              :btnColor="buttoncolor"
+          ></link-button>
+        </div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="dn-l dn-m dt tl pa3 relative h-10 shadow-4 right-0 mt3 mb3"
+      :class="isFlipped"
+      :style="{ backgroundColor: this.bgColor }"
+      id="round-card"
+    >
+      <div class="flex items-center h-100">
+        <h1 class="f3">{{ heading }}</h1>
         <div v-show="buttonurl" class="ml2 mr2 fr flex items-center">
           <link-button
               :buttonLink="buttonurl"
@@ -134,6 +151,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#round-card {
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+  overflow: hidden;
+}
 @media screen and (min-width: 600px) {
   .container {
     position: relative;
@@ -153,15 +176,10 @@ export default {
 }
 @media screen and (max-width: 600px) and (min-width: 480px) {
   .container {
-    // position: relative;
-    // top: 13%;
-    // left: 0%;
     border-radius: 0 150px 150px 0;
     z-index: 1;
   }
   .container-flipped {
-    // top: 13%;
-    // right: 0%;
     border-radius: 150px 0 0 150px;
     float: right;
     z-index: 1;
@@ -177,14 +195,12 @@ export default {
     padding-right: 15%;
     border-radius: 0 100px 100px 0;
     z-index: 1;
-    // height: 90%;
   }
   .container-flipped {
     border-radius: 100px 0 0 100px;
     float: right;
     z-index: 1;
     padding-left: 15%;
-    // height: 90%;
   }
   .flex-center{
     display: flex;
@@ -192,14 +208,11 @@ export default {
     flex-direction: column;
     justify-content: center;
   }
+  #round-card {
+  background-size: 90%;
 }
-#round-card {
-  background-repeat: no-repeat;
-  background-size: 65%;
-  background-position: center;
-  // display: table;
-  overflow: hidden;
 }
+
 .f-headline-l {
   text-align: center;
   display: table-cell;
