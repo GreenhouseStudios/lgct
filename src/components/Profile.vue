@@ -20,7 +20,7 @@
         :style="
           'background-image: url(' +
           currentPerson.img +
-          '); background-size: 115%'
+          '); background-size:' + currentPerson.imgSize
         "
       ></div>
       <button
@@ -78,58 +78,66 @@ export default {
       people: [
         {
           name: "Luisa Fernanda Arrieta Fernandez",
-          bio: "Luisa Fernanda Arrieta is a doctoral candidate in the History Department at the University of Connecticut. Her research focuses on national museums as stages for the performative embodiment of the state and as tools for the construction of national identities. She participated in the Conference Visualizing Blackness in Latin America, 16th-19th century with a paper titled Painting the Ideal Citizen: Blackness and Nation-building in Colombia’s National Museum, 1880-1887. Her research will appear in the Fall issue of the Journal for Latin American Cultural Studies.  Luisa Arrieta was one of the recipients of the Latino Museums Studies Program fellowships hosted by the Smithsonian Latino Center in Washington D.C in Summer 2018.  There, she connected her work on the representation of Afro-Colombians in Colombia’s national museums with the representation of Latino/as in the U.S. at the Smithsonian. She currently continues her work with the Smithsonian Latino Center as a curator for the upcoming Molina Family Latino Gallery’s digital and contemporary exhibit.",
+          bio: "Luisa Fernanda Arrieta is a doctoral candidate in the History Department at the University of Connecticut. Her research focuses on national museums as stages for the performative embodiment of the state and as tools for the construction of national identities.",
           img: require("../assets/LuisaBio.png"),
+          imgSize: "105%"
         },
         {
           name: "Mackenzie Fox",
           bio: "Mackenzie Fox is an Honors graduate from the University of Connecticut with a BFA in Digital Media and Design and a minor in Computer Science. Mackenzie loves contributing to creative projects by using her passion for art and her knowledge of coding. She is always up for a challenge, enjoys learning new skills, and works with great enthusiasm.",
           img: require("../assets/MackBio.png"),
+          imgSize: "127%"
         },
         {
           name: "Lauren Harland (she/her)",
           bio: "Lauren Harland is a UConn sophomore pursuing a BA in Digital Media & Design with a concentration in Business Strategies. She is interested in exploring all aspects of digital media, especially digital branding and user interface design. She believes that digital media is the perfect platform to tell impactful stories and to bring people together. In her free time, Lauren enjoys exploring other artistic outlets such as painting, embroidery and film photography. ",
           img: require("../assets/LaurenBio.png"),
+          imgSize: "107%"
         },
         {
           name: "Tom Lee",
           bio: "Tom Lee is a Greenhouse Studios staff member, serving as a Design Technologist. He has worked on a range of innovative interactive digital projects including motion-tracked digital play installations, AR/VR experiences, tabletop games, video games and web apps. He draws on a breadth of experience in music, engineering and design to generate and apply creative approaches to the domain of scholarly communications. He is a three-time graduate of the University of Connecticut holding a BA in Music, BS in Computer Science & Engineering, and an MFA in Digital Media & Design.",
           img: require("../assets/TomBio.png"),
+          imgSize: "105%"
         },
 {
           name: "Garrett McComas",
           bio: "Garrett McComas holds an MA in Classics from the University of Oregon and an MLIS from the University of Illinois at Urbana-Champaign. Prior to working at Greenhouse Studios, Garrett worked as a Graduate Research Assistant at UIUC for the Classroom and the Future of the Historical Record (CFHR) project, where he helped to publish projects in the Digital Humanities. Garrett is interested in the history of information practices and classification as well as the publication and preservation of Digital Humanities projects.",
           img: require("../assets/GlennBio.png"),
+          imgSize: "107%"
         },
         {
           name: "Glenn Mitoma",
           bio: "Glenn Mitoma is an Assistant Professor of Human Rights and Education, jointly appointed with the Human Rights Institute and the Neag School of Education Department of Curriculum and Instruction. Glenn is inaugural Director of Dodd Impact, previously serving as director of the Thomas J. Dodd Research Center since 2013. Glenn’s research and teaching focus on the history of human rights and human rights education, with current projects on the role of education in advancing respect for human rights, the history of human rights education, a biography of the Lebanese philosopher and diplomat—and prominent UN Universal Declaration of Human Rights author—Charles H. Malik.",
           img: require("../assets/GlennBio.png"),
+          imgSize: "127%"
         },
         {
           name: "Roya Movahed",
           bio: "Roya is a graduate student at DMD with a concentration in Web/Interactive Media Design in Uconn. Her story started with the choice of Visual Communication eight years ago, but it was not limited to that. Now, after years of studying in this environment and working in different positions as a: Visual Designer, Multimedia Specialist, etc. Roya can introduce herself as a highly motivated, creative, and conscientious professional who is eager to learn the principles of aesthetics and digital arts, to take advantage of their combination to achieve more effective methods of communication. Having a nerd side in her soul, she is going to discover the User Experience Design world at UConn. ",
           img: require("../assets/RoyaBio.png"),
+          imgSize: "127%"
         },
         {
           name: "Sage Phillips (she/her)",
           bio: "From Old Town, ME Sage is a senior double-majoring in Political Science and Human Rights with a minor in Native American & Indigenous Studies at the University of Connecticut. As a young panawáhpskewi (Penobscot) woman of the Wabanaki people, and a newly named Harry S. Truman, Udall, and Cohen Scholar Sage has made it her mission to make land-grant institutions like UConn a better place for Native and Indigenous students. She is the Founding President of the Native American & Indigenous Students Association and the Student Coordinator for the Native American Cultural Programs.",
           img: require("../assets/SageBio.png"),
+          imgSize: "127%"
         },
         {
           name: "Cameron Slocum",
           bio: "In the world of digital media, Cameron is especially interested in 2D animation and 3D modeling. Outside of digital media, she enjoys designing lighting and furniture. Cameron loves learning new techniques she can use to bring her ideas to life. In her spare time, Cameron can be found hiking, making a rug, or listening to music.",
-          img: require("../assets/CameronBio.png"),
+          img: require("../assets/CameronBio.png"),imgSize: "105%"
         },
         {
           name: "Carly Wanner-Hyde (she/her)",
           bio: "Carly specializes in 3D Animation, design, illustration, and group facilitation. She is passionate about using her creative platform to amplify the voices and experiences of others. She believes art can be used to jump-start change to benefit our current social climate and initiate difficult yet necessary conversations. Her work encourages people to view different perspectives, spark empathy, engage with their communities, and inspire. She enjoys drawing, woodworking, rock climbing, and playing outside.",
-          img: require("../assets/CarlyBio.png"),
+          img: require("../assets/CarlyBio.png"),imgSize: "127%"
         },
         {
           name: "Miles Waterbury",
           bio: "Miles Waterbury is a Digital Media and Design Major pursuing a BFA with a concentration in 3D Animation.  In addition to focusing on 3D animation, Miles tries to expand his skill set by taking classes within all the various Digital Media and Design concentrations.  In addition to his major Miles is heavily involved in the UConn Marching Band and UConn Pep Band.  Miles also a part of the UCMB Media team and a brother of Kappa Kappa Psi, a national honorary band fraternity.  Miles strives to improve his digital media abilities while at the same time giving back to the organization that he holds so dear to his heart.",
-          img: require("../assets/MilesBio.png"),
+          img: require("../assets/MilesBio.png"),imgSize: "110%"
         },
       ],
       index: 0,
