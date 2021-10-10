@@ -38,12 +38,12 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab
+        <land-today-tab
           style="bottom: 10em"
           class="z-0"
-          :template="'landToday'"
+          :sitesObj="landTodayObjs[0]"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
-          ><template v-slot:heading>The Land Today</template></collapsible-tab
+          ><template v-slot:heading>The Land Today</template></land-today-tab
         >
         <collapsible-tab
           style="bottom: 6em"
@@ -174,13 +174,12 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab
+        <land-today-tab
           style="bottom: 10em"
           class="z-0"
-          :template="'landToday'"
-          :sitesObj="landTodayObjs[0]"
+          :sitesObj="landTodayObjs[1]"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
-          ><template v-slot:heading>The Land Today</template></collapsible-tab
+          ><template v-slot:heading>The Land Today</template></land-today-tab
         >
         <collapsible-tab
           style="bottom: 6em"
@@ -282,17 +281,17 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab
+        <land-today-tab
           style="bottom: 10em"
           class="z-0"
-          :template="'landToday'"
+          :sitesObj="landTodayObjs[2]"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
           ><template v-slot:heading>The Land Today</template>
           This parcel counts for 160 acres of the 9144.95 in Houghton County,
           Michigan. This parcel is part of a group of six parcels tied to
           Connecticut in Chassell, Michigan. The area is mostly forested, but
           has a few private homes off of Upper Massie Road.
-        </collapsible-tab>
+        </land-today-tab>
         <collapsible-tab
           style="bottom: 6em"
           class="z-1"
@@ -468,12 +467,12 @@
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
-        <collapsible-tab
+        <land-today-tab
           style="bottom: 10em"
           class="z-0"
-          :template="'landToday'"
+          :sitesObj="landTodayObjs[3]"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
-          ><template v-slot:heading>The Land Today</template></collapsible-tab
+          ><template v-slot:heading>The Land Today</template></land-today-tab
         >
         <collapsible-tab
           style="bottom: 6em"
@@ -570,6 +569,64 @@
       </div>
       <curved-border :color="'red'" style="z-index: 100"></curved-border>
     </div>
+    <div class="section bg-lgct-red ph4">
+      <h1 class="lgct-white f-subheadline mt0">Sources</h1>
+      <div class="br4 bg-lgct-white lh-copy w-50-l tl pa4 center">
+        <p>Tribes were identified using www.native-lands.ca</p>
+
+<p class="b">Nebraska: </p>
+
+<p>C. Mustful. “Resisting Removal: George Manypenny.” Colin Mustful, January 15, 2019. https://www.colinmustful.com/resisting-removal-george-manypenny/.
+The Otoe-Missouria Tribe. “History.” Accessed October 7, 2021. https://www.omtribe.org/who-we-are/history/.
+Nebraska Education on Location. “Otoe-Missouria Tribe,” May 12, 2015. https://nebraskaeducationonlocation.org/native-tribes/otoe-missouria-tribe/.
+“Treaty of March 15, 1854 | Access Genealogy.” Accessed October 7, 2021. https://accessgenealogy.com/nebraska/treaty-of-march-15-1854.htm.</p>
+
+<p class="b">Michigan: </p>
+<p>Benedict, C. Harry. Red Metal :The Calumet and Hecla Story. Ann Arbor, 1952. http://hdl.handle.net/2027/wu.89046872255.</p>
+
+<p>Horace J. Stevens (1908) The Copper Handbook, v.8, Houghton, Mich.: Horace J. Stevens, p.1457.</p>
+
+<p>Horace J. Stevens (1902) The Copper Handbook, v.2, Houghton, Mich.: Horace J. Stevens, p.1457,1466.</p>
+
+<p>Krause, David. “Henry Rowe Schoolcraft and the Native Copper of the Keweenaw.” Earth Sciences History 8, no. 1 (1989): 4–13.</p>
+
+<p>Kugel, Rebecca. “‘In Religion and Other Things I Ought to Be the Main Leader of My People’:: The Ojibwe Reassess An Alliance; 1852–1882.” In To Be the Main Leaders of Our People, 101–38. A History of Minnesota Ojibwe Politics, 1825-1898. Michigan State University Press, 1998. http://www.jstor.org/stable/10.14321/j.ctt7zt8w1.7.
+———. “‘They Show Their Disposition Pretty Plain’:: Civil and War Leadership in Symbiosis at Leech Lake, 1870–1900.” In To Be the Main Leaders of Our People, 167–98. A History of Minnesota Ojibwe Politics, 1825-1898. Michigan State University Press, 1998. http://www.jstor.org/stable/10.14321/j.ctt7zt8w1.10.
+———. “‘[W]e Can Get Along Better Than You Think’:: The Ojibwe Adapt to Changing Times, 1880–1900.” In To Be the Main Leaders of Our People, 139–66. A History of Minnesota Ojibwe Politics, 1825-1898. Michigan State University Press, 1998. http://www.jstor.org/stable/10.14321/j.ctt7zt8w1.9.
+———. “‘We Did Not Understand It So’:: Political Division Becomes a Resistance Strategy, 1838–1868.” In To Be the Main Leaders of Our People, 55–100. A History of Minnesota Ojibwe Politics, 1825-1898. Michigan State University Press, 1998. http://www.jstor.org/stable/10.14321/j.ctt7zt8w1.6.
+———. “‘You Don’t Do Us Any Good at All by Being Here’:: The Uncertain Beginnings of the Ojibwe-American Alliance, 1825–1837.” In To Be the Main Leaders of Our People, 19–54. A History of Minnesota Ojibwe Politics, 1825-1898. Michigan State University Press, 1998. http://www.jstor.org/stable/10.14321/j.ctt7zt8w1.5.</p>
+
+<p>Lankton, Larry. Cradle to Grave: Life, Work, and Death at the Lake Superior Copper Mines. Oxford University Press, 1993.</p>
+
+<p>Sturgis, E. B.   The Mines handbook: An enlargement of the Copper HandBook; A Manual of the Mining Industry of North America. New York, N.Y. : Stevens Copper Handbook Co.</p>
+
+<p class="b">California: </p>
+
+<p>The Otoe-Missouria Tribe. “History.” Accessed October 7, 2021. https://www.omtribe.org/who-we-are/history/.
+Wells, Kay. “Cloverdale Pioneers: Daniel Sink.” SoCoNews. Accessed October 7, 2021. https://soconews.org/cloverdale_reveille/opinion/columns/cloverdale-pioneers-daniel-sink/article_5f67d3c6-6c56-11e9-8101-575aba603257.html.
+“Who We Are.” Accessed October 7, 2021. http://www.cloverdalerancheria.com/who-we-are.php#history.</p>
+
+<p class="b">Montana: </p>
+<p>“The Fort Shaw Boarding School | Native American Netroots.” Accessed October 7, 2021. http://nativeamericannetroots.net/diary/1241.</p>
+
+<p>“Badger-Two Medicine – Blackfeet Nation.” Accessed October 7, 2021. https://blackfeetnation.com/badger-two-medicine/.</p>
+
+<p>“History | University of Connecticut,” February 5, 2019. https://uconn.edu/about-us/history/.</p>
+
+<p>Beck, Iko’tsimiskimaki. “List of Indian Boarding Schools in the United States.” The National Native American Boarding School Healing Coalition (blog). Accessed October 7, 2021. 
+https://boardingschoolhealing.org/list/.</p>
+
+<p>“Blackfeet Nation.” Accessed October 7, 2021. https://blackfeetnation.com/.</p>
+
+<p>“Iinnii Buffalo Spirit Center – Blackfeet Nation.” Accessed October 7, 2021. https://blackfeetnation.com/iinnii-buffalo-spirit-center/.</p>
+
+<p>Métis Nation of Ontario. “Métis Historic Timeline.” Accessed October 7, 2021. https://www.metisnation.org/culture-heritage/metis-timeline/.</p>
+
+<p>Métis Nation of Ontario. “Métis Nation of Ontario | Culture and Heritage | Métis of Ontario.” Accessed October 7, 2021. https://www.metisnation.org/culture-heritage/.</p>
+
+<p>Métis Nation of Ontario. “The Métis and the War of 1812.” Accessed October 7, 2021. https://www.metisnation.org/culture-heritage/metis-and-the-war-of-1812/.</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -580,6 +637,7 @@ import CollapsibleTab from "../components/CollapsibleTab.vue";
 import ipsum from "../ipsum.js";
 import RoundedCard from "../components/RoundedCard.vue";
 import HomeLogo from "../components/HomeLogo.vue";
+import LandTodayTab from '../components/LandTodayTab.vue';
 export default {
   name: "Parcels",
   components: {
@@ -588,6 +646,7 @@ export default {
     CollapsibleTab,
     RoundedCard,
     HomeLogo,
+    LandTodayTab
   },
   data() {
     return {
@@ -596,25 +655,40 @@ export default {
       activeTab: null,
       landTodayObjs: [
         {
+          name: "Montana",
+          sites: [
+            {name: "Residential Land",img: require('../assets/Parcel Imgs/MontanaParcel/MontanaParcel.png')},]
+        },
+         {
           name: "Nebraska",
           sites: [
-            {name: "Nebraska Wesleyan Campus",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-           {name: "Walgreens",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Lincoln Police Dept Northeast Team Station",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Ayers & Ayers, Inc. Construction Company",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Makovicka Physical Therapy",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "United Methodist Church",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Art Studio/Gallery",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Beauty  and Tattoo Salons",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Plumbing Business",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Massage Studio - Empowered Healing",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Automotive Shop",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Sorority and Fraternity House",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Chain Restaurants",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Building Consultancy - Branch Pattern",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')},
-{name: "Jeweler",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png')}],
-        }
-      ]
+            {name: "Nebraska Wesleyan Campus",img: require('../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png'), link: "https://www.google.com/maps/@40.8376097,-96.6497008,3a,75y,303.47h,94t/data=!3m7!1e1!3m5!1shguwLJGDUi18DIj7SoguJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhguwLJGDUi18DIj7SoguJw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D160.32758%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192"},
+            {name: "Walgreens",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-walgreens.png'),link: "https://www.google.com/maps/@40.8378821,-96.6534696,3a,75y,147.32h,86.78t/data=!3m7!1e1!3m5!1sycZZ6bUOWQnkBbLRviSOrw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DycZZ6bUOWQnkBbLRviSOrw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D92.46353%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656"},
+            {name: "Lincoln Police Dept Northeast Team Station",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-lincoln-pd.png'),link: "https://www.google.com/maps/@40.8372547,-96.6526069,3a,75y,169.98h,86.18t/data=!3m6!1e1!3m4!1seLwAoF7_oJot-DDlWT24cQ!2e0!7i16384!8i8192"},
+            {name: "Ayers & Ayers, Inc. Construction Company",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska_ayers-ayers.png'), link: "https://www.google.com/maps/place/Makovicka+Physical+Therapy/@40.8372615,-96.652958,3a,75y,196.57h,91.24t/data=!3m7!1e1!3m5!1szaOIoeFH7z7od8x4WM2edQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzaOIoeFH7z7od8x4WM2edQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D270.15237%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m5!3m4!1s0x8796bc10082b9e29:0xa9a96b9962053ade!8m2!3d40.8369281!4d-96.6533166"},
+            {name: "Makovicka Physical Therapy",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-pt-makovicka.png'),link: "https://www.google.com/maps/place/Makovicka+Physical+Therapy/@40.837263,-96.6531987,3a,75y,183.91h,89.17t/data=!3m6!1e1!3m4!1sorCv5zVwhgT0WMjEhd07ew!2e0!7i16384!8i8192!4m5!3m4!1s0x8796bc10082b9e29:0xa9a96b9962053ade!8m2!3d40.8369281!4d-96.6533166"},
+            {name: "United Methodist Church",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-methodistchurch.png'), link: "https://www.google.com/maps/@40.8393145,-96.651225,3a,75y,334.1h,100.38t/data=!3m6!1e1!3m4!1s11tX3_-QEIkTlmFlxKGukw!2e0!7i16384!8i8192"},
+            {name: "Art Studio/Gallery",img: require('../assets/lgct-logo.png')},
+            {name: "Beauty  and Tattoo Salons",img: require('../assets/lgct-logo.png')},
+            {name: "Plumbing Business",img: require('../assets/lgct-logo.png')},
+            {name: "Massage Studio - Empowered Healing",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-empoweredhealing.png'), link: "https://www.google.com/maps/@40.8398342,-96.6536387,3a,75y,140.58h,85.42t/data=!3m6!1e1!3m4!1sli-dUWNs-TdFalAhCF5x6A!2e0!7i16384!8i8192"},
+            {name: "Automotive Shop",img: require('../assets/lgct-logo.png')},
+            {name: "Sorority and Fraternity House",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-frat.png'),link: "https://www.google.com/maps/@40.840326,-96.649772,3a,75y,316.78h,86.68t/data=!3m7!1e1!3m5!1sdYIIbxQJkOveH6xB5kv0HA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DdYIIbxQJkOveH6xB5kv0HA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D169.75478%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656"},
+            {name: "Chain Restaurants",img: require('../assets/lgct-logo.png')},
+            {name: "Building Consultancy - Branch Pattern",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-branchpattern.jpeg'),link: "https://www.google.com/maps/@40.8409983,-96.6537131,3a,75y,81.36h,83.34t/data=!3m7!1e1!3m5!1szEdTrDQkwVYyqsXIPg_JvA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzEdTrDQkwVYyqsXIPg_JvA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D67.79744%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192"},
+            {name: "Jeweler",img: require('../assets/Parcel Imgs/NebraskaParcel/nebraska-jewelers.png'),link: "https://www.google.com/maps/place/24%2F7+Commercial+Handyman+Services/@40.840104,-96.6536389,3a,75y,103.56h,84.31t/data=!3m6!1e1!3m4!1syfs3J7dm1LZPYxkCefKmVw!2e0!7i16384!8i8192!4m12!1m6!3m5!1s0x8796bc10082b9e29:0xa9a96b9962053ade!2sMakovicka+Physical+Therapy!8m2!3d40.8369281!4d-96.6533166!3m4!1s0x8796bc05791265df:0x260d76bcf1e92282!8m2!3d40.8399646!4d-96.6535517"}],
+        },
+        {
+          name: "Michigan",
+          sites: [
+            {name: "Residential Land",img: require('../assets/Parcel Imgs/Michigan-02.png')},]
+        },
+          {
+          name: "California",
+          sites: [
+            {name: "Residential Land",img: require('../assets/Parcel Imgs/CaliforniaParcel/California.png')},]
+        },
+      ],
     };
   },
   methods: {
