@@ -55,6 +55,6 @@ export default {
   height: 10vh;
 }
 .shadow {
-  box-shadow: 0 -5px 20px rgba(80, 80, 80, 0.6);
+  box-shadow: 0 -10px 10px -10px rgba(80, 80, 80, 0.6);
 }
 </style>
