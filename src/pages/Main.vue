@@ -48,7 +48,7 @@
         <div class="flex items-center h-100">
           <rounded-card :img="require('../assets/LG_usa-silhouette.png')"
           :buttonurl="'/timeline/Connecticut Timeline'">
-            <p>
+            <p class="f3-ns f6">
               The interference of colonialism on the territory we now know as
               “The United States” disrupted the relationship of stewardship and
               respect to the land and generated the current displacement and
@@ -63,7 +63,7 @@
               the interest and gain of white settlers.
             </p>
 
-            <p>
+            <p class="f3-ns f6">
               Although not all encompassing, this timeline shows significant
               historical events that reveal the patterns and strategies the
               United States government implemented through its history to erode
@@ -89,16 +89,16 @@
           :buttonurl="'/timeline/Connecticut Timeline'"
           :buttoncolor="'#aa4f37'"
         >
-          The University of Connecticut is built on land originally stewarded by
+          <p class="f3-ns f6">The University of Connecticut is built on land originally stewarded by
           Indigenous peoples and was taken by brutal force. The University of
           Connecticut also continues to benefit from the Morrill Act of 1862, as
           well as subsequent governmental acts, that were made possible by the
           systematic dispossession of Indigenous peoples in other parts of the
           country by the United States government. This timeline gives a glimpse
           into how the state of Connecticut was formed and how the University of
-          Connecticut came to be its Land Grant University.
+          Connecticut came to be its Land Grant University.</p>
         </rounded-card>
-        <curved-border :color="'teal'"></curved-border>
+        <curved-border :color="'teal'" class="z-3"></curved-border>
       </div>
 
       <div class="section relative bg-lgct-gold">

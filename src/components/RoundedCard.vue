@@ -20,7 +20,7 @@
     </div>
     <div
       v-else
-      class="dn-l dn-m dt tl pa3 relative h-10 shadow-4 right-0 mt3 mb3"
+      class="dn-l dn-m dt tl ph3 relative h-10 shadow-4 right-0 mt3 mb3"
       :class="isFlipped"
       :style="{ backgroundColor: this.bgColor }"
       id="round-card"
