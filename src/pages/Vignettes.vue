@@ -26,7 +26,7 @@
 <div>Michif Piyii (Métis) Apsaalooké (Crow) Salish Kootenai (Flathead) Očhéthi Šakówiŋ </div>
 </template>
         <template v-slot:subtitle>Currently known as Montana - Madison County</template>
-        <template v-slot:plot>MT200040S0050W0SN300AS1/2NWCT</template>
+        <template v-slot:plot><a href="https://www.landgrabu.org/lands/mt200040s0050w0sn300ashalfnwct" target="_blank" class="underline">MT200040S0050W0SN300AS1/2NWCT</a><i class="fa fa-external-link"></i></template>
         <p>
           On October 17, 1855, the United States government signed a treaty with
           the Blackfoot people and Ontonagon band of the Chippewa that
@@ -159,7 +159,7 @@
           <div>Očhéthi Šakówiŋ Land</div></template
         >
         <template v-slot:subtitle>Currently known as Nebraska</template>
-        <template v-slot:plot>NE060100N0070E0SN170ANECT</template>
+        <template v-slot:plot><a class="underline" href="https://www.landgrabu.org/lands/ne060100n0070e0sn170anect" target="_blank">NE060100N0070E0SN170ANECT</a><i class="fa fa-external-link"></i></template>
         <p>
           On March 15, 1854 under Treaty No. 265 was signed by the United States
           government and the Otoe and Missouria People, ceding thousands of
@@ -268,7 +268,7 @@
         <template v-slot:subtitle
           >Currently known as Michigan - Houghton County</template
         >
-        <template v-slot:plot>MI190540N0340W0SN3500ANWCT</template>
+        <template v-slot:plot><a href="https://www.landgrabu.org/lands/mi190540n0340w0sn350anwct" class="underline" target="_blank">MI190540N0340W0SN3500ANWCT</a><i class="fa fa-external-link"></i></template>
         <p>
           On October 4, 1842, the United States government acquired this 160
           acre parcel as a part of the Treaty of La Pointe signed by the
@@ -454,9 +454,9 @@
     >
       <stacked-card-horizontal class="w-75-l z-0" mainColor="bg-moon-gray">
         <template v-slot:gps> 40.3442 N 96.5325 W</template>
-        <template v-slot:heading>Southern Pomo Land</template>
+        <template v-slot:heading>Southern Pomo</template>
         <template v-slot:subtitle>Currently known as California</template>
-        <template v-slot:plot>CA210110N0110W0SN010AW</template>
+        <template v-slot:plot><a href="https://www.landgrabu.org/lands/ca210110n0110w0sn010awhalfswct" target="_blank" class="underline">CA210110N0110W0SN010AW</a><i class="fa fa-external-link"></i></template>
         <p>
           On August 22, 1851, the United States government seized 91,966 acres
           by unratified treaty, co-signed Mas-su-ta-ka-ya, Po-mo, Sai-nell, and
