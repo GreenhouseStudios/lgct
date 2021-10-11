@@ -34,20 +34,38 @@
         class="section overflow-hidden relative"
         style="background-color: #000000"
       >
-        <div class="flex flex-column justify-center align-center">
-          <h1 class="f1 white">Mapping the Impact</h1>
+        <div class="flex flex-column justify-center align-center h-100">
+          <h1 class="f1-ns f3 white">Mapping the Impact</h1>
           <!-- <img class="mw-30" :src="require('/src/assets/map.png')" /> -->
           <!-- <div style="background-image: url('require')"></div> -->
-          <video autoplay loop>
-            <source :src="require('../assets/FinalAnimationHD.mp4')" loop type="video/mp4">
-          </video>
+          <div class="w-75-ns w-90 center flex flex-column justify-center">
+            <video autoplay loop class="w-100">
+              <source
+                :src="require('../assets/FinalAnimationHD.mp4')"
+                loop
+                type="video/mp4"
+              />
+            </video>
+            <p class="z-5 white bg-black br2 ph2 tl f4-ns f6">
+              This animation is an artistic rendering of data from the Land Grab
+              U project and does not fully represent that data. To see a more
+              accurate representation, please visit
+              <a
+                href="https://www.landgrabu.org/universities/"
+                class="blue di b"
+                >landgrabu.org</a
+              >, and select “Connecticut”.
+            </p>
+          </div>
         </div>
         <curved-border :color="'red'" :left="true"></curved-border>
       </div>
       <div class="section relative bg-lgct-red">
         <div class="flex items-center h-100">
-          <rounded-card :img="require('../assets/LG_usa-silhouette.png')"
-          :buttonurl="'/timeline/Connecticut Timeline'">
+          <rounded-card
+            :img="require('../assets/LG_usa-silhouette.png')"
+            :buttonurl="'/timeline/Connecticut Timeline'"
+          >
             <p class="f3-ns f6">
               The interference of colonialism on the territory we now know as
               “The United States” disrupted the relationship of stewardship and
@@ -89,28 +107,36 @@
           :buttonurl="'/timeline/Connecticut Timeline'"
           :buttoncolor="'#aa4f37'"
         >
-          <p class="f3-ns f6">The University of Connecticut is built on land originally stewarded by
-          Indigenous peoples and was taken by brutal force. The University of
-          Connecticut also continues to benefit from the Morrill Act of 1862, as
-          well as subsequent governmental acts, that were made possible by the
-          systematic dispossession of Indigenous peoples in other parts of the
-          country by the United States government. This timeline gives a glimpse
-          into how the state of Connecticut was formed and how the University of
-          Connecticut came to be its Land Grant University.</p>
+          <p class="f3-ns f6">
+            The University of Connecticut is built on land originally stewarded
+            by Indigenous peoples and was taken by brutal force. The University
+            of Connecticut also continues to benefit from the Morrill Act of
+            1862, as well as subsequent governmental acts, that were made
+            possible by the systematic dispossession of Indigenous peoples in
+            other parts of the country by the United States government. This
+            timeline gives a glimpse into how the state of Connecticut was
+            formed and how the University of Connecticut came to be its Land
+            Grant University.
+          </p>
         </rounded-card>
         <curved-border :color="'teal'" class="z-3"></curved-border>
       </div>
 
       <div class="section relative bg-lgct-gold">
         <div class="flex items-center h-100">
-        <rounded-card :isTitle="true" :heading="'Land Parcels'" :img="require('../assets/LG_horizontal-blue-shape-progression-06.png')" style="flex:1 !important"></rounded-card>
-        <div class="ma3 fr flex items-center">
-          <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
-          <link-button
-            :buttonLink="'/parcels'"
-          ></link-button>
-        </div>
-        <curved-border :color="'gold'"></curved-border>
+          <rounded-card
+            :isTitle="true"
+            :heading="'Land Parcels'"
+            :img="
+              require('../assets/LG_horizontal-blue-shape-progression-06.png')
+            "
+            style="flex: 1 !important"
+          ></rounded-card>
+          <div class="ma3 fr flex items-center">
+            <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
+            <link-button :buttonLink="'/parcels'"></link-button>
+          </div>
+          <curved-border :color="'gold'"></curved-border>
         </div>
       </div>
 
@@ -131,28 +157,49 @@
 </template>
 
 <script>
-  var video = document.getElementById('video1'), fraction = 0.8;
+var video = document.getElementById("video1"),
+  fraction = 0.8;
 
-  function checkScroll() {
-      var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
-      b = y + h, //bottom
-      visibleX, visibleY, visible;
+function checkScroll() {
+  var x = video.offsetLeft,
+    y = video.offsetTop,
+    w = video.offsetWidth,
+    h = video.offsetHeight,
+    r = x + w, //right
+    b = y + h, //bottom
+    visibleX,
+    visibleY,
+    visible;
 
-      visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
-      visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+  visibleX = Math.max(
+    0,
+    Math.min(
+      w,
+      window.pageXOffset + window.innerWidth - x,
+      r - window.pageXOffset
+    )
+  );
+  visibleY = Math.max(
+    0,
+    Math.min(
+      h,
+      window.pageYOffset + window.innerHeight - y,
+      b - window.pageYOffset
+    )
+  );
 
-      visible = visibleX * visibleY / (w * h);
+  visible = (visibleX * visibleY) / (w * h);
 
-      if (visible > fraction) {
-          video.play();
-      } else {
-          video.pause();
-      }
+  if (visible > fraction) {
+    video.play();
+  } else {
+    video.pause();
   }
+}
 
-  checkScroll();
-  window.addEventListener('scroll', checkScroll, false);
-  window.addEventListener('resize', checkScroll, false);
+checkScroll();
+window.addEventListener("scroll", checkScroll, false);
+window.addEventListener("resize", checkScroll, false);
 </script>
 
 <script>
