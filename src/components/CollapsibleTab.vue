@@ -3,7 +3,7 @@
     <h1 class="title f3-l f4 ml6-l ml5"><slot name="heading"></slot></h1>
     <span class="flex">
       <span
-        class="flex flex-column flex-row-l pa4-l pa3 br4 lh-title mh6-l mr2"
+        class="flex flex-column flex-row-l pa4-l pa3 br4 lh-title mh6-l mr2 overflow-scroll"
         id="main-content"
         v-show="showContent"
       >
