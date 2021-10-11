@@ -39,7 +39,7 @@
           <!-- <img class="mw-30" :src="require('/src/assets/map.png')" /> -->
           <!-- <div style="background-image: url('require')"></div> -->
           <div class="w-75-ns w-90 center flex flex-column justify-center">
-            <video autoplay loop class="w-100">
+            <video autoplay loop class="w-100" id="video1" controls>
               <source
                 :src="require('../assets/FinalAnimationHD.mp4')"
                 loop
