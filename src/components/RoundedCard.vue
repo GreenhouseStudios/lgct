@@ -36,7 +36,7 @@
       </div>
     </div>
     <div
-      class="dn-l dn-m dt tl pa3 relative h-75 shadow-4 right-0"
+      class="dn-l dn-m dt tl pa3 relative h-75 shadow-4 right-0 overflow-scroll"
       :class="isFlipped"
       :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
       v-show="!isTitle"
@@ -44,7 +44,7 @@
     >
       <div class="flex items-center h-100" style="justify-content: space-around;">
         <div>
-          <p class="i fw5 f6 pr5-m lh-copy" v-if="!isTitle">
+          <p class="i fw5 f6 pr5-m" v-if="!isTitle">
             <slot></slot>
           </p>
         </div>
@@ -78,7 +78,7 @@
       </div>
       <div
         v-else
-        class="dt-l dt-m dn tl pa4-l pa3 relative h-75 w-100-m w-90-l left-0 shadow-4"
+        class="dt-l dt-m dn tl pa4-l pa3 relative h-75 w-100-m w-90-l left-0 shadow-4 overflow-scroll"
         :class="isFlipped"
         :style="{ backgroundImage: 'url(' + img + ')', backgroundColor: this.bgColor }"
         id="round-card"

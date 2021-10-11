@@ -59,7 +59,7 @@
       <curved-border :color="'red'" :left="true"></curved-border>
     </div>
 
-    <div class="section relative bg-lgct-red white serif fw3 pa5">
+    <div class="section relative bg-lgct-red white serif fw3 pa5-l">
       <stacked-card class="center">
         <template v-slot:heading>The Future of Land Grab</template>
         <p class="f3 black">
@@ -77,9 +77,9 @@
       <curved-border :color="'white'"></curved-border>
     </div>
 
-    <div class="section relative bg-lgct-white serif white fw3 pa5">
+    <div class="section relative bg-lgct-white serif white fw3 pa5-l">
       <stacked-card class="center" mainColor="bg-lgct-teal" headColor="bg-moon-gray">
-        <template v-slot:heading><h1 class="black">The Development of Land Grab</h1></template>
+        <template v-slot:heading><span class="black ">The Development of Land Grab</span></template>
         <p class="f3">
           Land Grab CT initially began when team members Glenn Mitoma and Sage
           Phillips applied for a grant with the intention of identifying land
@@ -114,17 +114,17 @@
     <div class="section relative bg-lgct-teal fw3">
       <stacked-card-horizontal>
         <template v-slot:heading>Special Thanks</template>
-        <ul class="list f2 lh-copy">
-          <li>Land Grab U - Bobby and Tristan</li>
+        <table class="list f2-ns f6 db lh-copy">
+          <li>Tristan Ahtone and Bobby Lee: Land Grab U</li>
           <li>
-            Jiff Martin - contributor, Sustainable Food System Educator at UConn
+            Jiff Martin: Sustainable Food System Educator, UConn
             Extension
           </li>
-          <li>Steven Gavazzi, Ohio State</li>
-          <li>University NACP, Shaquanna Sebastian, Kiara Ruesta-Cayetano</li>
-          <li>Mike Stanton, Journalism at UConn</li>
-          <li>Christopher Clark, History Department at UConn</li>
-        </ul>
+          <li>Steven Gavazzi: The Ohio State University</li>
+          <li>Shaquanna Sebastian, Kiara Ruesta-Cayetano: UConn NACP</li>
+          <li>Mike Stanton: UConn Journalism</li>
+          <li>Christopher Clark: UConn History Department</li>
+        </table>
       </stacked-card-horizontal>
     </div>
   </div>

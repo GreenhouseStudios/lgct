@@ -64,7 +64,7 @@
             </p>
 
             <p class="f3-ns f6">
-              Although not all encompassing, this timeline shows significant
+              Although not all-encompassing, this timeline shows significant
               historical events that reveal the patterns and strategies the
               United States government implemented through its history to erode
               the sovereignty and agency of Indigenous peoples, and their
@@ -78,7 +78,7 @@
             ></link-button>
           </div>
         </div>
-        <curved-border :color="'white'"></curved-border>
+        <curved-border :color="'white'" class="z-3"></curved-border>
       </div>
 
       <div class="section relative bg-lgct-white">

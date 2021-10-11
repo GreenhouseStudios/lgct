@@ -37,8 +37,8 @@
           <h1>{{ currentPerson.name }}</h1>
         </div>
         <div class="bg-light-gray br4 pa1 ph2 shadow-2">
-          <img :src="currentPerson.img" alt="image of team member" />
-          <p>{{ currentPerson.bio }}</p>
+          <img :src="currentPerson.img" alt="image of team member" class="br3"/>
+          <p class="tl">{{ currentPerson.bio }}</p>
         </div>
       </div>
       <div class="flex w-100 absolute bottom-2 center">
@@ -96,7 +96,7 @@ export default {
         },
         {
           name: "Tom Lee",
-          bio: "Tom Lee is a Greenhouse Studios staff member, serving as a Design Technologist. He has worked on a range of innovative interactive digital projects including motion-tracked digital play installations, AR/VR experiences, tabletop games, video games and web apps. He draws on a breadth of experience in music, engineering and design to generate and apply creative approaches to the domain of scholarly communications. He is a three-time graduate of the University of Connecticut holding a BA in Music, BS in Computer Science & Engineering, and an MFA in Digital Media & Design.",
+          bio: "Tom Lee is a Greenhouse Studios Design TechnologistTom has worked on a range of innovative interactive digital projects including motion-tracked digital play installations, AR/VR experiences, tabletop games, video games and web apps. He draws on a breadth of experience in music, engineering and design to generate and apply creative approaches to the domain of scholarly communications.",
           img: require("../assets/TomBio.png"),
           imgSize: "105%"
         },

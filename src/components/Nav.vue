@@ -3,7 +3,7 @@
     <nav class="dt-l border-box" style="position:fixed;" >
       <ul v-if="navShow" v-click-outside="handleClickOutside">
         <li
-          @click="fp.moveTo(index + 1)"
+          @click="move(index)"
           class="tl"
           v-for="(item, index) in navItems"
           :key="item"
@@ -27,11 +27,11 @@ export default {
       navItems: [
         "Home",
         "Morrill Act",
+        "Objectives",
         "Map the Impact",
-        "Mission",
         "National Timeline",
         "CT Timeline",
-        "Land Grab Parcels",
+        "Parcels",
         "About",
       ],
       navShow: false,
@@ -55,6 +55,10 @@ export default {
         this.navShow = false;
       } 
       this.justToggled = false;
+    },
+    move(index){
+      this.fp.moveTo(index + 1)
+      this.toggleNav();
     }
   },
   computed: {
