@@ -1,5 +1,5 @@
 <template>
-  <div class="section dark-gray flex flex-column justify-center">
+  <div class="section relative dark-gray flex flex-column justify-center">
     <home-button></home-button>
     <rounded-card :heading="'Thanks for visiting Land Grab CT'" id="card">
       <div>
