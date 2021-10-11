@@ -39,9 +39,9 @@
           <!-- <img class="mw-30" :src="require('/src/assets/map.png')" /> -->
           <!-- <div style="background-image: url('require')"></div> -->
           <div class="w-75-ns w-90 center flex flex-column justify-center">
-            <video autoplay loop class="w-100" id="video1" controls>
+            <video autoplay loop muted class="w-100" id="video1" controls v-if="videoSrc">
               <source
-                :src="require('../assets/FinalAnimationHD.mp4')"
+                :src="videoSrc"
                 loop
                 type="video/mp4"
               />
@@ -228,6 +228,7 @@ export default {
     return {
       homeActive: true,
       ipsum: ipsum,
+      videoSrc: null,
       options: {
         licenseKey: "5040F97D-84574F59-952CE4FC-EAD7E65C",
         scrollBar: true,
@@ -249,6 +250,9 @@ export default {
         onLeave: this.showOrHideToTopButton,
       },
     };
+  },
+  mounted () {
+    this.videoSrc = require('../assets/FinalAnimationHD.mp4');
   },
 };
 </script>
