@@ -23,7 +23,7 @@ const routes = [
     { path: "/resources/", component: Resources },
     { path: "/parcels/", component: Vignettes },
     { path: "/main/", component: Main },
-    { path: '/', component: Date.now() < new Date(2021, 10, 11, 12, 0, 0, 0) ? Preview : Main },
+    { path: '/', component: Date.now() < new Date(2021, 9, 11, 12, 0, 0, 0) ? Preview : Main },
     { path: '*', component: Error },
 ]
 
