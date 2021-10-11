@@ -1,16 +1,5 @@
 <template>
   <div id="app">
-    <div v-if="$route.path !== '/'">
-      <div class="fixed top-0 right-2 hot-pink z-2 f1 serif pa2 dn db-l">
-        Large
-      </div>
-      <div class="fixed top-0 right-2 hot-pink z-2 f3 serif pa2 dn db-m">
-        Medium
-      </div>
-      <div class="fixed top-0 right-2 hot-pink z-2 f5 serif pa2 dn-l dn-m db">
-        Small
-      </div>
-    </div>
     <router-view></router-view>
   </div>
 </template>
