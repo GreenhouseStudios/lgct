@@ -1,28 +1,39 @@
 <template>
-  <div class="tl pa5 ml5-l ml3" @click="toggleTab">
+  <div class="tl pa5-ns ml5-l ml3" @click="toggleTab">
     <h1 class="title f3-l f4 ml6-l ml5"><slot name="heading"></slot></h1>
     <span class="flex">
       <span
-        class="flex flex-column flex-row-l pa4 pb5 br4 lh-title mh4 w-100"
+        class="flex flex-column flex-row-l pa4-ns pb5 br4 lh-title mh4-ns w-100"
         id="main-content"
         v-show="showContent"
       >
-        <span class="sans-serif lh-copy mr3 f3 fw5">
+        <span class="sans-serif lh-copy mr3-ns f3 fw5">
           <slot></slot>
         </span>
-        <ul class="f3 tl fw4 flex-column flex-wrap mh4">
+        <ul class="f3-ns f6 tl fw4 mh4-ns" id="btn-list" v-if="sitesObj.sites.length > 1">
           <button
             @click.stop="siteIndex = index"
-            v-for="(item,index) in sitesObj.sites"
+            v-for="(item, index) in sitesObj.sites"
             :key="item.name"
-            class="bn br2 ma2 shadow-3 pa2 grow f5 pv0"
+            class="bn br2 ma2 shadow-3 pa2-ns grow f5-ns f6 pv0"
           >
             <p>{{ item.name }}</p>
           </button>
         </ul>
-        <span class="br4 pa4 relative mr6" style="background: #fefcf5; max-width: 500px">
-          <img :src="sitesObj.sites[siteIndex].img" :alt="sitesObj.sites[siteIndex].name" style="object-fit:cover;"/>
-          <a v-if="sitesObj.sites[siteIndex].link" :href="sitesObj.sites[siteIndex].link" class="lgct-red sans-serif pt2 fw4 tc underline"
+        <span
+          class="br4 pa4-ns pa2 relative mr6 w7"
+          style="background: #fefcf5; max-width: 500px"
+        >
+          <img
+            :src="sitesObj.sites[siteIndex].img"
+            :alt="sitesObj.sites[siteIndex].name"
+            style="object-fit: fill;"
+          />
+          <p v-if="sitesObj.sites.length === 1" class="black sans-serif tc w-100 f5 mt1" >{{sitesObj.sites[siteIndex].name}}</p>
+          <a
+            v-if="sitesObj.sites[siteIndex].link"
+            :href="sitesObj.sites[siteIndex].link"
+            class="lgct-red sans-serif pt2 fw4 tc underline"
             >Street View</a
           >
         </span>
@@ -58,32 +69,32 @@ export default {
             {
               name: "Nebraska Wesleyan Campus",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/@40.8376097,-96.6497008,3a,75y,303.47h,94t/data=!3m7!1e1!3m5!1shguwLJGDUi18DIj7SoguJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhguwLJGDUi18DIj7SoguJw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D160.32758%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192"
+              link: "https://www.google.com/maps/@40.8376097,-96.6497008,3a,75y,303.47h,94t/data=!3m7!1e1!3m5!1shguwLJGDUi18DIj7SoguJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhguwLJGDUi18DIj7SoguJw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D160.32758%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192",
             },
             {
               name: "Walgreens",
               img: require("../assets/Parcel Imgs/NebraskaParcel/nebraska-walgreens.png"),
-              link: "https://www.google.com/maps/@40.8378821,-96.6534696,3a,75y,147.32h,86.78t/data=!3m7!1e1!3m5!1sycZZ6bUOWQnkBbLRviSOrw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DycZZ6bUOWQnkBbLRviSOrw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D92.46353%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656"
+              link: "https://www.google.com/maps/@40.8378821,-96.6534696,3a,75y,147.32h,86.78t/data=!3m7!1e1!3m5!1sycZZ6bUOWQnkBbLRviSOrw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DycZZ6bUOWQnkBbLRviSOrw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D92.46353%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656",
             },
             {
               name: "Lincoln Police Dept Northeast Team Station",
               img: require("../assets/Parcel Imgs/NebraskaParcel/nebraska-lincoln-pd.png"),
-              link: "https://www.google.com/maps/@40.8372547,-96.6526069,3a,75y,169.98h,86.18t/data=!3m6!1e1!3m4!1seLwAoF7_oJot-DDlWT24cQ!2e0!7i16384!8i8192"
+              link: "https://www.google.com/maps/@40.8372547,-96.6526069,3a,75y,169.98h,86.18t/data=!3m6!1e1!3m4!1seLwAoF7_oJot-DDlWT24cQ!2e0!7i16384!8i8192",
             },
             {
               name: "Ayers & Ayers, Inc. Construction Company",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/place/Makovicka+Physical+Therapy/@40.8372615,-96.652958,3a,75y,196.57h,91.24t/data=!3m7!1e1!3m5!1szaOIoeFH7z7od8x4WM2edQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzaOIoeFH7z7od8x4WM2edQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D270.15237%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m5!3m4!1s0x8796bc10082b9e29:0xa9a96b9962053ade!8m2!3d40.8369281!4d-96.6533166"
+              link: "https://www.google.com/maps/place/Makovicka+Physical+Therapy/@40.8372615,-96.652958,3a,75y,196.57h,91.24t/data=!3m7!1e1!3m5!1szaOIoeFH7z7od8x4WM2edQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzaOIoeFH7z7od8x4WM2edQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D270.15237%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m5!3m4!1s0x8796bc10082b9e29:0xa9a96b9962053ade!8m2!3d40.8369281!4d-96.6533166",
             },
             {
               name: "Makovicka Physical Therapy",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/place/Makovicka+Physical+Therapy/@40.837263,-96.6531987,3a,75y,183.91h,89.17t/data=!3m6!1e1!3m4!1sorCv5zVwhgT0WMjEhd07ew!2e0!7i16384!8i8192!4m5!3m4!1s0x8796bc10082b9e29:0xa9a96b9962053ade!8m2!3d40.8369281!4d-96.6533166"
+              link: "https://www.google.com/maps/place/Makovicka+Physical+Therapy/@40.837263,-96.6531987,3a,75y,183.91h,89.17t/data=!3m6!1e1!3m4!1sorCv5zVwhgT0WMjEhd07ew!2e0!7i16384!8i8192!4m5!3m4!1s0x8796bc10082b9e29:0xa9a96b9962053ade!8m2!3d40.8369281!4d-96.6533166",
             },
             {
               name: "United Methodist Church",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/@40.8393145,-96.651225,3a,75y,334.1h,100.38t/data=!3m6!1e1!3m4!1s11tX3_-QEIkTlmFlxKGukw!2e0!7i16384!8i8192"
+              link: "https://www.google.com/maps/@40.8393145,-96.651225,3a,75y,334.1h,100.38t/data=!3m6!1e1!3m4!1s11tX3_-QEIkTlmFlxKGukw!2e0!7i16384!8i8192",
             },
             {
               name: "Art Studio/Gallery",
@@ -100,7 +111,7 @@ export default {
             {
               name: "Massage Studio - Empowered Healing",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/@40.8398342,-96.6536387,3a,75y,140.58h,85.42t/data=!3m6!1e1!3m4!1sli-dUWNs-TdFalAhCF5x6A!2e0!7i16384!8i8192"
+              link: "https://www.google.com/maps/@40.8398342,-96.6536387,3a,75y,140.58h,85.42t/data=!3m6!1e1!3m4!1sli-dUWNs-TdFalAhCF5x6A!2e0!7i16384!8i8192",
             },
             {
               name: "Automotive Shop",
@@ -109,7 +120,7 @@ export default {
             {
               name: "Sorority and Fraternity House",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/@40.840326,-96.649772,3a,75y,316.78h,86.68t/data=!3m7!1e1!3m5!1sdYIIbxQJkOveH6xB5kv0HA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DdYIIbxQJkOveH6xB5kv0HA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D169.75478%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656"
+              link: "https://www.google.com/maps/@40.840326,-96.649772,3a,75y,316.78h,86.68t/data=!3m7!1e1!3m5!1sdYIIbxQJkOveH6xB5kv0HA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DdYIIbxQJkOveH6xB5kv0HA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D169.75478%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656",
             },
             {
               name: "Chain Restaurants",
@@ -118,12 +129,12 @@ export default {
             {
               name: "Building Consultancy - Branch Pattern",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/@40.8409983,-96.6537131,3a,75y,81.36h,83.34t/data=!3m7!1e1!3m5!1szEdTrDQkwVYyqsXIPg_JvA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzEdTrDQkwVYyqsXIPg_JvA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D67.79744%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192"
+              link: "https://www.google.com/maps/@40.8409983,-96.6537131,3a,75y,81.36h,83.34t/data=!3m7!1e1!3m5!1szEdTrDQkwVYyqsXIPg_JvA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzEdTrDQkwVYyqsXIPg_JvA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D67.79744%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192",
             },
             {
               name: "Jeweler",
               img: require("../assets/Parcel Imgs/NebraskaParcel/NebraskaWesleyan.png"),
-              link: "https://www.google.com/maps/place/24%2F7+Commercial+Handyman+Services/@40.840104,-96.6536389,3a,75y,103.56h,84.31t/data=!3m6!1e1!3m4!1syfs3J7dm1LZPYxkCefKmVw!2e0!7i16384!8i8192!4m12!1m6!3m5!1s0x8796bc10082b9e29:0xa9a96b9962053ade!2sMakovicka+Physical+Therapy!8m2!3d40.8369281!4d-96.6533166!3m4!1s0x8796bc05791265df:0x260d76bcf1e92282!8m2!3d40.8399646!4d-96.6535517"
+              link: "https://www.google.com/maps/place/24%2F7+Commercial+Handyman+Services/@40.840104,-96.6536389,3a,75y,103.56h,84.31t/data=!3m6!1e1!3m4!1syfs3J7dm1LZPYxkCefKmVw!2e0!7i16384!8i8192!4m12!1m6!3m5!1s0x8796bc10082b9e29:0xa9a96b9962053ade!2sMakovicka+Physical+Therapy!8m2!3d40.8369281!4d-96.6533166!3m4!1s0x8796bc05791265df:0x260d76bcf1e92282!8m2!3d40.8399646!4d-96.6535517",
             },
           ],
         };
@@ -194,5 +205,18 @@ div::after {
 }
 div:hover::after {
   background: #4d9ba3;
+}
+@media screen and (min-width: 60em) {
+  #btn-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 60em) {
+  #btn-list {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
 </style>
