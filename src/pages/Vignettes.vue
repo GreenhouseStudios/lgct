@@ -6,6 +6,7 @@
         :heading="'Land Parcels'"
         class="w-100"
         :isTitle="true"
+        id="title-card"
       ></rounded-card>
       <curved-border :color="'red'"></curved-border>
     </div>
@@ -713,5 +714,8 @@ export default {
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+#title-card{
+  height: 75vh;
 }
 </style>
