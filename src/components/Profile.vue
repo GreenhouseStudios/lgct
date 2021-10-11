@@ -91,26 +91,26 @@ export default {
         {
           name: "Lauren Harland (she/her)",
           bio: "Lauren Harland is a UConn sophomore pursuing a BA in Digital Media & Design with a concentration in Business Strategies. She is interested in exploring all aspects of digital media, especially digital branding and user interface design. She believes that digital media is the perfect platform to tell impactful stories and to bring people together. In her free time, Lauren enjoys exploring other artistic outlets such as painting, embroidery and film photography. ",
-          img: require("../assets/LaurenBio.png"),
+          img: require("../assets/LaurenHarland.jpg"),
           imgSize: "107%"
         },
         {
           name: "Tom Lee",
           bio: "Tom Lee is a Greenhouse Studios Design TechnologistTom has worked on a range of innovative interactive digital projects including motion-tracked digital play installations, AR/VR experiences, tabletop games, video games and web apps. He draws on a breadth of experience in music, engineering and design to generate and apply creative approaches to the domain of scholarly communications.",
-          img: require("../assets/TomBio.png"),
+          img: require("../assets/toml.jpg"),
           imgSize: "105%"
         },
 {
           name: "Garrett McComas",
           bio: "Garrett McComas holds an MA in Classics from the University of Oregon and an MLIS from the University of Illinois at Urbana-Champaign. Prior to working at Greenhouse Studios, Garrett worked as a Graduate Research Assistant at UIUC for the Classroom and the Future of the Historical Record (CFHR) project, where he helped to publish projects in the Digital Humanities. Garrett is interested in the history of information practices and classification as well as the publication and preservation of Digital Humanities projects.",
-          img: require("../assets/GlennBio.png"),
+          img: require("../assets/garrettm.jpg"),
           imgSize: "107%"
         },
         {
           name: "Glenn Mitoma",
           bio: "Glenn Mitoma is an Assistant Professor of Human Rights and Education, jointly appointed with the Human Rights Institute and the Neag School of Education Department of Curriculum and Instruction. Glenn is inaugural Director of Dodd Impact, previously serving as director of the Thomas J. Dodd Research Center since 2013. Glenn’s research and teaching focus on the history of human rights and human rights education, with current projects on the role of education in advancing respect for human rights, the history of human rights education, a biography of the Lebanese philosopher and diplomat—and prominent UN Universal Declaration of Human Rights author—Charles H. Malik.",
-          img: require("../assets/GlennBio.png"),
-          imgSize: "127%"
+          img: require("../assets/Glenn-Website-Photo.jpg"),
+          imgSize: "107%"
         },
         {
           name: "Roya Movahed",
@@ -127,7 +127,7 @@ export default {
         {
           name: "Cameron Slocum",
           bio: "In the world of digital media, Cameron is especially interested in 2D animation and 3D modeling. Outside of digital media, she enjoys designing lighting and furniture. Cameron loves learning new techniques she can use to bring her ideas to life. In her spare time, Cameron can be found hiking, making a rug, or listening to music.",
-          img: require("../assets/CameronBio.png"),imgSize: "105%"
+          img: require("../assets/cameron.png"),imgSize: "105%"
         },
         {
           name: "Carly Wanner-Hyde (she/her)",
@@ -137,7 +137,7 @@ export default {
         {
           name: "Miles Waterbury",
           bio: "Miles Waterbury is a Digital Media and Design Major pursuing a BFA with a concentration in 3D Animation.  In addition to focusing on 3D animation, Miles tries to expand his skill set by taking classes within all the various Digital Media and Design concentrations.  In addition to his major Miles is heavily involved in the UConn Marching Band and UConn Pep Band.  Miles also a part of the UCMB Media team and a brother of Kappa Kappa Psi, a national honorary band fraternity.  Miles strives to improve his digital media abilities while at the same time giving back to the organization that he holds so dear to his heart.",
-          img: require("../assets/MilesBio.png"),imgSize: "110%"
+          img: require("../assets/miles-w.jpg"),imgSize: "100%"
         },
       ],
       index: 0,
