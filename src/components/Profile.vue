@@ -79,8 +79,8 @@ export default {
         {
           name: "Luisa Fernanda Arrieta Fernandez",
           bio: "Luisa Fernanda Arrieta is a doctoral candidate in the History Department at the University of Connecticut. Her research focuses on national museums as stages for the performative embodiment of the state and as tools for the construction of national identities.",
-          img: require("../assets/LuisaBio.png"),
-          imgSize: "105%"
+          img: require("../assets/luisa.png"),
+          imgSize: "100%"
         },
         {
           name: "Mackenzie Fox",
