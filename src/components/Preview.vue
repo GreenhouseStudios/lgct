@@ -6,7 +6,7 @@
       id="hero"
       class="w-40-l w-70"
     />
-    <h1 class="tc pv4 f1-l f3">Coming October 11th, 2021</h1>
+    <h1 class="tc pv4 f1-l f3">Launches at 12pm ET</h1>
     </div>
     <curved-border :color="'red'"></curved-border>
   </div>

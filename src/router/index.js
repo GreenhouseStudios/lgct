@@ -22,20 +22,20 @@ const routes = [
     { path: "/about/", component: About },
     { path: "/resources/", component: Resources },
     { path: "/parcels/", component: Vignettes },
-    {path: "/main/", component: Main},
-    { path: '/', component: Preview },
+    { path: "/main/", component: Main },
+    { path: '/', component: Date.now() < new Date(2021, 10, 11, 12, 0, 0, 0) ? Preview : Main },
     { path: '*', component: Error },
 ]
 
 const router = new VueRouter({
     routes, // short for `routes: routes`
-    scrollBehavior (to, from, savedPosition) {
+    scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition
-          } else {
+        } else {
             return { x: 0, y: 0 }
-          }
-      }
+        }
+    }
 })
 
 
