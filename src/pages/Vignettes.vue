@@ -53,44 +53,13 @@
         >
           <template v-slot:heading>Settler Appropriation and Uses</template>
           <p>
-            Connecticut Land Grant scrip was redeemed in 1877 for two parcels in
-            northern Sonoma County by John Comstock and Daniel Sink.
+           In 1855 the United States paid $2.71 for this 80-acre piece of land upon the agreement of a transfer under the Morrill Act between the United States and Blackfoot; Chippewa, Ontonagon band peoples. This land grant parcel was granted to the State of Connecticut in 1862, the land later underwent patent in 1872 to which the university accepted in 1893. From the original $2.71 amount, the University of Connecticut was able to raise $60.35 off of this 80-acre piece of land. When these dollar amounts undergo inflation, the rates rise to reveal that today the profit is much larger. The original $2.71 rises to $80.01, and the University would raise $1,751.88 as compared to the original $60.35. 
           </p>
           <p>
-            Originally the homelands of the Southern Pomo people and the site of
-            a village of ?iy.o.tok.o wi (‘at the lower field’), these parcels
-            were close to a nearly 9,000 acre Mexican Rancheria, Rancho Rincon
-            de Musalacon, granted by Governor Pio Pico to Francisco Berreyesa in
-            1846. While the US agreed to honor the Mexican land grants when it
-            took control of California following the Mexican-American War of
-            1848, the US laid claim to these parcels and other California
-            indigenous lands through a series of treaties negotiated in the
-            early 1850s. As with treaties in other parts of the US, these
-            treaties provided for minimal monetary compensation and small
-            reservations of tribal lands. However, through the vigorous
-            opposition of California’s senators, the Senate declined to ratify
-            the treaties and the Native land rights were terminated through fiat
-            with no monetary compensation or land reserves.
+            While this land as it currently sits resides on the banks of Indian Creek, MT, it is also Blackfoot Land. This specific parcel located in Madison County, MT was sold to directly benefit the white education at the Storrs Agricultural School established in 1881. A decade later, the Fort Shaw Indian Boarding School was opened in 1892 approximately 187 miles north of Madison County, also on Blackfoot land. The school was designed to house 250 Native students, who would be too far from their homes for their families to visit. Fort Shaw was formerly a military base for the United States Army, and the residential school it became would discipline Native children using military style tactics. Young boys and girls were to only speak English, follow military discipline, and rid themselves of their Native cultures. The Fort Shaw Indian Boarding School followed a curriculum inspired by the Carlisle and Chemawa schools, therefore the young men were to enter fields of farming or labor, and young women would be housewives or servants.
           </p>
           <p>
-            The failure to ratify the treaties effectively endorsed the
-            extra-judicial seizure of land by white settlers which was rampant
-            in the Gold Rush period. This seizure was accompanied by a series of
-            extermination campaigns which Benjamin Madley has characterized as
-            an American Genocide. In what is now known as the Bloody Island
-            Massacre, a large community of Pomo were surrounded and massacred by
-            US Army forces on May 15, 1850. Madley estimates between 60 and 800
-            Pomo were murdered in that attack, perhaps making it the largest
-            settler killing of North American natives—larger than the murders of
-            Lakota at Wounded Knee or of Pequot at Mystic.
-          </p>
-          <p>
-            These parcels lay just to the northwest of the city of Cloverdale,
-            which Daniel Sink had helped to found in 1872. Sink created a road
-            on these lands, for which he charged travelers a toll to use, and
-            later planted grapes. His son, William Sink would establish a winery
-            in 1893, joining the burgeoning California wine industry.
-            [https://soconews.org/cloverdale_reveille/opinion/columns/cloverdale-pioneers-daniel-sink/article_5f67d3c6-6c56-11e9-8101-575aba603257.html]
+            Blackfoot land tells two stories to education in modern-day America; it directly benefitted the Storrs Agricultural School which would eventually become the University of Connecticut in its entirety, and also assimilate young Native Children through violence, to become “useful American citizens.”
           </p>
         </collapsible-tab>
         <collapsible-tab
@@ -98,45 +67,16 @@
           class="z-2"
           v-on:toggle-tab="toggleTab('toggle me', $event)"
           ><template v-slot:heading>Native Peoples of this Land</template>
-          <p>
-            The Pomo people have lived for millenia in what is today parts of
-            the Northern California counties of Sonoma, Mendocino, and Lake.
-            Prior to European contact, the Pomo lived in several culturally and
-            linguistically distinct bands and tribes along the Pacific coast,
-            redwood forests, Russian River valley, and Clear Lake areas. These
-            parcels are located near the northern end of the Southern Pomo
-            territory, close to the likely site of a village of ?iy.o.tok.o wi
-            (‘at the lower field’). The foothills of the Russian River valley
-            were rich in acorn oaks, buckeyes, small and large game, and other
-            resources, and supported a flourishing population of 3,950 to 6,300
-            Southern Pomo by the turn of the nineteenth century.
-          </p>
-          <p>
-            Targeted by US settlers for extermination in the 19th century,
-            including at the Bloody Island Massacre at Clear Lake on May 15,
-            1850. The Pomo had previously survived expropriation and forced
-            labor at the hands of Russian colonists at Fort Ross, the Spanish
-            Mission system, and the Mexican rancherias. With encroachment and
-            depredation, Pomo resisted, adapted, and endured, continuing to
-            practice traditional arts, like basketweaving, and adopting new
-            practices, like the Ghost Dance. These systematic efforts at
-            displacement, assimilation, and/or extermination took a profound
-            toll, with Pomo populations decimated and lands reduced by 99
-            percent. Nevertheless, the Pomo people survived this attempted
-            genocide, with several communities achieving Federal recognition in
-            the 20th century.
-          </p>
-          <p>
-            One such community is the Cloverdale Rancheria of Pomo Indians.
-            First federally recognized in 1921, the tribe was “terminated” under
-            the Rancheria Act of 1958. Thanks to the leadership of Pomo elder
-            Tillie Harwick, the termination was overturned in 1983 and the
-            Rancheria works to preserve, revive, and extend Pomo traditions
-            including basketweaving and dance. Today including nearly 500
-            members, the Cloverdale Rancheria provides key Tribal services,
-            sustains and grows cultural traditions, and is working toward
-            self-sufficiency and sovereignty in the Cloverdale area.
-          </p></collapsible-tab>
+         <p>This parcel resides on the lands of Niitsítpiis-stahkoii ᖹᐟᒧᐧᐨᑯᐧ ᓴᐦᖾᐟ (Blackfoot / Niitsítapi ᖹᐟᒧᐧᒣᑯ), Michif Piyii (Métis), Apsaalooké (Crow), and Salish Kootenai (Flathead) Očhéthi Šakówiŋ peoples. Established by treaty in 1855, the Flathead Reservation would become home to the Blackfeet Nation in Northwest Montana, home to one of the largest tribes in modern-day United States. For the Blackfeet Nation, their honor to the land lies strongly with the protection of the Badger-Two Medicine, an almost completely unroaded area of beautiful mountains and water that the Nation has vowed to protect. As a result, all oil and gas leases have been halted, and a congressional bill of permanent protection has been released. Additionally, the Blackfoot Confederacy (Blackfeet Nation, Kainai Nation, Piikani Nation, and Siksika Nation) began the Iinnii Initiative in 2009 to restore the Buffalo population, conserve the lands and culture. </p>
+<p>
+The Métis people, located in the Northwest spanned a large area of land prior to the War of 1812 that resulted in the establishment of the United States-Canada border. In 1670, under the Royal Crown, the Hudson’s Bay Company (HBC) was implemented and would later grant land to Lord Selkirk, removing the Métis people from their lands. While the Canadian government worked to establish settlements, the Métis National Committee was developed during 1869-1870, which remains today. After a long effort, joining lobbying groups and collaborating with other Nations, the Métis people were later recognized in 1982 as one of Canada’s original Aboriginal peoples along with two other communities. In 2008, the Métis Nation of Ontario (MNO) sign an agreement with  Ontario’s government to implement a collaborative relationship, and the MNO later declare 2010-2020 to be the decade of the Métis. Today, the Métis people reside on territories surrounding the waters of Ontario, Canada and the Great Lake region. They continue to connect through kinship, identity, and their history as Métis people.
+</p>
+<p>
+
+Under the discovery of valuable goods, such as minerals and gold on Native lands, the United States government made it a duty to take over lands that contained these goods. The Crow Tribe, Cheyenne and Sioux tribes would be directly affected by these efforts, and the discovery of gold on their lands made them a prime target. Through growing tensions between the U.S. government and the Crow people, the Battle of Little Bighorn on June 25, 1876 became the event that would put Chief Sitting Bull, Crazy Horse and Colonel Custer face to face. The discovery of gold served as reason for the government to ignore treaties and invade Crow lands, while the Crow people fought to retaliate against being moved to Indian Reservations. Although Custer and his men were defeated, the Sioux and Cheyenne were sent to reservations within five years of the battle. Today, the Crow people are the fifth-largest tribe in modern-day United States covering about 2,300,000 acres in south-central Montana.</p>
+
+<p>Today, the Flathead Reservation is home to the Confederated Salish and Kootenai tribes, who are a combination of the Salish, the Pend d'Oreille and the Kootenai. These communities were given the name “Flathead” by Europeans, who observed cultural practices of “Cranial deformation.” The Confederated Salish and Kootenai tribes today are federally recognized as of 1904, and occupy 1.3 million acres, home to a diverse population of tribal communities.</p>
+         </collapsible-tab>
         
       </div>
         <curved-border :color="'white'" :left="true" class="z-5" ></curved-border>
