@@ -110,8 +110,7 @@ Under the discovery of valuable goods, such as minerals and gold on Native lands
           States $20.67. The land ceded was granted to the University of
           Connecticut in 1862, which made a return of six times the original
           price - $121.22 was raised for the university from this one parcel of
-          land. Today, residential homes and Currently known as Nebraska
-          Wesleyan University sit on this parcel.
+          land. Today, residential homes and Wesleyan University sit on this parcel.
         </p>
       </stacked-card-horizontal>
       <div class="lower serif lgct-white fw7 z-1">
