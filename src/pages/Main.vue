@@ -52,7 +52,7 @@
             :img="require('../assets/LG_usa-silhouette.png')"
             :buttonurl="'/timeline/Connecticut Timeline'"
           >
-            <p class="f3-ns f6">
+            <p class="f5-ns f6">
               The land grant college and university system must be understood in the context of the larger history of dispossession of Indigneous peoples in North America.  At its root, colonialism is about land: control, commodification, extraction, and exploitation of territory in the service of settler interests.  In this way, the 1862 Morrill Land Grant Act marks a continuation and extension of a longer history of European and American appropriation, often by violence and coercion, of Native lands, and the transformation of that land into financial resources to benefit settler society.  
 
 This dispossession was, from the very beginning, resisted, contested, and occasionally subverted by Native Tribes and individuals across the continent.  For many if not all Native cultures, the close connection between survival, identity, and geographic place meant that this process of dispossession, even if it was not, as it often was, accompanied by a deliberate policy of extermination, often amounted to attempted genocide.  The creativity, strength, and resilience of generations of Native peoples ensured that such attempts were unsuccessful. Today, these vibrant, sovereign communities are forging new futures at the same time the work to reclaim much of what they lost
@@ -80,7 +80,7 @@ The following timeline presents an overview of key episodes in the history of co
           :buttonurl="'/timeline/Connecticut Timeline'"
           :buttoncolor="'#aa4f37'"
         >
-          <p class="f3-ns f6">
+          <p class="f3-ns f4-m f4">
             This timeline examines the history of the University of Connecticut within the larger system of colonialism. This history includes the roots of colonialism in land control, commodification, extraction and exploitation, which are integral in the formation of the state of Connecticut and the establishment and ongoing funding of the University of Connecticut.  Although not comprehensive, this timeline presents an overview of key episodes in the ongoing acquisition of land that has constructed modern day UConn. 
           </p>
         </rounded-card>
@@ -96,7 +96,7 @@ The following timeline presents an overview of key episodes in the history of co
               require('../assets/LG_horizontal-blue-shape-progression-06.png')
             "
             style="flex: 1 !important"
-          ><p class="f3-ns f6">Virtually visit a selection of parcels that currently benefit the University of Connecticut. Learn about how the land is being used today, the Native peoples of this land, and the history of how settlers appropriated and exploited it. </p></rounded-card>
+          ><p class="f3-ns f4">Virtually visit a selection of parcels that currently benefit the University of Connecticut. Learn about how the land is being used today, the Native peoples of this land, and the history of how settlers appropriated and exploited it. </p></rounded-card>
           <div class="ma3 fr flex items-center">
             <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
             <link-button :buttonLink="'/parcels'"></link-button>
