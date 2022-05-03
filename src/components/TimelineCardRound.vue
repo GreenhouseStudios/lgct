@@ -228,7 +228,7 @@ div.expanded {
   background-position: left bottom;
 }
 .root-expanded {
-  border-radius: 0 10000px 10000px 0;
+  border-radius: 0 200px 200px 0;
   background-size: 200% !important;
   background: linear-gradient(
     to right,
