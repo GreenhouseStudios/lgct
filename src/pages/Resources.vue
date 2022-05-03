@@ -76,7 +76,7 @@
           ></div>
         </div>
         <ul class="flex ma2" id="resource-cards-container">
-          <a href="https://landgrabu.org">
+          <a href="https://landgrabu.org" target="_blank">
             <div
               v-for="i in 4"
               :key="i"

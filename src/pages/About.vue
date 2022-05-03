@@ -85,7 +85,7 @@
           Phillips applied for a grant with the intention of identifying land
           parcels from the Morrill Act that tied to the University of
           Connecticut. The day after being awarded the grant, the
-          <a href="http://landgrabu.org">Land Grab U</a>
+          <a href="http://landgrabu.org" target="_blank">Land Grab U</a>
           project was published, which is a rigorously detailed project that
           traced the land parcels and money tied to every Land-Grant University
           in the United States. It defined the Morrill Act based on land and
@@ -96,7 +96,7 @@
         </p>
         <p class="f3">
           Soon, the project was brought to
-          <a href="https://greenhousestudios.uconn.edu/">Greenhouse Studios</a>
+          <a href="https://greenhousestudios.uconn.edu/" target="_blank">Greenhouse Studios</a>
           for further development. After sessions brainstorming, consultation
           and collaboration, the current LandGrab CT website began to take form.
           The team researched, synthesised information, formulated theses, and

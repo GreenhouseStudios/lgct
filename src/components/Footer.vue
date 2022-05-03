@@ -6,15 +6,15 @@
         <p class="f2-ns f4 sans-serif mb0">Follow us on social media</p>
       </div>
       <div class="flex justify-start">
-        <a href="https://twitter.com/LandGrabCT" class="ma3"
+        <a href="https://twitter.com/LandGrabCT" target="_blank" class="ma3"
           ><i class="fa fa-2x fa-twitter blue"></i
         ></a>
-        <a href="https://www.instagram.com/landgrabct/?hl=en" class="ma3"
+        <a href="https://www.instagram.com/landgrabct/?hl=en" target="_blank" class="ma3"
           ><i class="fa fa-2x fa-instagram black"></i
         ></a>
       </div>
       <div>
-        <a href="https://greenhousestudios.uconn.edu/"
+        <a href="https://greenhousestudios.uconn.edu/" target="_blank"
           >https://greenhousestudios.uconn.edu/</a
         >
         <h3>© 2021 - {{new Date().getFullYear()}} Greenhouse Studios</h3>
