@@ -1,5 +1,5 @@
 <template>
-  <div class="z-1 ph4 mb6 mw9">
+  <div class="z-1 ph4 mb6 mw9 ma5-l ma3">
     <div
       class="br4 pv4-ns pv1 ph3-ns ph3 pa2 shadow-4 flex-ns flex-row-l flex-column justify-between"
       id="main-card"

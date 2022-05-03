@@ -37,11 +37,28 @@
           <h1>{{ currentPerson.name }}</h1>
         </div>
         <div class="bg-light-gray br4 pa1 ph2 shadow-2">
-          <img :src="currentPerson.img" alt="image of team member" class="br3"/>
+          <div class="flex w-100 center" style="justify-content: space-around; align-items: center;">
+            <button
+              @click="changeIndex(-1)"
+              class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 mh2"
+              :style="{ backgroundColor: this.btnColor }"
+            >
+              <i class="white fa fa-chevron-left"></i>
+            </button>
+            <img :src="currentPerson.img" alt="image of team member" class="br3"/>
+            <button
+              @click="changeIndex(1)"
+              class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 mh2"
+              :style="{ backgroundColor: this.btnColor }"
+            >
+              <i class="white fa fa-chevron-right"></i>
+            </button>
+          </div>
+          
           <p class="tl">{{ currentPerson.bio }}</p>
         </div>
       </div>
-      <div class="flex w-100 absolute bottom-2 center">
+      <!-- <div class="flex w-100 absolute bottom-2 center" style="justify-content: space-around;">
         <button
           @click="changeIndex(-1)"
           class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 mh2"
@@ -49,15 +66,14 @@
         >
           <i class="white fa fa-chevron-left"></i>
         </button>
-        <span class="w-two-thirds"></span>
         <button
           @click="changeIndex(1)"
-          class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 m2"
+          class="w2 h2 bg-moon-gray br-100 bn grow shadow-4 mh2"
           :style="{ backgroundColor: this.btnColor }"
         >
           <i class="white fa fa-chevron-right"></i>
         </button>
-      </div>
+      </div> -->
     </div>
     <curved-border :color="'teal'"></curved-border>
   </div>

@@ -114,7 +114,7 @@
     <div class="section relative bg-lgct-teal fw3">
       <stacked-card-horizontal>
         <template v-slot:heading>Special Thanks</template>
-        <table class="list f2-ns f6 db lh-copy">
+        <table class="list f3-ns f4 db lh-copy">
           <li>Tristan Ahtone and Bobby Lee: Land Grab U</li>
           <li>
             Jiff Martin: Sustainable Food System Educator, UConn
