@@ -14,7 +14,7 @@
           <h5 class="lgct-teal f3-l f5 sans-serif i fw4 ma0 pv3-ns pv1">
             <slot name="gps"></slot>
           </h5>
-          <div class="f2-l f4"><slot name="heading"></slot></div>
+          <div class="f2-l f3"><slot name="heading"></slot></div>
           <div class="f4-l f6 fw4 sans-serif lgct-teal pv3-ns pv1">
             <slot name="subtitle"></slot>
           </div>
