@@ -37,7 +37,7 @@
           v-if="event.fullBody"
           v-show="!showMore"
           ><div class="relative flex justify-center items-center f2">
-            <span><i class="fa fa-lg fa-chevron-down"></i></span></div
+            <span><i class="fa fa-lg fa-chevron-down arrowButton"></i></span></div
         ></span>
         <span
           id="read-less-button"
@@ -46,7 +46,7 @@
           v-if="event.fullBody"
           v-show="showMore"
           ><div class="relative flex justify-center items-center f2">
-            <span><i class="fa fa-lg fa-chevron-up"></i></span></div
+            <span><i class="fa fa-lg fa-chevron-up arrowButton"></i></span></div
         ></span>
 
         <div v-if="event.childPosts">
@@ -213,6 +213,7 @@ div.expanded {
   right: -30%;
 }
 .root {
+  cursor: pointer;
   border-radius: 0 10000px 10000px 0;
   background-size: 200% !important;
   background: linear-gradient(
@@ -237,5 +238,9 @@ div.expanded {
     rgba(255, 255, 255, 0) 100%
   );
   box-shadow: 10px 5px 5px rgba(50,50,50,0.2);
+}
+
+.arrowButton:hover {
+  cursor: pointer;
 }
 </style>
