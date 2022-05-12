@@ -60,7 +60,7 @@
         id="round-card"
       >
         <div class="flex items-center h-100">
-          <div>
+          <div style="flex-grow: 3">
             <h1 id="heading-title-version" class="f-headline-l f1" v-if="isTitle">{{ heading }}</h1>
             <h1 class="f1-l f3" v-else>{{ heading }}</h1>
 

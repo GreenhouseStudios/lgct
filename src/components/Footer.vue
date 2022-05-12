@@ -13,12 +13,14 @@
           <a href="https://www.instagram.com/landgrabct/?hl=en" target="_blank" class="ma3"
             ><i class="fa fa-2x fa-instagram black"></i
           ></a>
-        </div>
-        <div style="">
-          <a href="https://greenhousestudios.uconn.edu/" target="_blank" style="max-width: 100px; padding: 5px;">
+            <a href="https://greenhousestudios.uconn.edu/" target="_blank" style="width: auto; height: auto; max-width: 70px; max-height: 70px; padding: 5px;">
             <img src="../../public/GS-Full-Brackets-Green-Black.png"/>
           </a>
-          <h3>© 2021 - {{new Date().getFullYear()}} Greenhouse Studios</h3>
+        </div>
+       
+        <div style="">
+         
+          <p class="copyright">© 2021 - {{new Date().getFullYear()}} Greenhouse Studios</p>
           <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
             <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
           </a>

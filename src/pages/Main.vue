@@ -11,7 +11,21 @@
         <div class="flex flex-column items-center justify-center h-100">
           <stacked-card headColor="bg-lgct-red" mainColor="bg-moon-gray">
             <template v-slot:heading>The Objective of Land Grab CT</template>
-            The Land Grab CT project was inspired by the <a href="https://landgrabu.org" target="_blank" class="blue b di">Land Grab U</a> project, which extensively collected and mapped land data tied to land-grant universities and the 1862 Morrill Act. Our website is a localization of the data from the Land Grab U project and an expansion of their work in a larger colonial context. Land Grab CT specifically focuses on UConn’s status as a land-grant university and details UConn’s acquisition and control of the land it currently resides on as well as the parcels of land from which it benefits.This project aims to inform viewers about UConn’s participation in the construction of colonial systems of higher education. It invites them to interrogate their assumptions about these systems and their impact on Native communities.
+            The Land Grab CT project was inspired by the
+            <a href="https://landgrabu.org" target="_blank" class="blue b di"
+              >Land Grab U</a
+            >
+            project, which extensively collected and mapped land data tied to
+            land-grant universities and the 1862 Morrill Act. Our website is a
+            localization of the data from the Land Grab U project and an
+            expansion of their work in a larger colonial context. Land Grab CT
+            specifically focuses on UConn’s status as a land-grant university
+            and details UConn’s acquisition and control of the land it currently
+            resides on as well as the parcels of land from which it
+            benefits.This project aims to inform viewers about UConn’s
+            participation in the construction of colonial systems of higher
+            education. It invites them to interrogate their assumptions about
+            these systems and their impact on Native communities.
           </stacked-card>
         </div>
         <curved-border :color="'black'"></curved-border>
@@ -25,12 +39,16 @@
           <!-- <img class="mw-30" :src="require('/src/assets/map.png')" /> -->
           <!-- <div style="background-image: url('require')"></div> -->
           <div class="w-75-ns w-90 center flex flex-column justify-center">
-            <video autoplay loop muted class="w-100" id="video1" controls v-if="videoSrc">
-              <source
-                :src="videoSrc"
-                loop
-                type="video/mp4"
-              />
+            <video
+              autoplay
+              loop
+              muted
+              class="w-100"
+              id="video1"
+              controls
+              v-if="videoSrc"
+            >
+              <source :src="videoSrc" loop type="video/mp4" />
             </video>
             <p class="z-5 white bg-black br2 ph2 tl f4-ns f6">
               This animation is an artistic rendering of data from the Land Grab
@@ -48,19 +66,12 @@
       </div>
       <div class="section relative bg-lgct-red">
         <div class="flex items-center h-100">
-          <rounded-card
-            :img="require('../assets/LG_usa-silhouette.png')"
-            :buttonurl="'/timeline/Connecticut Timeline'"
-          >
-            <p class="f5-ns f6">
-              The land grant college and university system must be understood in the context of the larger history of dispossession of Indigneous peoples in North America.  At its root, colonialism is about land: control, commodification, extraction, and exploitation of territory in the service of settler interests.  In this way, the 1862 Morrill Land Grant Act marks a continuation and extension of a longer history of European and American appropriation, often by violence and coercion, of Native lands, and the transformation of that land into financial resources to benefit settler society.  
-
-This dispossession was, from the very beginning, resisted, contested, and occasionally subverted by Native Tribes and individuals across the continent.  For many if not all Native cultures, the close connection between survival, identity, and geographic place meant that this process of dispossession, even if it was not, as it often was, accompanied by a deliberate policy of extermination, often amounted to attempted genocide.  The creativity, strength, and resilience of generations of Native peoples ensured that such attempts were unsuccessful. Today, these vibrant, sovereign communities are forging new futures at the same time the work to reclaim much of what they lost
-
-The following timeline presents an overview of key episodes in the history of colonial dispossession, Native resistance, and the intersection with education policy and practice. 
-
+          <rounded-card :img="require('../assets/LG_usa-silhouette.png')">
+            <p class="f3-ns f4">
+              This timeline presents an overview of key episodes in the history
+              of colonial dispossession, Native resistance, and the intersection
+              with education policy and practice.
             </p>
-
           </rounded-card>
           <div class="ma3 fr flex items-center">
             <link-button
@@ -74,14 +85,21 @@ The following timeline presents an overview of key episodes in the history of co
 
       <div class="section relative bg-lgct-white">
         <rounded-card
-          :flip="true"
+          flip
           :heading="'Connecticut Timeline'"
           :img="require('../assets/LG_ct-silhouette.png')"
           :buttonurl="'/timeline/Connecticut Timeline'"
           :buttoncolor="'#aa4f37'"
         >
           <p class="f3-ns f4-m f4">
-            This timeline examines the history of the University of Connecticut within the larger system of colonialism. This history includes the roots of colonialism in land control, commodification, extraction and exploitation, which are integral in the formation of the state of Connecticut and the establishment and ongoing funding of the University of Connecticut.  Although not comprehensive, this timeline presents an overview of key episodes in the ongoing acquisition of land that has constructed modern day UConn. 
+            This timeline examines the history of the University of Connecticut
+            within the larger system of colonialism. This history includes the
+            roots of colonialism in land control, commodification, extraction
+            and exploitation, which are integral in the formation of the state
+            of Connecticut and the establishment and ongoing funding of the
+            University of Connecticut. Although not comprehensive, this timeline
+            presents an overview of key episodes in the ongoing acquisition of
+            land that has constructed modern day UConn.
           </p>
         </rounded-card>
         <curved-border :color="'teal'" class="z-3"></curved-border>
@@ -90,13 +108,18 @@ The following timeline presents an overview of key episodes in the history of co
       <div class="section relative bg-lgct-gold">
         <div class="flex items-center h-100">
           <rounded-card
-            
             :heading="'Land Parcels'"
             :img="
               require('../assets/LG_horizontal-blue-shape-progression-06.png')
             "
             style="flex: 1 !important"
-          ><p class="f3-ns f4">Virtually visit a selection of parcels that currently benefit the University of Connecticut. Learn about how the land is being used today, the Native peoples of this land, and the history of how settlers appropriated and exploited it. </p></rounded-card>
+            ><p class="f3-ns f4">
+              Virtually visit a selection of parcels that currently benefit the
+              University of Connecticut. Learn about how the land is being used
+              today, the Native peoples of this land, and the history of how
+              settlers appropriated and exploited it.
+            </p>
+          </rounded-card>
           <div class="ma3 fr flex items-center">
             <!-- <div class="ma3 absolute right-1 bottom-1 flex items-center"> -->
             <link-button :buttonLink="'/parcels'"></link-button>
@@ -107,13 +130,14 @@ The following timeline presents an overview of key episodes in the history of co
 
       <div class="section white bg-lgct-red relative">
         <rounded-card
-          :isTitle="true"
+          isTitle
           :heading="'About the Project'"
           :img="require('../assets/LG_horizontal-yellow-shape-progression.png')"
-          :flip="true"
+          flip
           :buttonurl="'/about'"
           bgColor="#EAC574"
         ></rounded-card>
+        <curved-border :color="'red'" left></curved-border>
       </div>
 
       <Footer></Footer>
@@ -216,8 +240,8 @@ export default {
       },
     };
   },
-  mounted () {
-    this.videoSrc = require('../assets/FinalAnimationHD.mp4');
+  mounted() {
+    this.videoSrc = require("../assets/FinalAnimationHD.mp4");
   },
 };
 </script>
